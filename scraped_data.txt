@@ -99,3 +99,2970 @@ Link: /adresse/vildtbaneparken-112c-2635-ishoej-01830889112c_______
 Address: Vildtbaneparken 112C
 Sale Type: Tvangsauktion, Sale Date: 31-01-1994, Price: 360.000
 
+Link: /adresse/viggo-rothes-vej-13-2920-charlottenlund-01570936__13_______
+Address: Viggo Rothes Vej 13
+Sale Type: Tvangsauktion, Sale Date: 09-01-2018, Price: 20.300.000
+Sale Type: 08-02-2016, Sale Date: 23.000, Price: - kr./m2
+Sale Type: 08-02-2016, Sale Date: 23.000, Price: - kr./m2
+
+Link: /adresse/vigerslev-alle-362-2650-hvidovre-01679379_362_______
+Address: Vigerslev Alle 362
+Sale Type: Tvangsauktion, Sale Date: 21-09-2011, Price: 810.000
+Sale Type: 09-09-1996, Sale Date: 675.000, Price: - kr./m2
+
+Link: /adresse/viemosebro-30-2610-roedovre-01750957__30_______
+Address: Viemosebro 30
+Sale Type: Tvangsauktion, Sale Date: 18-12-1995, Price: 421.000
+
+Link: /adresse/vibeholms-vaenge-93-2635-ishoej-01830878__93_______
+Address: Vibeholms Vænge 93
+Sale Type: Tvangsauktion, Sale Date: 02-11-2009, Price: 2.200.000
+Sale Type: 04-04-2001, Sale Date: 1.695.000, Price: - kr./m2
+
+Link: /adresse/vibeholms-vaenge-9-2635-ishoej-01830878___9_______
+Address: Vibeholms Vænge 9
+Sale Type: Tvangsauktion, Sale Date: 23-07-2012, Price: 2.325.000
+
+Link: /adresse/vibeholms-vaenge-56-2635-ishoej-01830878__56_______
+Address: Vibeholms Vænge 56
+Sale Type: Tvangsauktion, Sale Date: 04-05-2009, Price: 2.500.000
+Sale Type: 11-08-2005, Sale Date: 2.695.000, Price: - kr./m2
+Sale Type: 02-08-2000, Sale Date: 1.580.000, Price: - kr./m2
+
+Link: /adresse/vibeholms-alle-14-2605-broendby-01530791__14_______
+Address: Vibeholms Allé 14
+Sale Type: Tvangsauktion, Sale Date: 21-05-2012, Price: 2.500.000
+Sale Type: 12-09-2006, Sale Date: 8.800.000, Price: - kr./m2
+Sale Type: 10-05-1996, Sale Date: 1.400.000, Price: - kr./m2
+
+Link: /adresse/vesterkoeb-45-1-4-2640-hedehusene-01699339__45__1___4
+Address: Vesterkøb 45, 1. 4.
+Sale Type: Tvangsauktion, Sale Date: 01-12-2014, Price: 654.000
+Sale Type: 25-10-2005, Sale Date: 1.125.000, Price: - kr./m2
+Sale Type: 20-01-2004, Sale Date: 870.000, Price: - kr./m2
+
+Link: /adresse/vesterkoeb-40-2-9-2640-hedehusene-01699339__40__2___9
+Address: Vesterkøb 40, 2. 9.
+Sale Type: Tvangsauktion, Sale Date: 03-11-2009, Price: 10.200.000
+Sale Type: 26-11-1998, Sale Date: 150.000, Price: - kr./m2
+
+Link: /adresse/vesterkoeb-40-2-16-2640-hedehusene-01699339__40__2__16
+Address: Vesterkøb 40, 2. 16.
+Sale Type: Tvangsauktion, Sale Date: 03-11-2009, Price: 10.200.000
+Sale Type: 26-11-1998, Sale Date: 170.000, Price: - kr./m2
+
+Link: /adresse/vesterkoeb-40-2-15-2640-hedehusene-01699339__40__2__15
+Address: Vesterkøb 40, 2. 15.
+Sale Type: Tvangsauktion, Sale Date: 03-11-2009, Price: 10.200.000
+Sale Type: 26-11-1998, Sale Date: 140.000, Price: - kr./m2
+
+Link: /adresse/vesterkoeb-40-2-12-2640-hedehusene-01699339__40__2__12
+Address: Vesterkøb 40, 2. 12.
+Sale Type: Tvangsauktion, Sale Date: 03-11-2009, Price: 10.200.000
+Sale Type: 26-11-1998, Sale Date: 160.000, Price: - kr./m2
+
+Link: /adresse/vesterkoeb-40-2-11-2640-hedehusene-01699339__40__2__11
+Address: Vesterkøb 40, 2. 11.
+Sale Type: Tvangsauktion, Sale Date: 03-11-2009, Price: 10.200.000
+Sale Type: 26-11-1998, Sale Date: 140.000, Price: - kr./m2
+
+Link: /adresse/vesterkoeb-40-1-7-2640-hedehusene-01699339__40__1___7
+Address: Vesterkøb 40, 1. 7.
+Sale Type: Tvangsauktion, Sale Date: 03-11-2009, Price: 10.200.000
+Sale Type: 26-11-1998, Sale Date: 140.000, Price: - kr./m2
+
+Link: /adresse/vesterkoeb-40-1-5-2640-hedehusene-01699339__40__1___5
+Address: Vesterkøb 40, 1. 5.
+Sale Type: Tvangsauktion, Sale Date: 03-11-2009, Price: 10.200.000
+Sale Type: 26-11-1998, Sale Date: 160.000, Price: - kr./m2
+
+Link: /adresse/vejlegaardsparken-66-2-th-2665-vallensbaek-strand-01879267__66__2__th
+Address: Vejlegårdsparken 66, 2. th.
+Sale Type: Tvangsauktion, Sale Date: 10-10-2011, Price: 1.150.000
+Sale Type: 10-10-2008, Sale Date: 1.375.000, Price: - kr./m2
+Sale Type: 06-03-2006, Sale Date: 1.710.000, Price: - kr./m2
+
+Link: /adresse/vejlegaardsparken-60-2-23-2665-vallensbaek-strand-01879267__60__2__23
+Address: Vejlegårdsparken 60, 2. 23.
+Sale Type: Tvangsauktion, Sale Date: 18-07-2014, Price: 931.500
+Sale Type: 17-01-2008, Sale Date: 1.380.000, Price: - kr./m2
+
+Link: /adresse/vejlegaardsparken-50-0-4-2665-vallensbaek-strand-01879267__50_st___4
+Address: Vejlegårdsparken 50, st. 4.
+Sale Type: Tvangsauktion, Sale Date: 10-07-2012, Price: 349.000
+Sale Type: 19-10-1999, Sale Date: 447.000, Price: - kr./m2
+Sale Type: 16-03-1994, Sale Date: 236.000, Price: - kr./m2
+
+Link: /adresse/vejlegaardsparken-50-2-26-2665-vallensbaek-strand-01879267__50__2__26
+Address: Vejlegårdsparken 50, 2. 26.
+Sale Type: Tvangsauktion, Sale Date: 18-05-1998, Price: 210.000
+
+Link: /adresse/vejlegaardsparken-40-0-2-2665-vallensbaek-strand-01879267__40_st___2
+Address: Vejlegårdsparken 40, st. 2.
+Sale Type: Tvangsauktion, Sale Date: 14-06-2011, Price: 320.000
+Sale Type: 14-09-1998, Sale Date: 378.860, Price: - kr./m2
+Sale Type: 06-06-1994, Sale Date: 220.000, Price: - kr./m2
+
+Link: /adresse/vejlegaardsparken-24-0-1-2665-vallensbaek-strand-01879267__24_st___1
+Address: Vejlegårdsparken 24, st. 1.
+Sale Type: Tvangsauktion, Sale Date: 13-09-2010, Price: 200.000
+Sale Type: 16-05-2007, Sale Date: 650.000, Price: - kr./m2
+Sale Type: 01-08-2005, Sale Date: 564.000, Price: - kr./m2
+
+Link: /adresse/vejlegaardsparken-22-1-16-2665-vallensbaek-strand-01879267__22__1__16
+Address: Vejlegårdsparken 22, 1. 16.
+Sale Type: Tvangsauktion, Sale Date: 25-06-2003, Price: 535.000
+Sale Type: 02-11-2000, Sale Date: 495.686, Price: - kr./m2
+Sale Type: 20-08-1999, Sale Date: 363.000, Price: - kr./m2
+
+Link: /adresse/vejlegaardsparken-2-0-8-2665-vallensbaek-strand-01879267___2_st___8
+Address: Vejlegårdsparken 2, st. 8.
+Sale Type: Tvangsauktion, Sale Date: 20-09-2011, Price: 890.000
+Sale Type: 29-05-1996, Sale Date: 356.000, Price: - kr./m2
+Sale Type: 08-02-1996, Sale Date: 326.193, Price: - kr./m2
+
+Link: /adresse/vejlegaardsparken-2-0-2-2665-vallensbaek-strand-01879267___2_st___2
+Address: Vejlegårdsparken 2, st. 2.
+Sale Type: Tvangsauktion, Sale Date: 15-01-2014, Price: 811.211
+Sale Type: 30-06-1996, Sale Date: 406.000, Price: - kr./m2
+Sale Type: 28-12-1993, Sale Date: 365.000, Price: - kr./m2
+
+Link: /adresse/vejlegaardsparken-2-4-43-2665-vallensbaek-strand-01879267___2__4__43
+Address: Vejlegårdsparken 2, 4. 43.
+Sale Type: Tvangsauktion, Sale Date: 13-12-2011, Price: 300.000
+Sale Type: 03-07-2002, Sale Date: 725.000, Price: - kr./m2
+Sale Type: 30-08-2000, Sale Date: 504.124, Price: - kr./m2
+
+Link: /adresse/vejlegaardsparken-2-3-37-2665-vallensbaek-strand-01879267___2__3__37
+Address: Vejlegårdsparken 2, 3. 37.
+Sale Type: Tvangsauktion, Sale Date: 25-04-2012, Price: 330.000
+Sale Type: 10-12-2005, Sale Date: 925.000, Price: - kr./m2
+Sale Type: 09-09-2001, Sale Date: 615.000, Price: - kr./m2
+
+Link: /adresse/vejlegaardsparken-2-1-16-2665-vallensbaek-strand-01879267___2__1__16
+Address: Vejlegårdsparken 2, 1. 16.
+Sale Type: Tvangsauktion, Sale Date: 26-01-1994, Price: 163.000
+
+Link: /adresse/vejlegaardsparken-14-3-34-2665-vallensbaek-strand-01879267__14__3__34
+Address: Vejlegårdsparken 14, 3. 34.
+Sale Type: Tvangsauktion, Sale Date: 07-11-2011, Price: 590.000
+Sale Type: 05-01-2006, Sale Date: 1.595.000, Price: - kr./m2
+Sale Type: 23-02-2004, Sale Date: 1.095.000, Price: - kr./m2
+
+Link: /adresse/vejlegaardsparken-12-2-27-2665-vallensbaek-strand-01879267__12__2__27
+Address: Vejlegårdsparken 12, 2. 27.
+Sale Type: Tvangsauktion, Sale Date: 19-10-2023, Price: 2.155.000
+Sale Type: 28-01-2022, Sale Date: 2.000.000, Price: - kr./m2
+Sale Type: 16-01-2019, Sale Date: 1.630.000, Price: 18.953
+
+Link: /adresse/vejlegaardsparken-12-1-16-2665-vallensbaek-strand-01879267__12__1__16
+Address: Vejlegårdsparken 12, 1. 16.
+Sale Type: Tvangsauktion, Sale Date: 23-01-2012, Price: 360.000
+Sale Type: 31-01-2006, Sale Date: 949.000, Price: - kr./m2
+Sale Type: 03-01-2000, Sale Date: 437.077, Price: - kr./m2
+
+Link: /adresse/vejledalen-80-0-mf-2635-ishoej-01830854__80_st__mf
+Address: Vejledalen 80, st. mf.
+Sale Type: Tvangsauktion, Sale Date: 18-02-2014, Price: 325.100
+Sale Type: 15-07-2000, Sale Date: 477.316, Price: - kr./m2
+Sale Type: 03-03-1997, Sale Date: 265.000, Price: - kr./m2
+
+Link: /adresse/vejledalen-80-1-th-2635-ishoej-01830854__80__1__th
+Address: Vejledalen 80, 1. th.
+Sale Type: Tvangsauktion, Sale Date: 04-07-2011, Price: 720.000
+Sale Type: 05-09-2005, Sale Date: 1.355.000, Price: - kr./m2
+Sale Type: 23-06-1993, Sale Date: 365.000, Price: - kr./m2
+
+Link: /adresse/vejledalen-78-1-th-2635-ishoej-01830854__78__1__th
+Address: Vejledalen 78, 1. th.
+Sale Type: Tvangsauktion, Sale Date: 02-09-2014, Price: 684.000
+Sale Type: 16-04-2003, Sale Date: 863.816, Price: - kr./m2
+Sale Type: 09-05-1999, Sale Date: 566.180, Price: - kr./m2
+
+Link: /adresse/vejledalen-76-0-th-2635-ishoej-01830854__76_st__th
+Address: Vejledalen 76, st. th.
+Sale Type: Tvangsauktion, Sale Date: 03-08-2009, Price: 738.000
+Sale Type: 03-05-2001, Sale Date: 681.013, Price: - kr./m2
+
+Link: /adresse/vejledalen-74-0-tv-2635-ishoej-01830854__74_st__tv
+Address: Vejledalen 74, st. tv.
+Sale Type: Tvangsauktion, Sale Date: 12-01-2009, Price: 1.100.000
+Sale Type: 15-06-2008, Sale Date: 897.500, Price: - kr./m2
+Sale Type: 15-06-2008, Sale Date: 897.500, Price: - kr./m2
+
+Link: /adresse/vejledalen-60-3-tv-2635-ishoej-01830854__60__3__tv
+Address: Vejledalen 60, 3. tv.
+Sale Type: Tvangsauktion, Sale Date: 17-06-2014, Price: 730.980
+Sale Type: 20-08-2006, Sale Date: 1.667.341, Price: - kr./m2
+Sale Type: 24-03-2004, Sale Date: 831.000, Price: - kr./m2
+
+Link: /adresse/vejledalen-362-2635-ishoej-01830854_362_______
+Address: Vejledalen 362
+Sale Type: Tvangsauktion, Sale Date: 10-05-2016, Price: 1.695.000
+Sale Type: 18-12-1994, Sale Date: 405.000, Price: - kr./m2
+Sale Type: 29-03-1993, Sale Date: 195.000, Price: - kr./m2
+
+Link: /adresse/vejledalen-258-2635-ishoej-01830854_258_______
+Address: Vejledalen 258
+Sale Type: Tvangsauktion, Sale Date: 16-03-2009, Price: 905.000
+Sale Type: 25-04-2005, Sale Date: 1.328.000, Price: - kr./m2
+Sale Type: 28-11-2003, Sale Date: 1.068.000, Price: - kr./m2
+
+Link: /adresse/vejlebrovej-95-3-49-2635-ishoej-01830850__95__3__49
+Address: Vejlebrovej 95, 3. 49.
+Sale Type: Tvangsauktion, Sale Date: 20-10-2020, Price: 1.130.000
+Sale Type: 01-10-2007, Sale Date: 1.320.000, Price: - kr./m2
+Sale Type: 01-10-2007, Sale Date: 1.320.000, Price: - kr./m2
+
+Link: /adresse/vejlebrovej-87-2-95-2635-ishoej-01830850__87__2__95
+Address: Vejlebrovej 87, 2. 95.
+Sale Type: Tvangsauktion, Sale Date: 10-10-2008, Price: 600.000
+Sale Type: 17-03-2006, Sale Date: 1.372.000, Price: - kr./m2
+Sale Type: 08-08-2005, Sale Date: 1.046.777, Price: - kr./m2
+
+Link: /adresse/vejlebrovej-86-2-2-2635-ishoej-01830850__86__2___2
+Address: Vejlebrovej 86, 2. 2.
+Sale Type: Tvangsauktion, Sale Date: 04-04-2012, Price: 210.000
+
+Link: /adresse/vejlebrovej-85-2-146-2635-ishoej-01830850__85__2_146
+Address: Vejlebrovej 85, 2. 146.
+Sale Type: Tvangsauktion, Sale Date: 10-08-2015, Price: 835.000
+Sale Type: 05-10-2006, Sale Date: 1.517.743, Price: - kr./m2
+Sale Type: 07-09-2005, Sale Date: 1.102.295, Price: - kr./m2
+
+Link: /adresse/vejlebrovej-85-1-140-2635-ishoej-01830850__85__1_140
+Address: Vejlebrovej 85, 1. 140.
+Sale Type: Tvangsauktion, Sale Date: 16-09-2013, Price: 1.218.000
+
+Link: /adresse/vejlebrovej-82-2-th-2635-ishoej-01830850__82__2__th
+Address: Vejlebrovej 82, 2. th.
+Sale Type: Tvangsauktion, Sale Date: 20-09-2010, Price: 2.310.000
+
+Link: /adresse/vejlebrovej-80-3-mf-2635-ishoej-01830850__80__3__mf
+Address: Vejlebrovej 80, 3. mf.
+Sale Type: Tvangsauktion, Sale Date: 12-10-2009, Price: 300.000
+Sale Type: 22-05-2006, Sale Date: 851.400, Price: - kr./m2
+Sale Type: 24-01-2000, Sale Date: 349.000, Price: - kr./m2
+
+Link: /adresse/vejlebrovej-76-3-1-2635-ishoej-01830850__76__3___1
+Address: Vejlebrovej 76, 3. 1.
+Sale Type: Tvangsauktion, Sale Date: 20-09-2011, Price: 2.310.000
+
+Link: /adresse/vejlebrovej-76-2-3-2635-ishoej-01830850__76__2___3
+Address: Vejlebrovej 76, 2. 3.
+Sale Type: Tvangsauktion, Sale Date: 20-04-2010, Price: 315.000
+Sale Type: 05-05-2008, Sale Date: 717.018, Price: - kr./m2
+Sale Type: 27-06-2003, Sale Date: 635.765, Price: - kr./m2
+
+Link: /adresse/vejlebrovej-70-3-3-2635-ishoej-01830850__70__3___3
+Address: Vejlebrovej 70, 3. 3.
+Sale Type: Tvangsauktion, Sale Date: 16-11-2015, Price: 463.500
+Sale Type: 23-10-2006, Sale Date: 1.042.000, Price: - kr./m2
+Sale Type: 26-09-2006, Sale Date: 760.000, Price: - kr./m2
+
+Link: /adresse/vejlebrovej-68-3-2-2635-ishoej-01830850__68__3___2
+Address: Vejlebrovej 68, 3. 2.
+Sale Type: Tvangsauktion, Sale Date: 17-06-2009, Price: 380.000
+Sale Type: 20-08-2006, Sale Date: 703.032, Price: - kr./m2
+Sale Type: 01-08-2002, Sale Date: 485.357, Price: - kr./m2
+
+Link: /adresse/vejlebrovej-62-3-mf-2635-ishoej-01830850__62__3__mf
+Address: Vejlebrovej 62, 3. mf.
+Sale Type: Tvangsauktion, Sale Date: 05-08-2013, Price: 373.500
+Sale Type: 17-10-2000, Sale Date: 367.740, Price: - kr./m2
+Sale Type: 20-04-1992, Sale Date: 190.000, Price: - kr./m2
+
+Link: /adresse/vejlebrovej-60-1-tv-2635-ishoej-01830850__60__1__tv
+Address: Vejlebrovej 60, 1. tv.
+Sale Type: Tvangsauktion, Sale Date: 14-11-2011, Price: 700.000
+Sale Type: 03-05-2006, Sale Date: 1.578.623, Price: - kr./m2
+Sale Type: 26-11-2002, Sale Date: 860.000, Price: - kr./m2
+
+Link: /adresse/vejlebrovej-14c-2635-ishoej-01830850_14c_______
+Address: Vejlebrovej 14C
+Sale Type: Tvangsauktion, Sale Date: 05-07-2011, Price: 1.650.000
+Sale Type: 04-12-2006, Sale Date: 2.917.000, Price: - kr./m2
+
+Link: /adresse/vejlebrovej-124-3-mf-2635-ishoej-01830850_124__3__mf
+Address: Vejlebrovej 124, 3. mf.
+Sale Type: Tvangsauktion, Sale Date: 14-12-2011, Price: 220.000
+Sale Type: 23-10-2006, Sale Date: 869.005, Price: - kr./m2
+Sale Type: 18-11-2002, Sale Date: 469.000, Price: - kr./m2
+
+Link: /adresse/vejlebrovej-120-3-th-2635-ishoej-01830850_120__3__th
+Address: Vejlebrovej 120, 3. th.
+Sale Type: Tvangsauktion, Sale Date: 11-03-2009, Price: 1.000.000
+Sale Type: 01-06-2006, Sale Date: 1.976.543, Price: - kr./m2
+Sale Type: 01-07-2005, Sale Date: 1.365.000, Price: - kr./m2
+
+Link: /adresse/vejlebrovej-118-4-mf-2635-ishoej-01830850_118__4__mf
+Address: Vejlebrovej 118, 4. mf.
+Sale Type: Tvangsauktion, Sale Date: 22-03-2010, Price: 266.694
+Sale Type: 25-06-2006, Sale Date: 848.971, Price: - kr./m2
+Sale Type: 24-04-2006, Sale Date: 642.926, Price: - kr./m2
+
+Link: /adresse/vejlebrovej-114-2-tv-2635-ishoej-01830850_114__2__tv
+Address: Vejlebrovej 114, 2. tv.
+Sale Type: Tvangsauktion, Sale Date: 06-03-2013, Price: 630.000
+Sale Type: 09-11-2007, Sale Date: 1.298.000, Price: - kr./m2
+Sale Type: 12-02-2004, Sale Date: 995.000, Price: - kr./m2
+
+Link: /adresse/vejlebrovej-106-3-th-2635-ishoej-01830850_106__3__th
+Address: Vejlebrovej 106, 3. th.
+Sale Type: Tvangsauktion, Sale Date: 15-06-2011, Price: 850.000
+Sale Type: 23-10-2001, Sale Date: 963.536, Price: - kr./m2
+Sale Type: 22-04-2000, Sale Date: 717.000, Price: - kr./m2
+
+Link: /adresse/vejlebrovej-102-1-tv-2635-ishoej-01830850_102__1__tv
+Address: Vejlebrovej 102, 1. tv.
+Sale Type: Tvangsauktion, Sale Date: 20-12-2010, Price: 600.000
+Sale Type: 13-09-2002, Sale Date: 902.837, Price: - kr./m2
+
+Link: /adresse/ved-vandloebet-9-0-2610-roedovre-01750941___9_st____
+Address: Ved Vandløbet 9, st.
+Sale Type: Tvangsauktion, Sale Date: 16-12-2014, Price: 960.000
+Sale Type: 26-11-2006, Sale Date: 1.650.000, Price: - kr./m2
+Sale Type: 29-05-2005, Sale Date: 1.950.000, Price: - kr./m2
+
+Link: /adresse/ved-vandloebet-9-1-2610-roedovre-01750941___9__1____
+Address: Ved Vandløbet 9, 1.
+Sale Type: Tvangsauktion, Sale Date: 16-12-2014, Price: 960.000
+Sale Type: 26-11-2006, Sale Date: 1.650.000, Price: - kr./m2
+Sale Type: 29-05-2005, Sale Date: 1.950.000, Price: - kr./m2
+
+Link: /adresse/ved-renden-47-2870-dyssegaard-01570920__47_______
+Address: Ved Renden 47
+Sale Type: Tvangsauktion, Sale Date: 02-11-2022, Price: 6.920.000
+Sale Type: 08-06-2015, Sale Date: 5.600.000, Price: 32.184
+Sale Type: 31-03-1994, Sale Date: 1.252.680, Price: - kr./m2
+
+Link: /adresse/ved-kagsaa-2b-2860-soeborg-01590956__2b_______
+Address: Ved Kagså 2B
+Sale Type: Tvangsauktion, Sale Date: 26-03-2014, Price: 710.000
+Sale Type: 29-03-2004, Sale Date: 1.286.800, Price: - kr./m2
+Sale Type: 10-12-2001, Sale Date: 1.040.000, Price: - kr./m2
+
+Link: /adresse/vangeporten-3-1-2920-charlottenlund-01570907___3__1____
+Address: Vangeporten 3, 1.
+Sale Type: Tvangsauktion, Sale Date: 16-09-2024, Price: 4.459.254
+Sale Type: 08-12-2003, Sale Date: 2.475.000, Price: - kr./m2
+Sale Type: 12-10-1998, Sale Date: 1.950.000, Price: - kr./m2
+
+Link: /adresse/vangede-bygade-74-0-4-2820-gentofte-01570903__74_st___4
+Address: Vangede Bygade 74, st. 4.
+Sale Type: Tvangsauktion, Sale Date: 21-09-2009, Price: 400.000
+Sale Type: 10-01-2005, Sale Date: 675.000, Price: - kr./m2
+Sale Type: 06-07-2001, Sale Date: 500.000, Price: - kr./m2
+
+Link: /adresse/vangede-bygade-103-0-tv-2820-gentofte-01570903_103_st__tv
+Address: Vangede Bygade 103, st. tv.
+Sale Type: Tvangsauktion, Sale Date: 04-01-2017, Price: 1.131.800
+Sale Type: 25-02-2007, Sale Date: 1.200.000, Price: - kr./m2
+Sale Type: 25-04-1994, Sale Date: 398.000, Price: - kr./m2
+
+Link: /adresse/vandmestervej-32b-2630-taastrup-01699122_32b_______
+Address: Vandmestervej 32B
+Sale Type: Tvangsauktion, Sale Date: 22-04-2013, Price: 4.100.000
+Sale Type: 09-01-2006, Sale Date: 1.750.000, Price: - kr./m2
+
+Link: /adresse/vallensbaek-strandvej-270-2665-vallensbaek-strand-01871750_270_______
+Address: Vallensbæk Strandvej 270
+Sale Type: Tvangsauktion, Sale Date: 04-11-1992, Price: 740.000
+
+Link: /adresse/valeursvej-9-2900-hellerup-01570900___9_______
+Address: Valeursvej 9
+Sale Type: Tvangsauktion, Sale Date: 01-12-2010, Price: 16.400.000
+Sale Type: 27-08-2007, Sale Date: 28.000.000, Price: - kr./m2
+Sale Type: 15-12-2004, Sale Date: 11.000.000, Price: - kr./m2
+
+Link: /adresse/valbyvej-22-2-th-2630-taastrup-01699095__22__2__th
+Address: Valbyvej 22, 2. th.
+Sale Type: Tvangsauktion, Sale Date: 23-03-2011, Price: 220.000
+Sale Type: 02-09-2002, Sale Date: 739.895, Price: - kr./m2
+Sale Type: 10-11-1998, Sale Date: 336.060, Price: - kr./m2
+
+Link: /adresse/ulrikkenborg-alle-39-2-mf-2800-kongens-lyngby-01730831__39__2__mf
+Address: Ulrikkenborg Alle 39, 2. mf.
+Sale Type: Tvangsauktion, Sale Date: 15-08-2012, Price: 590.000
+Sale Type: 21-06-2006, Sale Date: 1.399.000, Price: - kr./m2
+Sale Type: 14-09-2003, Sale Date: 795.000, Price: - kr./m2
+
+Link: /adresse/ulborgvej-16-2760-maaloev-01510807__16_______
+Address: Ulborgvej 16
+Sale Type: Tvangsauktion, Sale Date: 18-04-2017, Price: 1.973.400
+Sale Type: 14-01-1997, Sale Date: 606.000, Price: - kr./m2
+
+Link: /adresse/taastrup-have-5-0-tv-2630-taastrup-01698960___5_st__tv
+Address: Taastrup Have 5, st. tv.
+Sale Type: Tvangsauktion, Sale Date: 21-08-2012, Price: 550.000
+Sale Type: 29-12-2006, Sale Date: 1.300.000, Price: - kr./m2
+Sale Type: 11-10-2002, Sale Date: 742.500, Price: - kr./m2
+
+Link: /adresse/taastrup-have-42-0-mf-2630-taastrup-01698960__42_st__mf
+Address: Taastrup Have 42, st. mf.
+Sale Type: Tvangsauktion, Sale Date: 27-04-1999, Price: 190.918
+Sale Type: 08-03-1999, Sale Date: 335.000, Price: - kr./m2
+Sale Type: 14-02-1995, Sale Date: 272.000, Price: - kr./m2
+
+Link: /adresse/taastrup-have-38-1-mf-2630-taastrup-01698960__38__1__mf
+Address: Taastrup Have 38, 1. mf.
+Sale Type: Tvangsauktion, Sale Date: 15-06-2020, Price: 1.045.000
+Sale Type: 21-02-2017, Sale Date: 860.000, Price: 20.976
+Sale Type: 28-05-2015, Sale Date: 645.000, Price: 15.732
+
+Link: /adresse/taastrup-have-31-0-tv-2630-taastrup-01698960__31_st__tv
+Address: Taastrup Have 31, st. tv.
+Sale Type: Tvangsauktion, Sale Date: 08-09-2010, Price: 600.000
+Sale Type: 03-10-2000, Sale Date: 615.000, Price: - kr./m2
+Sale Type: 09-11-1999, Sale Date: 595.000, Price: - kr./m2
+
+Link: /adresse/taastrup-have-30-0-th-2630-taastrup-01698960__30_st__th
+Address: Taastrup Have 30, st. th.
+Sale Type: Tvangsauktion, Sale Date: 12-06-2013, Price: 455.000
+Sale Type: 01-04-2004, Sale Date: 849.000, Price: - kr./m2
+Sale Type: 31-03-1996, Sale Date: 340.000, Price: - kr./m2
+
+Link: /adresse/taastrup-have-23-1-th-2630-taastrup-01698960__23__1__th
+Address: Taastrup Have 23, 1. th.
+Sale Type: Tvangsauktion, Sale Date: 16-11-2011, Price: 610.000
+Sale Type: 19-10-2004, Sale Date: 925.000, Price: - kr./m2
+
+Link: /adresse/taastrup-have-10-1-th-2630-taastrup-01698960__10__1__th
+Address: Taastrup Have 10, 1. th.
+Sale Type: Tvangsauktion, Sale Date: 27-01-2015, Price: 980.000
+Sale Type: 23-08-2005, Sale Date: 910.000, Price: - kr./m2
+Sale Type: 24-06-2001, Sale Date: 672.326, Price: - kr./m2
+
+Link: /adresse/taarbaek-strandvej-76-1-th-2930-klampenborg-01730970__76__1__th
+Address: Taarbæk Strandvej 76, 1. th.
+Sale Type: Tvangsauktion, Sale Date: 10-06-1994, Price: 865.000
+
+Link: /adresse/tvaervej-22-1-tv-2640-hedehusene-01698878__22__1__tv
+Address: Tværvej 22, 1. tv.
+Sale Type: Tvangsauktion, Sale Date: 11-03-2014, Price: 3.700.000
+Sale Type: 01-06-2010, Sale Date: 5.150.000, Price: - kr./m2
+Sale Type: 09-04-2008, Sale Date: 2.150.000, Price: - kr./m2
+
+Link: /adresse/tvaervej-22-1-th-2640-hedehusene-01698878__22__1__th
+Address: Tværvej 22, 1. th.
+Sale Type: Tvangsauktion, Sale Date: 11-03-2014, Price: 3.700.000
+Sale Type: 01-06-2010, Sale Date: 5.150.000, Price: - kr./m2
+Sale Type: 09-04-2008, Sale Date: 2.150.000, Price: - kr./m2
+
+Link: /adresse/tvaervej-14b-2640-hedehusene-01698878_14b_______
+Address: Tværvej 14B
+Sale Type: Tvangsauktion, Sale Date: 09-05-2012, Price: 1.125.000
+Sale Type: 13-10-2006, Sale Date: 2.000.000, Price: - kr./m2
+Sale Type: 24-05-2002, Sale Date: 825.000, Price: - kr./m2
+
+Link: /adresse/tvaervej-14a-2640-hedehusene-01698878_14a_______
+Address: Tværvej 14A
+Sale Type: Tvangsauktion, Sale Date: 09-05-2012, Price: 1.125.000
+Sale Type: 13-10-2006, Sale Date: 2.000.000, Price: - kr./m2
+Sale Type: 24-05-2002, Sale Date: 825.000, Price: - kr./m2
+
+Link: /adresse/tvaerdiget-32-2740-skovlunde-01510686__32_______
+Address: Tværdiget 32
+Sale Type: Tvangsauktion, Sale Date: 26-11-2014, Price: 2.750.000
+Sale Type: 19-10-2006, Sale Date: 2.450.000, Price: - kr./m2
+
+Link: /adresse/tvaerbommen-55-0-th-2820-gentofte-01570895__55_st__th
+Address: Tværbommen 55, st. th.
+Sale Type: Tvangsauktion, Sale Date: 19-10-2009, Price: 420.000
+Sale Type: 20-06-2007, Sale Date: 1.356.208, Price: - kr./m2
+Sale Type: 18-06-2007, Sale Date: 1.084.967, Price: - kr./m2
+
+Link: /adresse/tukshoejen-61-2730-herlev-01638617__61_______
+Address: Tukshøjen 61
+Sale Type: Tvangsauktion, Sale Date: 09-07-2012, Price: 1.580.000
+
+Link: /adresse/tranevaenget-10-2-th-2900-hellerup-01570883__10__2__th
+Address: Tranevænget 10, 2. th.
+Sale Type: Tvangsauktion, Sale Date: 21-09-2009, Price: 2.000.000
+Sale Type: 02-11-2005, Sale Date: 3.087.230, Price: - kr./m2
+
+Link: /adresse/tranedalen-19-2635-ishoej-01830760__19_______
+Address: Tranedalen 19
+Sale Type: Tvangsauktion, Sale Date: 20-10-2020, Price: 2.600.000
+Sale Type: 16-10-2007, Sale Date: 2.600.000, Price: - kr./m2
+Sale Type: 24-05-2005, Sale Date: 2.224.504, Price: - kr./m2
+
+Link: /adresse/torvevej-9-2740-skovlunde-01510685___9_______
+Address: Torvevej 9
+Sale Type: Tvangsauktion, Sale Date: 26-06-1995, Price: 810.000
+
+Link: /adresse/topperne-9-3-32-2620-albertslund-01650532___9__3__32
+Address: Topperne 9, 3. 32.
+Sale Type: Tvangsauktion, Sale Date: 30-07-1992, Price: 211.000
+
+Link: /adresse/topperne-7-0-2-2620-albertslund-01650532___7_st___2
+Address: Topperne 7, st. 2.
+Sale Type: Tvangsauktion, Sale Date: 21-04-2022, Price: 1.020.000
+Sale Type: 01-05-2017, Sale Date: 625.000, Price: 18.939
+Sale Type: 01-03-2013, Sale Date: 269.000, Price: 8.152
+
+Link: /adresse/topperne-5-2-22-2620-albertslund-01650532___5__2__22
+Address: Topperne 5, 2. 22.
+Sale Type: Tvangsauktion, Sale Date: 13-01-2020, Price: 1.058.347
+Sale Type: 03-11-2007, Sale Date: 621.430, Price: - kr./m2
+Sale Type: 27-09-2005, Sale Date: 820.000, Price: - kr./m2
+
+Link: /adresse/topperne-3-2-24-2620-albertslund-01650532___3__2__24
+Address: Topperne 3, 2. 24.
+Sale Type: Tvangsauktion, Sale Date: 17-07-2012, Price: 420.000
+Sale Type: 30-12-1998, Sale Date: 459.000, Price: - kr./m2
+Sale Type: 22-07-1994, Sale Date: 336.628, Price: - kr./m2
+
+Link: /adresse/topperne-28-0-4-2620-albertslund-01650532__28_st___4
+Address: Topperne 28, st. 4.
+Sale Type: Tvangsauktion, Sale Date: 22-01-2013, Price: 486.800
+Sale Type: 16-12-2004, Sale Date: 780.000, Price: - kr./m2
+Sale Type: 09-10-1996, Sale Date: 352.274, Price: - kr./m2
+
+Link: /adresse/topperne-22-2-21-2620-albertslund-01650532__22__2__21
+Address: Topperne 22, 2. 21.
+Sale Type: Tvangsauktion, Sale Date: 23-10-2006, Price: 1.332.000
+Sale Type: 13-09-1994, Sale Date: 475.000, Price: - kr./m2
+Sale Type: 01-11-1993, Sale Date: 231.000, Price: - kr./m2
+
+Link: /adresse/topperne-12-1-12-2620-albertslund-01650532__12__1__12
+Address: Topperne 12, 1. 12.
+Sale Type: Tvangsauktion, Sale Date: 14-06-2011, Price: 575.000
+Sale Type: 02-10-2007, Sale Date: 1.148.000, Price: - kr./m2
+Sale Type: 19-03-2003, Sale Date: 750.000, Price: - kr./m2
+
+Link: /adresse/tjaereborgvej-33-2760-maaloev-01510803__33_______
+Address: Tjæreborgvej 33
+Sale Type: Tvangsauktion, Sale Date: 25-09-2012, Price: 1.275.000
+
+Link: /adresse/tavlebakkevej-4-2605-broendby-01530691___4_______
+Address: Tavlebakkevej 4
+Sale Type: Tvangsauktion, Sale Date: 26-02-2013, Price: 1.859.000
+Sale Type: 10-03-2006, Sale Date: 2.795.000, Price: - kr./m2
+Sale Type: 11-12-2004, Sale Date: 1.950.000, Price: - kr./m2
+
+Link: /adresse/tagesmindevej-1-2820-gentofte-01570852___1_______
+Address: Tagesmindevej 1
+Sale Type: Tvangsauktion, Sale Date: 29-05-2009, Price: 7.250.000
+Sale Type: 01-09-2006, Sale Date: 262.500, Price: - kr./m2
+Sale Type: 21-12-2005, Sale Date: 5.250.000, Price: - kr./m2
+
+Link: /adresse/soendergaardsvej-10-2870-dyssegaard-01570842__10_______
+Address: Søndergårdsvej 10
+Sale Type: Tvangsauktion, Sale Date: 09-04-1992, Price: 715.050
+
+Link: /adresse/soellingsvej-11-2920-charlottenlund-01570831__11_______
+Address: Søllingsvej 11
+Sale Type: Tvangsauktion, Sale Date: 22-10-2024, Price: 10.200.000
+Sale Type: 25-10-2002, Sale Date: 4.350.000, Price: - kr./m2
+
+Link: /adresse/soebredden-8-2820-gentofte-01570822___8_______
+Address: Søbredden 8
+Sale Type: Tvangsauktion, Sale Date: 19-04-2010, Price: 4.900.000
+Sale Type: 19-04-2010, Sale Date: 4.900.000, Price: - kr./m2
+Sale Type: 08-11-2004, Sale Date: 4.370.000, Price: - kr./m2
+
+Link: /adresse/soebredden-54-2820-gentofte-01570822__54_______
+Address: Søbredden 54
+Sale Type: Tvangsauktion, Sale Date: 15-06-1995, Price: 480.000
+
+Link: /adresse/soeborg-hovedgade-7-1-2870-dyssegaard-01570821___7__1____
+Address: Søborg Hovedgade 7, 1.
+Sale Type: Tvangsauktion, Sale Date: 16-05-2012, Price: 2.080.396
+Sale Type: 02-03-1994, Sale Date: 900.000, Price: - kr./m2
+
+Link: /adresse/soeborg-hovedgade-14-0-tv-2870-dyssegaard-01570821__14_st__tv
+Address: Søborg Hovedgade 14, st. tv.
+Sale Type: Tvangsauktion, Sale Date: 10-04-2013, Price: 1.250.000
+Sale Type: 06-06-2005, Sale Date: 385.000, Price: - kr./m2
+
+Link: /adresse/soebakken-29-2920-charlottenlund-01570817__29_______
+Address: Søbakken 29
+Sale Type: Tvangsauktion, Sale Date: 26-01-2009, Price: 7.410.000
+Sale Type: 28-09-2005, Sale Date: 7.500.000, Price: - kr./m2
+Sale Type: 19-08-1996, Sale Date: 2.300.000, Price: - kr./m2
+
+Link: /adresse/syvhoejvaenge-254-2625-vallensbaek-01877882_254_______
+Address: Syvhøjvænge 254
+Sale Type: Tvangsauktion, Sale Date: 17-07-2001, Price: 1.627.000
+
+Link: /adresse/symfonivej-20-2730-herlev-01637976__20_______
+Address: Symfonivej 20
+Sale Type: Tvangsauktion, Sale Date: 26-10-2009, Price: 3.200.000
+Sale Type: 08-03-2001, Sale Date: 1.610.000, Price: - kr./m2
+
+Link: /adresse/sydvestvej-35-2600-glostrup-01610473__35_______
+Address: Sydvestvej 35
+Sale Type: Tvangsauktion, Sale Date: 02-11-2010, Price: 1.616.000
+Sale Type: 04-08-2007, Sale Date: 2.500.000, Price: - kr./m2
+
+Link: /adresse/svenstrupvej-42-2665-vallensbaek-strand-01877775__42_______
+Address: Svenstrupvej 42
+Sale Type: Tvangsauktion, Sale Date: 12-01-2010, Price: 1.210.000
+Sale Type: 28-09-2006, Sale Date: 2.775.000, Price: - kr./m2
+Sale Type: 08-08-1992, Sale Date: 665.000, Price: - kr./m2
+
+Link: /adresse/stroemsvej-14-2630-taastrup-01697754__14_______
+Address: Strømsvej 14
+Sale Type: Tvangsauktion, Sale Date: 30-09-2013, Price: 520.000
+Sale Type: 28-08-2003, Sale Date: 1.203.064, Price: - kr./m2
+Sale Type: 01-03-2001, Sale Date: 1.110.643, Price: - kr./m2
+
+Link: /adresse/stroebyvej-34-2650-hvidovre-01678214__34_______
+Address: Strøbyvej 34
+Sale Type: Tvangsauktion, Sale Date: 12-02-1998, Price: 1.805.000
+Sale Type: 12-02-1993, Sale Date: 2.500.000, Price: - kr./m2
+Sale Type: 07-10-1992, Sale Date: 1.000.000, Price: - kr./m2
+
+Link: /adresse/stroebyholm-9-2650-hvidovre-01678204___9_______
+Address: Strøbyholm 9
+Sale Type: Tvangsauktion, Sale Date: 23-05-2011, Price: 1.800.000
+Sale Type: 09-01-2002, Sale Date: 1.732.220, Price: - kr./m2
+Sale Type: 20-09-1994, Sale Date: 836.915, Price: - kr./m2
+
+Link: /adresse/strongvej-30-2630-taastrup-01697714__30_______
+Address: Strongvej 30
+Sale Type: Tvangsauktion, Sale Date: 07-06-2010, Price: 1.420.000
+Sale Type: 25-01-2006, Sale Date: 2.395.000, Price: - kr./m2
+Sale Type: 27-07-2002, Sale Date: 1.275.000, Price: - kr./m2
+
+Link: /adresse/strandvejen-310-2930-klampenborg-01570802_310_______
+Address: Strandvejen 310
+Sale Type: Tvangsauktion, Sale Date: 11-11-2009, Price: 10.350.000
+Sale Type: 11-11-2009, Sale Date: 10.350.000, Price: - kr./m2
+Sale Type: 03-05-2002, Sale Date: 8.284.231, Price: - kr./m2
+
+Link: /adresse/strandvejen-262a-0-2920-charlottenlund-01570802262a_st____
+Address: Strandvejen 262A, st.
+Sale Type: Tvangsauktion, Sale Date: 31-03-2014, Price: 3.250.000
+Sale Type: 27-06-2005, Sale Date: 4.250.000, Price: - kr./m2
+Sale Type: 08-04-2005, Sale Date: 2.825.001, Price: - kr./m2
+
+Link: /adresse/strandvejen-262a-1-2920-charlottenlund-01570802262a__1____
+Address: Strandvejen 262A, 1.
+Sale Type: Tvangsauktion, Sale Date: 31-03-2014, Price: 3.250.000
+Sale Type: 27-06-2005, Sale Date: 4.250.000, Price: - kr./m2
+Sale Type: 08-04-2005, Sale Date: 2.825.001, Price: - kr./m2
+
+Link: /adresse/strandvejen-234-0-2920-charlottenlund-01570802_234_st____
+Address: Strandvejen 234, st.
+Sale Type: Tvangsauktion, Sale Date: 25-11-2009, Price: 7.190.000
+Sale Type: 25-11-2009, Sale Date: 7.190.000, Price: - kr./m2
+Sale Type: 25-11-2009, Sale Date: 7.190.000, Price: - kr./m2
+
+Link: /adresse/strandvejen-234-1-2920-charlottenlund-01570802_234__1____
+Address: Strandvejen 234, 1.
+Sale Type: Tvangsauktion, Sale Date: 25-11-2009, Price: 7.190.000
+Sale Type: 25-11-2009, Sale Date: 7.190.000, Price: - kr./m2
+Sale Type: 25-11-2009, Sale Date: 7.190.000, Price: - kr./m2
+
+Link: /adresse/strandvejen-234--1-2920-charlottenlund-01570802_234_kl____
+Address: Strandvejen 234, kl.
+Sale Type: Tvangsauktion, Sale Date: 25-11-2009, Price: 7.190.000
+Sale Type: 25-11-2009, Sale Date: 7.190.000, Price: - kr./m2
+Sale Type: 25-11-2009, Sale Date: 7.190.000, Price: - kr./m2
+
+Link: /adresse/strandvejen-141-2-tv-2900-hellerup-01570802_141__2__tv
+Address: Strandvejen 141, 2. tv.
+Sale Type: Tvangsauktion, Sale Date: 09-11-2011, Price: 19.000.000
+
+Link: /adresse/strandvejen-141-2-th-2900-hellerup-01570802_141__2__th
+Address: Strandvejen 141, 2. th.
+Sale Type: Tvangsauktion, Sale Date: 09-11-2011, Price: 19.000.000
+
+Link: /adresse/strandvejen-141-1-th-2900-hellerup-01570802_141__1__th
+Address: Strandvejen 141, 1. th.
+Sale Type: Tvangsauktion, Sale Date: 09-11-2011, Price: 19.000.000
+
+Link: /adresse/strandvejen-132a-3-tv-2900-hellerup-01570802132a__3__tv
+Address: Strandvejen 132A, 3. tv.
+Sale Type: Tvangsauktion, Sale Date: 06-07-2009, Price: 3.500.000
+Sale Type: 15-11-2004, Sale Date: 2.000.000, Price: - kr./m2
+Sale Type: 30-08-2000, Sale Date: 1.350.000, Price: - kr./m2
+
+Link: /adresse/strandvangen-3-2650-hvidovre-01678154___3_______
+Address: Strandvangen 3
+Sale Type: Tvangsauktion, Sale Date: 31-01-2012, Price: 1.000.000
+Sale Type: 25-01-2005, Sale Date: 501.601, Price: - kr./m2
+Sale Type: 26-11-2001, Sale Date: 1.149.000, Price: - kr./m2
+
+Link: /adresse/strandloebervej-10-2650-hvidovre-01678035__10_______
+Address: Strandløbervej 10
+Sale Type: Tvangsauktion, Sale Date: 03-11-2015, Price: 2.600.000
+Sale Type: 26-03-1997, Sale Date: 1.040.000, Price: - kr./m2
+Sale Type: 27-07-1996, Sale Date: 712.300, Price: - kr./m2
+
+Link: /adresse/strandlyst-alle-55-2650-hvidovre-01678005__55_______
+Address: Strandlyst Alle 55
+Sale Type: Tvangsauktion, Sale Date: 19-10-2023, Price: 3.050.000
+Sale Type: 24-08-2017, Sale Date: 2.735.000, Price: 26.814
+Sale Type: 18-10-1999, Sale Date: 465.000, Price: - kr./m2
+
+Link: /adresse/sthensvej-5b-1-tv-2630-taastrup-01697579__5b__1__tv
+Address: Sthensvej 5B, 1. tv.
+Sale Type: Tvangsauktion, Sale Date: 22-10-1996, Price: 142.000
+Sale Type: 09-09-1996, Sale Date: 240.000, Price: - kr./m2
+Sale Type: 14-03-1995, Sale Date: 278.000, Price: - kr./m2
+
+Link: /adresse/stengaards-alle-6-0-1-2800-kongens-lyngby-01730776___6_st___1
+Address: Stengårds Alle 6, st. 1.
+Sale Type: Tvangsauktion, Sale Date: 30-09-2016, Price: 699.310
+Sale Type: 02-11-1994, Sale Date: 291.000, Price: - kr./m2
+Sale Type: 27-01-1992, Sale Date: 245.000, Price: - kr./m2
+
+Link: /adresse/stengaards-alle-31e-2800-kongens-lyngby-01730776_31e_______
+Address: Stengårds Alle 31E
+Sale Type: Tvangsauktion, Sale Date: 16-02-2011, Price: 2.620.000
+
+Link: /adresse/stendam-25-2650-hvidovre-01677616__25_______
+Address: Stendam 25
+Sale Type: Tvangsauktion, Sale Date: 17-01-1994, Price: 460.000
+
+Link: /adresse/stationsvej-13a-2640-hedehusene-01697525_13a_______
+Address: Stationsvej 13A
+Sale Type: Tvangsauktion, Sale Date: 19-05-1995, Price: 437.500
+
+Link: /adresse/stadionvej-43-0-13-2600-glostrup-01610462__43_st__13
+Address: Stadionvej 43, st. 13.
+Sale Type: Tvangsauktion, Sale Date: 07-06-2011, Price: 1.660.000
+Sale Type: 11-09-2006, Sale Date: 2.050.000, Price: - kr./m2
+
+Link: /adresse/spaden-c-4-0-3-2630-taastrup-01697428___4_st___3
+Address: Spaden C 4, st. 3.
+Sale Type: Tvangsauktion, Sale Date: 04-03-2014, Price: 445.000
+Sale Type: 02-07-2004, Sale Date: 839.000, Price: - kr./m2
+Sale Type: 15-03-2002, Sale Date: 816.836, Price: - kr./m2
+
+Link: /adresse/spaden-c-4-0-2-2630-taastrup-01697428___4_st___2
+Address: Spaden C 4, st. 2.
+Sale Type: Tvangsauktion, Sale Date: 15-05-2023, Price: 884.302
+Sale Type: 29-04-2007, Sale Date: 818.000, Price: - kr./m2
+Sale Type: 01-06-2005, Sale Date: 510.000, Price: - kr./m2
+
+Link: /adresse/spaden-c-2-0-3-2630-taastrup-01697428___2_st___3
+Address: Spaden C 2, st. 3.
+Sale Type: Tvangsauktion, Sale Date: 19-08-1996, Price: 210.000
+
+Link: /adresse/sommerfuglevej-9-2610-roedovre-01750800___9_______
+Address: Sommerfuglevej 9
+Sale Type: Tvangsauktion, Sale Date: 22-10-2014, Price: 1.650.000
+Sale Type: 09-07-1997, Sale Date: 895.000, Price: - kr./m2
+
+Link: /adresse/sofielundsvej-19-2600-glostrup-01610427__19_______
+Address: Sofielundsvej 19
+Sale Type: Tvangsauktion, Sale Date: 25-11-2015, Price: 3.700.000
+Sale Type: 26-06-2004, Sale Date: 2.000.000, Price: - kr./m2
+
+Link: /adresse/snogegaardsvej-8k-1-tv-2820-gentofte-01570761__8k__1__tv
+Address: Snogegårdsvej 8K, 1. tv.
+Sale Type: Tvangsauktion, Sale Date: 11-01-2012, Price: 600.000
+Sale Type: 30-01-2007, Sale Date: 1.490.000, Price: - kr./m2
+Sale Type: 26-09-1994, Sale Date: 405.000, Price: - kr./m2
+
+Link: /adresse/snekketoften-1-2830-virum-01730742___1_______
+Address: Snekketoften 1
+Sale Type: Tvangsauktion, Sale Date: 25-05-2011, Price: 4.450.000
+Sale Type: 24-10-2001, Sale Date: 3.040.000, Price: - kr./m2
+
+Link: /adresse/smedevaenget-28-2640-hedehusene-01697065__28_______
+Address: Smedevænget 28
+Sale Type: Tvangsauktion, Sale Date: 18-01-2017, Price: 2.631.275
+Sale Type: 12-10-1995, Sale Date: 157.000, Price: - kr./m2
+Sale Type: 29-09-1995, Sale Date: 1.584.300, Price: - kr./m2
+
+Link: /adresse/smedeengen-8-2635-ishoej-01830600___8_______
+Address: Smedeengen 8
+Sale Type: Tvangsauktion, Sale Date: 18-02-2014, Price: 1.401.000
+
+Link: /adresse/smakkegaardsvej-161-1-th-2820-gentofte-01570753_161__1__th
+Address: Smakkegårdsvej 161, 1. th.
+Sale Type: Tvangsauktion, Sale Date: 15-01-2014, Price: 1.116.000
+Sale Type: 28-03-2003, Sale Date: 1.125.000, Price: - kr./m2
+Sale Type: 31-10-2002, Sale Date: 925.000, Price: - kr./m2
+
+Link: /adresse/slotsvej-79-2920-charlottenlund-01570750__79_______
+Address: Slotsvej 79
+Sale Type: Tvangsauktion, Sale Date: 19-06-2013, Price: 4.850.000
+
+Link: /adresse/slotsvej-34b-2920-charlottenlund-01570750_34b_______
+Address: Slotsvej 34B
+Sale Type: Tvangsauktion, Sale Date: 07-02-1992, Price: 1.183.214
+
+Link: /adresse/slotsherrensvej-302-2610-roedovre-01750780_302_______
+Address: Slotsherrensvej 302
+Sale Type: Tvangsauktion, Sale Date: 15-12-2006, Price: 2.600.000
+Sale Type: 13-05-2004, Sale Date: 1.800.000, Price: - kr./m2
+
+Link: /adresse/slettebjergvej-2-1-tv-2750-ballerup-01510313___2__1__tv
+Address: Slettebjergvej 2, 1. tv.
+Sale Type: Tvangsauktion, Sale Date: 30-04-2014, Price: 720.000
+Sale Type: 24-01-2005, Sale Date: 1.175.000, Price: - kr./m2
+Sale Type: 25-06-1999, Sale Date: 565.000, Price: - kr./m2
+
+Link: /adresse/skovvej-7-2750-ballerup-01510309___7_______
+Address: Skovvej 7
+Sale Type: Tvangsauktion, Sale Date: 21-03-2017, Price: 2.674.063
+Sale Type: 19-03-1992, Sale Date: 970.000, Price: - kr./m2
+
+Link: /adresse/skovshovedvej-27a-2920-charlottenlund-01570736_27a_______
+Address: Skovshovedvej 27A
+Sale Type: Tvangsauktion, Sale Date: 09-04-1992, Price: 1.000.000
+
+Link: /adresse/skovbrynet-61-2880-bagsvaerd-01590757__61_______
+Address: Skovbrynet 61
+Sale Type: Tvangsauktion, Sale Date: 18-02-2019, Price: 4.423.000
+
+Link: /adresse/skovbrynet-25-2800-kongens-lyngby-01730722__25_______
+Address: Skovbrynet 25
+Sale Type: Tvangsauktion, Sale Date: 20-05-1994, Price: 585.000
+Sale Type: 22-04-1994, Sale Date: 847.940, Price: - kr./m2
+
+Link: /adresse/skovbrinken-5-2920-charlottenlund-01570717___5_______
+Address: Skovbrinken 5
+Sale Type: Tvangsauktion, Sale Date: 28-07-2010, Price: 11.400.000
+Sale Type: 22-01-2000, Sale Date: 4.500.000, Price: - kr./m2
+Sale Type: 08-09-1999, Sale Date: 4.500.000, Price: - kr./m2
+
+Link: /adresse/skolelodden-9-2605-broendby-01530601___9_______
+Address: Skolelodden 9
+Sale Type: Tvangsauktion, Sale Date: 10-09-1992, Price: 350.000
+
+Link: /adresse/skjoldagervej-92-0-tv-2820-gentofte-01570705__92_st__tv
+Address: Skjoldagervej 92, st. tv.
+Sale Type: Tvangsauktion, Sale Date: 02-12-1992, Price: 461.800
+
+Link: /adresse/skjoldagervej-80-2-tv-2820-gentofte-01570705__80__2__tv
+Address: Skjoldagervej 80, 2. tv.
+Sale Type: Tvangsauktion, Sale Date: 23-05-2005, Price: 927.310
+Sale Type: 18-04-1999, Sale Date: 905.000, Price: - kr./m2
+Sale Type: 06-07-1992, Sale Date: 510.000, Price: - kr./m2
+
+Link: /adresse/skjeberg-alle-33-0-tv-2630-taastrup-01696800__33_st__tv
+Address: Skjeberg Alle 33, st. tv.
+Sale Type: Tvangsauktion, Sale Date: 23-05-2012, Price: 740.000
+Sale Type: 11-12-2006, Sale Date: 1.125.000, Price: - kr./m2
+
+Link: /adresse/skelvej-10-2640-hedehusene-01696794__10_______
+Address: Skelvej 10
+Sale Type: Tvangsauktion, Sale Date: 16-12-2015, Price: 1.240.000
+Sale Type: 10-08-1999, Sale Date: 1.308.000, Price: - kr./m2
+Sale Type: 04-03-1998, Sale Date: 1.068.000, Price: - kr./m2
+
+Link: /adresse/selma-lagerloefs-alle-7-1-tv-2860-soeborg-01590734___7__1__tv
+Address: Selma Lagerløfs Alle 7, 1. tv.
+Sale Type: Tvangsauktion, Sale Date: 28-10-2013, Price: 470.000
+Sale Type: 04-07-2006, Sale Date: 1.100.000, Price: - kr./m2
+Sale Type: 03-02-2005, Sale Date: 895.000, Price: - kr./m2
+
+Link: /adresse/schimmelmannsvej-21-2930-klampenborg-01570691__21_______
+Address: Schimmelmannsvej 21
+Sale Type: Tvangsauktion, Sale Date: 02-06-2010, Price: 8.500.000
+Sale Type: 05-10-2005, Sale Date: 5.500.000, Price: - kr./m2
+Sale Type: 05-10-1995, Sale Date: 2.212.000, Price: - kr./m2
+
+Link: /adresse/saven-d-3-1-1-2630-taastrup-01696696___3__1___1
+Address: Saven D 3, 1. 1.
+Sale Type: Tvangsauktion, Sale Date: 22-10-2012, Price: 410.000
+Sale Type: 30-04-2008, Sale Date: 443.462, Price: - kr./m2
+Sale Type: 11-03-2002, Sale Date: 912.278, Price: - kr./m2
+
+Link: /adresse/saven-c-4-0-2-2630-taastrup-01696694___4_st___2
+Address: Saven C 4, st. 2.
+Sale Type: Tvangsauktion, Sale Date: 31-07-2018, Price: 769.000
+Sale Type: 16-04-2007, Sale Date: 685.000, Price: - kr./m2
+Sale Type: 04-07-2004, Sale Date: 641.551, Price: - kr./m2
+
+Link: /adresse/saven-c-1-1-2-2630-taastrup-01696694___1__1___2
+Address: Saven C 1, 1. 2.
+Sale Type: Tvangsauktion, Sale Date: 06-12-2011, Price: 958.000
+Sale Type: 15-11-2005, Sale Date: 1.895.000, Price: - kr./m2
+Sale Type: 07-11-2003, Sale Date: 1.322.093, Price: - kr./m2
+
+Link: /adresse/saven-b-6-3-1-2630-taastrup-01696692___6__3___1
+Address: Saven B 6, 3. 1.
+Sale Type: Tvangsauktion, Sale Date: 10-11-2009, Price: 390.000
+Sale Type: 21-03-2005, Sale Date: 611.936, Price: - kr./m2
+Sale Type: 09-12-2004, Sale Date: 611.936, Price: - kr./m2
+
+Link: /adresse/saven-b-5-0-4-2630-taastrup-01696692___5_st___4
+Address: Saven B 5, st. 4.
+Sale Type: Tvangsauktion, Sale Date: 11-11-2009, Price: 340.000
+Sale Type: 09-10-2005, Sale Date: 599.000, Price: - kr./m2
+Sale Type: 24-06-1999, Sale Date: 270.000, Price: - kr./m2
+
+Link: /adresse/saven-b-1-2-4-2630-taastrup-01696692___1__2___4
+Address: Saven B 1, 2. 4.
+Sale Type: Tvangsauktion, Sale Date: 28-06-2011, Price: 505.000
+Sale Type: 13-12-2004, Sale Date: 830.000, Price: - kr./m2
+Sale Type: 29-01-1998, Sale Date: 432.000, Price: - kr./m2
+
+Link: /adresse/saven-a-2-2-4-2630-taastrup-01696690___2__2___4
+Address: Saven A 2, 2. 4.
+Sale Type: Tvangsauktion, Sale Date: 14-07-2011, Price: 485.000
+Sale Type: 22-04-2007, Sale Date: 1.249.000, Price: - kr./m2
+Sale Type: 02-08-2001, Sale Date: 725.000, Price: - kr./m2
+
+Link: /adresse/saven-a-2-2-1-2630-taastrup-01696690___2__2___1
+Address: Saven A 2, 2. 1.
+Sale Type: Tvangsauktion, Sale Date: 04-03-2013, Price: 640.000
+Sale Type: 24-11-1997, Sale Date: 419.000, Price: - kr./m2
+
+Link: /adresse/saksen-d-2-0-1-2630-taastrup-01696642___2_st___1
+Address: Saksen D 2, st. 1.
+Sale Type: Tvangsauktion, Sale Date: 21-02-2017, Price: 1.316.296
+Sale Type: 13-07-1992, Sale Date: 480.000, Price: - kr./m2
+Sale Type: 18-02-1992, Sale Date: 480.000, Price: - kr./m2
+
+Link: /adresse/saksen-c-4-2-4-2630-taastrup-01696640___4__2___4
+Address: Saksen C 4, 2. 4.
+Sale Type: Tvangsauktion, Sale Date: 12-06-2013, Price: 745.000
+Sale Type: 29-04-2010, Sale Date: 650.000, Price: - kr./m2
+
+Link: /adresse/roennevangshusene-57-2-tv-2630-taastrup-01696605__57__2__tv
+Address: Rønnevangshusene 57, 2. tv.
+Sale Type: Tvangsauktion, Sale Date: 27-08-2012, Price: 900.000
+Sale Type: 29-09-2005, Sale Date: 1.425.000, Price: - kr./m2
+Sale Type: 04-06-2001, Sale Date: 970.651, Price: - kr./m2
+
+Link: /adresse/roedvig-alle-6a-2650-hvidovre-01677019__6a_______
+Address: Rødvig Alle 6A
+Sale Type: Tvangsauktion, Sale Date: 23-09-2013, Price: 2.695.000
+Sale Type: 28-03-2007, Sale Date: 2.411.132, Price: - kr./m2
+
+Link: /adresse/roedovrevej-321-1-th-2610-roedovre-01750705_321__1__th
+Address: Rødovrevej 321, 1. th.
+Sale Type: Tvangsauktion, Sale Date: 22-05-2012, Price: 1.405.000
+Sale Type: 04-02-2009, Sale Date: 1.250.000, Price: - kr./m2
+Sale Type: 13-07-1993, Sale Date: 425.480, Price: - kr./m2
+
+Link: /adresse/roedovrevej-319-1-mf-2610-roedovre-01750705_319__1__mf
+Address: Rødovrevej 319, 1. mf.
+Sale Type: Tvangsauktion, Sale Date: 11-09-2007, Price: 855.000
+Sale Type: 04-10-2006, Sale Date: 1.300.000, Price: - kr./m2
+Sale Type: 27-04-2004, Sale Date: 738.283, Price: - kr./m2
+
+Link: /adresse/roedovrevej-311-1-mf-2610-roedovre-01750705_311__1__mf
+Address: Rødovrevej 311, 1. mf.
+Sale Type: Tvangsauktion, Sale Date: 25-04-2012, Price: 230.000
+Sale Type: 22-12-2005, Sale Date: 578.000, Price: - kr./m2
+Sale Type: 02-10-1998, Sale Date: 315.000, Price: - kr./m2
+
+Link: /adresse/roedovrevej-202-2-mf-2610-roedovre-01750705_202__2__mf
+Address: Rødovrevej 202, 2. mf.
+Sale Type: Tvangsauktion, Sale Date: 17-05-2010, Price: 450.000
+Sale Type: 05-08-2004, Sale Date: 775.000, Price: - kr./m2
+Sale Type: 24-03-2003, Sale Date: 750.262, Price: - kr./m2
+
+Link: /adresse/roedovre-parkvej-333-1-2610-roedovre-01750702_333__1____
+Address: Rødovre Parkvej 333, 1.
+Sale Type: Tvangsauktion, Sale Date: 04-04-2011, Price: 400.000
+Sale Type: 14-11-2005, Sale Date: 980.000, Price: - kr./m2
+Sale Type: 20-06-1996, Sale Date: 282.000, Price: - kr./m2
+
+Link: /adresse/roedovre-parkvej-315-2-2610-roedovre-01750702_315__2____
+Address: Rødovre Parkvej 315, 2.
+Sale Type: Tvangsauktion, Sale Date: 24-10-2011, Price: 440.000
+Sale Type: 26-05-2006, Sale Date: 1.166.482, Price: - kr./m2
+Sale Type: 31-08-1997, Sale Date: 247.300, Price: - kr./m2
+
+Link: /adresse/roedovre-parkvej-229-1-2610-roedovre-01750702_229__1____
+Address: Rødovre Parkvej 229, 1.
+Sale Type: Tvangsauktion, Sale Date: 22-02-2016, Price: 1.173.000
+Sale Type: 13-03-2002, Sale Date: 861.551, Price: - kr./m2
+Sale Type: 15-09-1998, Sale Date: 362.000, Price: - kr./m2
+
+Link: /adresse/roedovre-parkvej-183-0-th-2610-roedovre-01750702_183_st__th
+Address: Rødovre Parkvej 183, st. th.
+Sale Type: Tvangsauktion, Sale Date: 29-12-2004, Price: 990.000
+Sale Type: 29-02-2000, Sale Date: 815.000, Price: - kr./m2
+Sale Type: 06-04-1998, Sale Date: 556.962, Price: - kr./m2
+
+Link: /adresse/roedovre-parkvej-179-0-mf-2610-roedovre-01750702_179_st__mf
+Address: Rødovre Parkvej 179, st. mf.
+Sale Type: Tvangsauktion, Sale Date: 07-06-2011, Price: 230.000
+Sale Type: 21-02-1999, Sale Date: 340.000, Price: - kr./m2
+Sale Type: 30-03-1997, Sale Date: 150.000, Price: - kr./m2
+
+Link: /adresse/roedager-alle-71-1-1-2610-roedovre-01750699__71__1___1
+Address: Rødager Alle 71, 1. 1.
+Sale Type: Tvangsauktion, Sale Date: 10-01-2005, Price: 638.000
+Sale Type: 14-01-2001, Sale Date: 395.000, Price: - kr./m2
+Sale Type: 05-10-1996, Sale Date: 202.000, Price: - kr./m2
+
+Link: /adresse/roedager-alle-65-2-mf-2610-roedovre-01750699__65__2__mf
+Address: Rødager Alle 65, 2. mf.
+Sale Type: Tvangsauktion, Sale Date: 07-04-2015, Price: 500.000
+Sale Type: 25-05-2007, Sale Date: 790.000, Price: - kr./m2
+Sale Type: 09-06-1995, Sale Date: 231.400, Price: - kr./m2
+
+Link: /adresse/rybjerg-alle-84-2860-soeborg-01590702__84_______
+Address: Rybjerg Alle 84
+Sale Type: Tvangsauktion, Sale Date: 04-12-2012, Price: 2.200.000
+Sale Type: 13-07-1998, Sale Date: 1.078.380, Price: - kr./m2
+Sale Type: 21-04-1997, Sale Date: 768.494, Price: - kr./m2
+
+Link: /adresse/runebergs-alle-4-2860-soeborg-01590699___4_______
+Address: Runebergs Alle 4
+Sale Type: Tvangsauktion, Sale Date: 06-12-2010, Price: 2.750.000
+Sale Type: 06-05-1999, Sale Date: 468.615, Price: - kr./m2
+Sale Type: 10-01-1995, Sale Date: 769.000, Price: - kr./m2
+
+Link: /adresse/rugtoften-13a-2880-bagsvaerd-01590694_13a_______
+Address: Rugtoften 13A
+Sale Type: Tvangsauktion, Sale Date: 01-03-2010, Price: 2.050.000
+Sale Type: 13-03-1997, Sale Date: 1.273.448, Price: - kr./m2
+Sale Type: 21-11-1994, Sale Date: 927.500, Price: - kr./m2
+
+Link: /adresse/rosmosevej-28-2650-hvidovre-01676929__28_______
+Address: Rosmosevej 28
+Sale Type: Tvangsauktion, Sale Date: 07-06-2010, Price: 3.300.000
+Sale Type: 02-12-2004, Sale Date: 2.495.000, Price: - kr./m2
+
+Link: /adresse/roskildevej-382-1-44-2610-roedovre-01750690_382__1__44
+Address: Roskildevej 382, 1. 44.
+Sale Type: Tvangsauktion, Sale Date: 31-10-2008, Price: 860.000
+Sale Type: 20-09-2007, Sale Date: 1.700.000, Price: - kr./m2
+Sale Type: 01-11-2005, Sale Date: 1.195.000, Price: - kr./m2
+
+Link: /adresse/roskildevej-378-0-1-2630-taastrup-01696362_378_st___1
+Address: Roskildevej 378, st. 1.
+Sale Type: Tvangsauktion, Sale Date: 02-07-2013, Price: 442.758
+Sale Type: 15-01-2005, Sale Date: 749.000, Price: - kr./m2
+Sale Type: 04-03-2001, Sale Date: 595.000, Price: - kr./m2
+
+Link: /adresse/roskildevej-346-2630-taastrup-01696362_346_______
+Address: Roskildevej 346
+Sale Type: Tvangsauktion, Sale Date: 11-12-2012, Price: 1.044.331
+Sale Type: 20-07-2005, Sale Date: 579.500, Price: - kr./m2
+Sale Type: 13-02-2000, Sale Date: 311.550, Price: - kr./m2
+
+Link: /adresse/roskildevej-280-0-tv-2610-roedovre-01750690_280_st__tv
+Address: Roskildevej 280, st. tv.
+Sale Type: Tvangsauktion, Sale Date: 11-04-2011, Price: 590.000
+Sale Type: 10-03-2005, Sale Date: 1.488.000, Price: - kr./m2
+Sale Type: 07-06-1995, Sale Date: 352.877, Price: - kr./m2
+
+Link: /adresse/robinievej-60-2620-albertslund-01650387__60_______
+Address: Robinievej 60
+Sale Type: Tvangsauktion, Sale Date: 09-01-2018, Price: 2.695.000
+Sale Type: 21-02-2007, Sale Date: 2.595.000, Price: - kr./m2
+
+Link: /adresse/riggervej-15-2660-broendby-strand-01530536__15_______
+Address: Riggervej 15
+Sale Type: Tvangsauktion, Sale Date: 19-06-2012, Price: 2.195.000
+Sale Type: 07-05-2000, Sale Date: 1.144.085, Price: - kr./m2
+Sale Type: 07-02-1995, Sale Date: 615.000, Price: - kr./m2
+
+Link: /adresse/resenbrovej-10-2610-roedovre-01750678__10_______
+Address: Resenbrovej 10
+Sale Type: Tvangsauktion, Sale Date: 29-07-1999, Price: 1.420.000
+
+Link: /adresse/resedavej-3-2820-gentofte-01570647___3_______
+Address: Resedavej 3
+Sale Type: Tvangsauktion, Sale Date: 19-10-2009, Price: 1.790.000
+Sale Type: 09-02-2007, Sale Date: 4.895.000, Price: - kr./m2
+Sale Type: 15-12-2005, Sale Date: 3.070.000, Price: - kr./m2
+
+Link: /adresse/refmosevej-8-2640-hedehusene-01696199___8_______
+Address: Refmosevej 8
+Sale Type: Tvangsauktion, Sale Date: 09-07-2013, Price: 1.900.000
+Sale Type: 13-09-2005, Sale Date: 2.195.000, Price: - kr./m2
+Sale Type: 05-09-2000, Sale Date: 1.225.244, Price: - kr./m2
+
+Link: /adresse/reerslevvej-11-2640-hedehusene-01696118__11_______
+Address: Reerslevvej 11
+Sale Type: Tvangsauktion, Sale Date: 28-11-2013, Price: 1.950.000
+Sale Type: 28-11-2013, Sale Date: 1.950.000, Price: - kr./m2
+Sale Type: 03-12-2001, Sale Date: 646.712, Price: - kr./m2
+
+Link: /adresse/rebaek-soepark-3-9-922-2650-hvidovre-01676690___3__9_922
+Address: Rebæk Søpark 3, 9. 922.
+Sale Type: Tvangsauktion, Sale Date: 12-11-2001, Price: 590.000
+Sale Type: 02-10-1999, Sale Date: 486.000, Price: - kr./m2
+
+Link: /adresse/rebaek-soepark-3-16-1605-2650-hvidovre-01676690___3_161605
+Address: Rebæk Søpark 3, 16. 1605.
+Sale Type: Tvangsauktion, Sale Date: 10-03-1993, Price: 65.000
+
+Link: /adresse/rebaek-soepark-3-15-1508-2650-hvidovre-01676690___3_151508
+Address: Rebæk Søpark 3, 15. 1508.
+Sale Type: Tvangsauktion, Sale Date: 31-05-2010, Price: 337.600
+Sale Type: 25-07-1995, Sale Date: 209.000, Price: - kr./m2
+
+Link: /adresse/rebaek-soepark-3-11-1112-2650-hvidovre-01676690___3_111112
+Address: Rebæk Søpark 3, 11. 1112.
+Sale Type: Tvangsauktion, Sale Date: 22-02-2011, Price: 270.000
+Sale Type: 26-04-2004, Sale Date: 629.142, Price: - kr./m2
+Sale Type: 15-07-1999, Sale Date: 330.000, Price: - kr./m2
+
+Link: /adresse/rebaek-soepark-3-10-1011-2650-hvidovre-01676690___3_101011
+Address: Rebæk Søpark 3, 10. 1011.
+Sale Type: Tvangsauktion, Sale Date: 07-04-2014, Price: 470.000
+Sale Type: 29-08-1999, Sale Date: 508.540, Price: - kr./m2
+
+Link: /adresse/rebaek-soepark-11-3-mf-2650-hvidovre-01676690__11__3__mf
+Address: Rebæk Søpark 11, 3. mf.
+Sale Type: Tvangsauktion, Sale Date: 07-06-2011, Price: 425.000
+Sale Type: 05-09-1997, Sale Date: 460.000, Price: - kr./m2
+
+Link: /adresse/randvolden-11-2730-herlev-01636330__11_______
+Address: Randvolden 11
+Sale Type: Tvangsauktion, Sale Date: 25-05-2012, Price: 2.630.000
+Sale Type: 01-09-2004, Sale Date: 2.695.000, Price: - kr./m2
+
+Link: /adresse/prinsesse-alexandrines-alle-18-2-th-2920-charlottenlund-01570636__18__2__th
+Address: Prinsesse Alexandrines Alle 18, 2. th.
+Sale Type: Tvangsauktion, Sale Date: 10-11-2011, Price: 1.475.000
+Sale Type: 05-12-2005, Sale Date: 1.995.000, Price: - kr./m2
+Sale Type: 08-01-2004, Sale Date: 1.250.000, Price: - kr./m2
+
+Link: /adresse/porsager-35-2620-albertslund-01650365__35_______
+Address: Porsager 35
+Sale Type: Tvangsauktion, Sale Date: 07-02-2012, Price: 1.572.217
+Sale Type: 03-10-2003, Sale Date: 1.624.000, Price: - kr./m2
+
+Link: /adresse/plovheldvej-9-2650-hvidovre-01676481___9_______
+Address: Plovheldvej 9
+Sale Type: Tvangsauktion, Sale Date: 21-06-2011, Price: 2.100.000
+Sale Type: 06-01-1997, Sale Date: 1.130.546, Price: - kr./m2
+Sale Type: 09-08-1994, Sale Date: 720.000, Price: - kr./m2
+
+Link: /adresse/platanhaven-91-2600-glostrup-01650362__91_______
+Address: Platanhaven 91
+Sale Type: Tvangsauktion, Sale Date: 10-09-2012, Price: 2.270.000
+
+Link: /adresse/plantevej-23-2-th-2870-dyssegaard-01570631__23__2__th
+Address: Plantevej 23, 2. th.
+Sale Type: Tvangsauktion, Sale Date: 12-12-2012, Price: 590.000
+Sale Type: 05-11-2007, Sale Date: 1.295.000, Price: - kr./m2
+Sale Type: 29-04-1997, Sale Date: 452.780, Price: - kr./m2
+
+Link: /adresse/pilevej-6-2600-glostrup-01610380___6_______
+Address: Pilevej 6
+Sale Type: Tvangsauktion, Sale Date: 21-01-1994, Price: 500.000
+Sale Type: 15-09-1993, Sale Date: 550.000, Price: - kr./m2
+
+Link: /adresse/pilevangen-29-2660-broendby-strand-01530496__29_______
+Address: Pilevangen 29
+Sale Type: Tvangsauktion, Sale Date: 27-04-2011, Price: 465.000
+Sale Type: 04-06-2006, Sale Date: 2.695.000, Price: - kr./m2
+
+Link: /adresse/pileskovvej-13-2635-ishoej-01830560__13_______
+Address: Pileskovvej 13
+Sale Type: Tvangsauktion, Sale Date: 31-03-2017, Price: 2.768.300
+Sale Type: 19-07-2002, Sale Date: 1.945.000, Price: - kr./m2
+
+Link: /adresse/pilegaards-vaenge-183-2635-ishoej-01830530_183_______
+Address: Pilegårds Vænge 183
+Sale Type: Tvangsauktion, Sale Date: 15-01-1996, Price: 585.000
+
+Link: /adresse/parkvej-5-2830-virum-01730642___5_______
+Address: Parkvej 5
+Sale Type: Tvangsauktion, Sale Date: 01-06-1992, Price: 422.250
+
+Link: /adresse/parkvej-153-1-th-2630-taastrup-01695738_153__1__th
+Address: Parkvej 153, 1. th.
+Sale Type: Tvangsauktion, Sale Date: 24-09-2012, Price: 1.045.000
+Sale Type: 26-04-2006, Sale Date: 1.375.000, Price: - kr./m2
+Sale Type: 10-11-2002, Sale Date: 785.000, Price: - kr./m2
+
+Link: /adresse/parcelvej-111-2830-virum-01730640_111_______
+Address: Parcelvej 111
+Sale Type: Tvangsauktion, Sale Date: 12-12-2012, Price: 5.405.000
+Sale Type: 03-12-2007, Sale Date: 5.800.000, Price: - kr./m2
+Sale Type: 07-06-2006, Sale Date: 3.600.005, Price: - kr./m2
+
+Link: /adresse/ordrupvej-98a-2-tv-2920-charlottenlund-01570622_98a__2__tv
+Address: Ordrupvej 98A, 2. tv.
+Sale Type: Tvangsauktion, Sale Date: 09-02-2009, Price: 1.000.000
+Sale Type: 31-12-2007, Sale Date: 1.600.000, Price: - kr./m2
+Sale Type: 02-01-1995, Sale Date: 295.000, Price: - kr./m2
+
+Link: /adresse/ordrupvej-75b-1-th-2920-charlottenlund-01570622_75b__1__th
+Address: Ordrupvej 75B, 1. th.
+Sale Type: Tvangsauktion, Sale Date: 13-08-2014, Price: 790.000
+Sale Type: 23-04-2003, Sale Date: 1.011.594, Price: - kr./m2
+
+Link: /adresse/ordrupvej-75a-1-th-2920-charlottenlund-01570622_75a__1__th
+Address: Ordrupvej 75A, 1. th.
+Sale Type: Tvangsauktion, Sale Date: 06-04-2016, Price: 975.000
+Sale Type: 20-12-2005, Sale Date: 1.995.000, Price: - kr./m2
+Sale Type: 22-10-2003, Sale Date: 1.235.000, Price: - kr./m2
+
+Link: /adresse/ordrupvej-67-1-tv-2920-charlottenlund-01570622__67__1__tv
+Address: Ordrupvej 67, 1. tv.
+Sale Type: Tvangsauktion, Sale Date: 06-04-1994, Price: 280.000
+Sale Type: 07-02-1994, Sale Date: 465.000, Price: - kr./m2
+
+Link: /adresse/ordrupvej-37a-1-th-2920-charlottenlund-01570622_37a__1__th
+Address: Ordrupvej 37A, 1. th.
+Sale Type: Tvangsauktion, Sale Date: 18-01-2017, Price: 1.234.835
+Sale Type: 29-01-2007, Sale Date: 1.550.000, Price: - kr./m2
+
+Link: /adresse/ordrupvej-126b-0-2920-charlottenlund-01570622126b_st____
+Address: Ordrupvej 126B, st.
+Sale Type: Tvangsauktion, Sale Date: 06-01-2010, Price: 3.275.000
+
+Link: /adresse/noerregaardsvej-59-2610-roedovre-01750614__59_______
+Address: Nørregårdsvej 59
+Sale Type: Tvangsauktion, Sale Date: 07-01-2009, Price: 2.150.000
+Sale Type: 10-10-2006, Sale Date: 3.127.500, Price: - kr./m2
+
+Link: /adresse/naesborgvej-48-1-tv-2650-hvidovre-01676123__48__1__tv
+Address: Næsborgvej 48, 1. tv.
+Sale Type: Tvangsauktion, Sale Date: 22-09-2010, Price: 720.000
+Sale Type: 20-03-1996, Sale Date: 361.000, Price: - kr./m2
+
+Link: /adresse/naesborgvej-42-2-tv-2650-hvidovre-01676123__42__2__tv
+Address: Næsborgvej 42, 2. tv.
+Sale Type: Tvangsauktion, Sale Date: 28-03-2011, Price: 560.000
+Sale Type: 13-03-2003, Sale Date: 875.000, Price: - kr./m2
+Sale Type: 16-09-1997, Sale Date: 436.000, Price: - kr./m2
+
+Link: /adresse/nysoevej-48-2665-vallensbaek-strand-01875858__48_______
+Address: Nysøvej 48
+Sale Type: Tvangsauktion, Sale Date: 03-05-2010, Price: 2.000.000
+Sale Type: 18-09-2002, Sale Date: 1.200.000, Price: - kr./m2
+
+Link: /adresse/nyhoejsvej-12-2630-taastrup-01695495__12_______
+Address: Nyhøjsvej 12
+Sale Type: Tvangsauktion, Sale Date: 28-02-2020, Price: 2.123.700
+Sale Type: 11-01-1999, Sale Date: 1.309.000, Price: - kr./m2
+
+Link: /adresse/nordre-ringvej-90-2600-glostrup-01610358__90_______
+Address: Nordre Ringvej 90
+Sale Type: Tvangsauktion, Sale Date: 28-06-2011, Price: 1.700.000
+Sale Type: 19-09-2005, Sale Date: 2.595.000, Price: - kr./m2
+Sale Type: 30-04-1999, Sale Date: 1.460.000, Price: - kr./m2
+
+Link: /adresse/nordre-ringvej-5-2-th-2600-glostrup-01610358___5__2__th
+Address: Nordre Ringvej 5, 2. th.
+Sale Type: Tvangsauktion, Sale Date: 25-02-2013, Price: 450.000
+Sale Type: 17-05-1994, Sale Date: 373.471, Price: - kr./m2
+
+Link: /adresse/nordre-molevej-9-2930-klampenborg-01730934___9_______
+Address: Nordre Molevej 9
+Sale Type: Tvangsauktion, Sale Date: 07-04-2010, Price: 12.900.000
+Sale Type: 07-11-2004, Sale Date: 10.500.000, Price: - kr./m2
+Sale Type: 30-06-2002, Sale Date: 8.250.000, Price: - kr./m2
+
+Link: /adresse/nordlundsvej-25-2650-hvidovre-01676033__25_______
+Address: Nordlundsvej 25
+Sale Type: Tvangsauktion, Sale Date: 04-10-2023, Price: 3.500.000
+Sale Type: 31-03-1992, Sale Date: 815.000, Price: - kr./m2
+
+Link: /adresse/niels-frederiksens-alle-6-2610-roedovre-01750595___6_______
+Address: Niels Frederiksens Alle 6
+Sale Type: Tvangsauktion, Sale Date: 15-03-2023, Price: 2.962.048
+Sale Type: 12-05-2010, Sale Date: 2.100.000, Price: 18.750
+Sale Type: 14-05-2003, Sale Date: 1.741.850, Price: - kr./m2
+
+Link: /adresse/niels-frederiksens-alle-20-2610-roedovre-01750595__20_______
+Address: Niels Frederiksens Alle 20
+Sale Type: Tvangsauktion, Sale Date: 21-09-1994, Price: 630.000
+
+Link: /adresse/niels-finsens-alle-65-2860-soeborg-01590604__65_______
+Address: Niels Finsens Alle 65
+Sale Type: Tvangsauktion, Sale Date: 26-05-2010, Price: 3.430.000
+Sale Type: 20-05-2002, Sale Date: 3.059.020, Price: - kr./m2
+
+Link: /adresse/nestors-alle-13-2650-hvidovre-01675974__13_______
+Address: Nestors Alle 13
+Sale Type: Tvangsauktion, Sale Date: 05-07-1993, Price: 445.011
+Sale Type: 15-06-1993, Sale Date: 755.000, Price: - kr./m2
+
+Link: /adresse/nellikevaenget-13-2625-vallensbaek-01875525__13_______
+Address: Nellikevænget 13
+Sale Type: Tvangsauktion, Sale Date: 30-08-2011, Price: 2.620.000
+Sale Type: 12-04-2006, Sale Date: 3.895.000, Price: - kr./m2
+Sale Type: 10-11-2004, Sale Date: 1.322.850, Price: - kr./m2
+
+Link: /adresse/nattergalevej-15-2630-taastrup-01695386__15_______
+Address: Nattergalevej 15
+Sale Type: Tvangsauktion, Sale Date: 06-07-1993, Price: 565.000
+
+Link: /adresse/natsvaermervej-50-2610-roedovre-01750017__50_______
+Address: Natsværmervej 50
+Sale Type: Tvangsauktion, Sale Date: 12-12-2012, Price: 2.300.000
+Sale Type: 12-10-1994, Sale Date: 650.000, Price: - kr./m2
+Sale Type: 10-01-1993, Sale Date: 715.970, Price: - kr./m2
+
+Link: /adresse/maagevej-7b-2650-hvidovre-01675615__7b_______
+Address: Mågevej 7B
+Sale Type: Tvangsauktion, Sale Date: 07-03-2011, Price: 1.800.000
+Sale Type: 15-12-2010, Sale Date: 1.500.000, Price: - kr./m2
+
+Link: /adresse/moerkager-53-2620-albertslund-01650329__53_______
+Address: Mørkager 53
+Sale Type: Tvangsauktion, Sale Date: 03-01-2017, Price: 3.450.000
+Sale Type: 11-08-2006, Sale Date: 3.295.000, Price: - kr./m2
+
+Link: /adresse/molndalsparken-27-2620-albertslund-01650328__27_______
+Address: Mölndalsparken 27
+Sale Type: Tvangsauktion, Sale Date: 17-06-1994, Price: 292.000
+Sale Type: 29-05-1994, Sale Date: 529.160, Price: - kr./m2
+
+Link: /adresse/molndalsparken-25-2620-albertslund-01650328__25_______
+Address: Mölndalsparken 25
+Sale Type: Tvangsauktion, Sale Date: 16-06-2010, Price: 1.225.000
+Sale Type: 28-06-1995, Sale Date: 550.040, Price: - kr./m2
+
+Link: /adresse/molndalsparken-24-2620-albertslund-01650328__24_______
+Address: Mölndalsparken 24
+Sale Type: Tvangsauktion, Sale Date: 05-11-2013, Price: 1.100.000
+Sale Type: 22-12-2006, Sale Date: 1.500.000, Price: - kr./m2
+Sale Type: 26-07-2002, Sale Date: 935.000, Price: - kr./m2
+
+Link: /adresse/moelleaaparken-57-1-b-2800-kongens-lyngby-01730601__57__1___b
+Address: Mølleåparken 57, 1. b.
+Sale Type: Tvangsauktion, Sale Date: 18-04-2012, Price: 730.000
+Sale Type: 16-05-2005, Sale Date: 1.225.000, Price: - kr./m2
+Sale Type: 24-10-1999, Sale Date: 779.000, Price: - kr./m2
+
+Link: /adresse/murskeen-3-3-42-2630-taastrup-01695125___3__3__42
+Address: Murskeen 3, 3. 42.
+Sale Type: Tvangsauktion, Sale Date: 06-12-2010, Price: 690.000
+Sale Type: 27-09-1999, Sale Date: 589.045, Price: - kr./m2
+
+Link: /adresse/murskeen-2-2-23-2630-taastrup-01695125___2__2__23
+Address: Murskeen 2, 2. 23.
+Sale Type: Tvangsauktion, Sale Date: 07-04-2024, Price: 1.435.000
+Sale Type: 30-11-2006, Sale Date: 1.365.000, Price: - kr./m2
+Sale Type: 22-12-2004, Sale Date: 1.019.000, Price: - kr./m2
+
+Link: /adresse/multebaervaenget-15-2650-hvidovre-01675764__15_______
+Address: Multebærvænget 15
+Sale Type: Tvangsauktion, Sale Date: 10-04-2012, Price: 1.500.000
+Sale Type: 09-09-1996, Sale Date: 787.700, Price: - kr./m2
+
+Link: /adresse/mosevej-8-1-tv-2800-kongens-lyngby-01730587___8__1__tv
+Address: Mosevej 8, 1. tv.
+Sale Type: Tvangsauktion, Sale Date: 08-11-2010, Price: 1.625.000
+
+Link: /adresse/mosevej-23-2860-soeborg-01590577__23_______
+Address: Mosevej 23
+Sale Type: Tvangsauktion, Sale Date: 05-12-2011, Price: 2.275.000
+
+Link: /adresse/mosevej-17-2635-ishoej-01830480__17_______
+Address: Mosevej 17
+Sale Type: Tvangsauktion, Sale Date: 01-12-2009, Price: 1.930.000
+Sale Type: 12-01-2003, Sale Date: 1.600.000, Price: - kr./m2
+
+Link: /adresse/mosevej-12-2635-ishoej-01830480__12_______
+Address: Mosevej 12
+Sale Type: Tvangsauktion, Sale Date: 20-03-2014, Price: 3.500.000
+Sale Type: 08-09-1998, Sale Date: 440.000, Price: - kr./m2
+
+Link: /adresse/mosehusvej-4-2610-roedovre-01750580___4_______
+Address: Mosehusvej 4
+Sale Type: Tvangsauktion, Sale Date: 05-03-2012, Price: 1.600.000
+Sale Type: 30-06-2003, Sale Date: 2.053.662, Price: - kr./m2
+
+Link: /adresse/mosegaardsvej-138-2820-gentofte-01570570_138_______
+Address: Mosegårdsvej 138
+Sale Type: Tvangsauktion, Sale Date: 11-01-1993, Price: 605.000
+
+Link: /adresse/mosebyvej-48-0-2730-herlev-01635859__48_st____
+Address: Mosebyvej 48, st.
+Sale Type: Tvangsauktion, Sale Date: 23-05-2012, Price: 1.325.000
+Sale Type: 04-08-2003, Sale Date: 1.450.000, Price: - kr./m2
+
+Link: /adresse/middelvej-1-0-2820-gentofte-01570560___1_st____
+Address: Middelvej 1, st.
+Sale Type: Tvangsauktion, Sale Date: 29-07-1996, Price: 1.125.000
+Sale Type: 29-03-1993, Sale Date: 650.000, Price: - kr./m2
+
+Link: /adresse/middelvej-1-1-2820-gentofte-01570560___1__1____
+Address: Middelvej 1, 1.
+Sale Type: Tvangsauktion, Sale Date: 29-07-1996, Price: 1.125.000
+Sale Type: 29-03-1993, Sale Date: 650.000, Price: - kr./m2
+
+Link: /adresse/merlegaardsvej-6-2635-ishoej-01830460___6_______
+Address: Merlegårdsvej 6
+Sale Type: Tvangsauktion, Sale Date: 15-01-2013, Price: 2.125.000
+Sale Type: 28-08-2011, Sale Date: 1.715.312, Price: - kr./m2
+Sale Type: 03-12-2000, Sale Date: 100.000, Price: - kr./m2
+
+Link: /adresse/medelbyvej-60-2610-roedovre-01750555__60_______
+Address: Medelbyvej 60
+Sale Type: Tvangsauktion, Sale Date: 30-05-2012, Price: 2.640.000
+
+Link: /adresse/marievej-23-2900-hellerup-01570550__23_______
+Address: Marievej 23
+Sale Type: Tvangsauktion, Sale Date: 30-04-2014, Price: 31.095.000
+Sale Type: 09-05-2011, Sale Date: 65.500.000, Price: - kr./m2
+Sale Type: 30-07-2008, Sale Date: 65.500.000, Price: - kr./m2
+
+Link: /adresse/margrethevej-33-0-2900-hellerup-01570547__33_st____
+Address: Margrethevej 33, st.
+Sale Type: Tvangsauktion, Sale Date: 02-03-2012, Price: 4.100.000
+Sale Type: 02-03-2012, Sale Date: 4.100.000, Price: - kr./m2
+Sale Type: 18-08-2004, Sale Date: 2.800.000, Price: - kr./m2
+
+Link: /adresse/margrethevej-33-1-2900-hellerup-01570547__33__1____
+Address: Margrethevej 33, 1.
+Sale Type: Tvangsauktion, Sale Date: 02-03-2012, Price: 4.100.000
+Sale Type: 02-03-2012, Sale Date: 4.100.000, Price: - kr./m2
+Sale Type: 18-08-2004, Sale Date: 2.800.000, Price: - kr./m2
+
+Link: /adresse/marbaek-park-2-1-3-2750-ballerup-01510622___2__1___3
+Address: Marbæk Park 2, 1. 3.
+Sale Type: Tvangsauktion, Sale Date: 16-10-2013, Price: 1.600.000
+Sale Type: 26-06-2006, Sale Date: 1.675.000, Price: - kr./m2
+
+Link: /adresse/mandholmen-12-2650-hvidovre-01675645__12_______
+Address: Mandholmen 12
+Sale Type: Tvangsauktion, Sale Date: 03-07-2013, Price: 1.678.642
+Sale Type: 21-10-2003, Sale Date: 1.450.000, Price: - kr./m2
+
+Link: /adresse/malervangen-14-2600-glostrup-01610001__14_______
+Address: Malervangen 14
+Sale Type: Tvangsauktion, Sale Date: 05-03-2012, Price: 1.600.000
+Sale Type: 17-03-2008, Sale Date: 935.000, Price: - kr./m2
+Sale Type: 07-09-2005, Sale Date: 816.599, Price: - kr./m2
+
+Link: /adresse/magnoliavej-27-2640-hedehusene-01694926__27_______
+Address: Magnoliavej 27
+Sale Type: Tvangsauktion, Sale Date: 29-06-2015, Price: 1.923.139
+Sale Type: 24-01-2008, Sale Date: 4.300.000, Price: - kr./m2
+Sale Type: 12-09-2007, Sale Date: 1.020.000, Price: - kr./m2
+
+Link: /adresse/magnoliavej-25-2640-hedehusene-01694926__25_______
+Address: Magnoliavej 25
+Sale Type: Tvangsauktion, Sale Date: 01-06-2015, Price: 2.193.014
+Sale Type: 06-01-2003, Sale Date: 3.296.166, Price: - kr./m2
+
+Link: /adresse/m-bechs-alle-168-2650-hvidovre-01675585_168_______
+Address: M Bechs Alle 168
+Sale Type: Tvangsauktion, Sale Date: 26-10-2011, Price: 1.600.000
+Sale Type: 28-07-2008, Sale Date: 2.575.000, Price: - kr./m2
+
+Link: /adresse/loenborgvej-1-2650-hvidovre-01675555___1_______
+Address: Lønborgvej 1
+Sale Type: Tvangsauktion, Sale Date: 12-03-2012, Price: 2.300.000
+Sale Type: 07-05-2007, Sale Date: 2.600.000, Price: - kr./m2
+Sale Type: 19-03-1997, Sale Date: 1.029.000, Price: - kr./m2
+
+Link: /adresse/lystoftevej-30-2800-kongens-lyngby-01730550__30_______
+Address: Lystoftevej 30
+Sale Type: Tvangsauktion, Sale Date: 03-05-2010, Price: 2.125.000
+
+Link: /adresse/lystoftevej-18a-1-th-2800-kongens-lyngby-01730550_18a__1__th
+Address: Lystoftevej 18A, 1. th.
+Sale Type: Tvangsauktion, Sale Date: 07-12-2011, Price: 3.000.000
+
+Link: /adresse/lyngmosevej-10-2620-albertslund-01650314__10_______
+Address: Lyngmosevej 10
+Sale Type: Tvangsauktion, Sale Date: 16-06-2014, Price: 1.750.000
+Sale Type: 22-01-2006, Sale Date: 2.049.000, Price: - kr./m2
+Sale Type: 14-05-2001, Sale Date: 1.411.740, Price: - kr./m2
+
+Link: /adresse/lyngevej-16-2640-hedehusene-01694683__16_______
+Address: Lyngevej 16
+Sale Type: Tvangsauktion, Sale Date: 19-06-2013, Price: 2.000.000
+
+Link: /adresse/lyngen-27-2800-kongens-lyngby-01590528__27_______
+Address: Lyngen 27
+Sale Type: Tvangsauktion, Sale Date: 24-05-2011, Price: 1.332.000
+
+Link: /adresse/lyngbyvej-365-0-2820-gentofte-01570527_365_st____
+Address: Lyngbyvej 365, st.
+Sale Type: Tvangsauktion, Sale Date: 14-06-2023, Price: 4.186.000
+Sale Type: 08-07-2009, Sale Date: 3.300.000, Price: - kr./m2
+Sale Type: 11-12-2006, Sale Date: 2.450.000, Price: - kr./m2
+
+Link: /adresse/lyngbyvej-365-1-2820-gentofte-01570527_365__1____
+Address: Lyngbyvej 365, 1.
+Sale Type: Tvangsauktion, Sale Date: 14-06-2023, Price: 4.186.000
+Sale Type: 08-07-2009, Sale Date: 3.300.000, Price: - kr./m2
+Sale Type: 11-12-2006, Sale Date: 2.450.000, Price: - kr./m2
+
+Link: /adresse/lyngbyvej-365-1-1-2820-gentofte-01570527_365__1___1
+Address: Lyngbyvej 365, 1. 1.
+Sale Type: Tvangsauktion, Sale Date: 14-06-2023, Price: 4.186.000
+Sale Type: 08-07-2009, Sale Date: 3.300.000, Price: - kr./m2
+Sale Type: 11-12-2006, Sale Date: 2.450.000, Price: - kr./m2
+
+Link: /adresse/lyngbyvej-343d-0-mf-2820-gentofte-01570527343d_st__mf
+Address: Lyngbyvej 343D, st. mf.
+Sale Type: Tvangsauktion, Sale Date: 07-12-2011, Price: 410.000
+Sale Type: 04-02-2008, Sale Date: 975.000, Price: - kr./m2
+Sale Type: 05-02-2007, Sale Date: 975.000, Price: - kr./m2
+
+Link: /adresse/lyngby-hovedgade-50a-2-tv-2800-kongens-lyngby-01730535_50a__2__tv
+Address: Lyngby Hovedgade 50A, 2. tv.
+Sale Type: Tvangsauktion, Sale Date: 04-11-2009, Price: 11.500.000
+
+Link: /adresse/lyngby-hovedgade-50a-2-th-2800-kongens-lyngby-01730535_50a__2__th
+Address: Lyngby Hovedgade 50A, 2. th.
+Sale Type: Tvangsauktion, Sale Date: 04-11-2009, Price: 11.500.000
+
+Link: /adresse/lyngby-hovedgade-50a-1-tv-2800-kongens-lyngby-01730535_50a__1__tv
+Address: Lyngby Hovedgade 50A, 1. tv.
+Sale Type: Tvangsauktion, Sale Date: 04-11-2009, Price: 11.500.000
+
+Link: /adresse/lyngby-hovedgade-50a-1-th-2800-kongens-lyngby-01730535_50a__1__th
+Address: Lyngby Hovedgade 50A, 1. th.
+Sale Type: Tvangsauktion, Sale Date: 04-11-2009, Price: 11.500.000
+
+Link: /adresse/lundtoftevej-293-0-tv-2800-kongens-lyngby-01730527_293_st__tv
+Address: Lundtoftevej 293, st. tv.
+Sale Type: Tvangsauktion, Sale Date: 01-03-2017, Price: 5.028.400
+Sale Type: 13-12-2006, Sale Date: 2.800.000, Price: - kr./m2
+
+Link: /adresse/lunagervej-12-2650-hvidovre-01675496__12_______
+Address: Lunagervej 12
+Sale Type: Tvangsauktion, Sale Date: 23-01-2004, Price: 1.275.000
+Sale Type: 06-12-2001, Sale Date: 1.283.164, Price: - kr./m2
+
+Link: /adresse/lindevej-1b-2630-taastrup-01694547__1b_______
+Address: Lindevej 1B
+Sale Type: Tvangsauktion, Sale Date: 24-08-1998, Price: 1.310.000
+Sale Type: 11-12-1996, Sale Date: 1.225.000, Price: - kr./m2
+Sale Type: 25-04-1994, Sale Date: 535.000, Price: - kr./m2
+
+Link: /adresse/lindevej-1a-2630-taastrup-01694547__1a_______
+Address: Lindevej 1A
+Sale Type: Tvangsauktion, Sale Date: 24-08-1998, Price: 1.310.000
+Sale Type: 11-12-1996, Sale Date: 1.225.000, Price: - kr./m2
+Sale Type: 25-04-1994, Sale Date: 535.000, Price: - kr./m2
+
+Link: /adresse/lindevangshusene-82-0-th-2630-taastrup-01694520__82_st__th
+Address: Lindevangshusene 82, st. th.
+Sale Type: Tvangsauktion, Sale Date: 11-01-2022, Price: 2.240.000
+Sale Type: 09-02-2007, Sale Date: 1.745.000, Price: - kr./m2
+Sale Type: 28-04-2002, Sale Date: 1.042.236, Price: - kr./m2
+
+Link: /adresse/lindevangshusene-76-2-mf-2630-taastrup-01694520__76__2__mf
+Address: Lindevangshusene 76, 2. mf.
+Sale Type: Tvangsauktion, Sale Date: 12-06-2009, Price: 510.000
+Sale Type: 10-01-2005, Sale Date: 710.362, Price: - kr./m2
+Sale Type: 22-02-2002, Sale Date: 610.345, Price: - kr./m2
+
+Link: /adresse/lindevang-26-2660-broendby-strand-01530386__26_______
+Address: Lindevang 26
+Sale Type: Tvangsauktion, Sale Date: 28-09-2005, Price: 2.175.000
+Sale Type: 02-06-2002, Sale Date: 1.695.000, Price: - kr./m2
+
+Link: /adresse/lindevang-12-2660-broendby-strand-01530386__12_______
+Address: Lindevang 12
+Sale Type: Tvangsauktion, Sale Date: 16-04-2013, Price: 2.150.000
+Sale Type: 10-10-2006, Sale Date: 3.100.000, Price: - kr./m2
+Sale Type: 28-07-1994, Sale Date: 842.190, Price: - kr./m2
+
+Link: /adresse/lindetoften-5-2630-taastrup-01694493___5_______
+Address: Lindetoften 5
+Sale Type: Tvangsauktion, Sale Date: 16-07-2014, Price: 2.429.500
+Sale Type: 01-08-2007, Sale Date: 1.859.159, Price: - kr./m2
+Sale Type: 16-03-1995, Sale Date: 1.458.000, Price: - kr./m2
+
+Link: /adresse/lindebo-21-1-126-2630-taastrup-01694470__21__1_126
+Address: Lindebo 21, 1. 126.
+Sale Type: Tvangsauktion, Sale Date: 07-03-2012, Price: 300.000
+Sale Type: 02-09-2010, Sale Date: 675.000, Price: - kr./m2
+Sale Type: 02-09-2010, Sale Date: 675.000, Price: - kr./m2
+
+Link: /adresse/linde-alle-7-2600-glostrup-01610308___7_______
+Address: Linde Alle 7
+Sale Type: Tvangsauktion, Sale Date: 22-12-2010, Price: 2.250.000
+Sale Type: 22-05-2002, Sale Date: 1.924.000, Price: - kr./m2
+
+Link: /adresse/lilliendalsvej-18-2600-glostrup-01610298__18_______
+Address: Lilliendalsvej 18
+Sale Type: Tvangsauktion, Sale Date: 29-08-2018, Price: 2.275.000
+
+Link: /adresse/lilliendalsvej-1-2-2-2600-glostrup-01610298___1__2___2
+Address: Lilliendalsvej 1, 2. 2.
+Sale Type: Tvangsauktion, Sale Date: 26-01-1995, Price: 108.000
+
+Link: /adresse/lille-strandvej-5-2900-hellerup-01570510___5_______
+Address: Lille Strandvej 5
+Sale Type: Tvangsauktion, Sale Date: 09-03-2016, Price: 6.000.000
+Sale Type: 09-09-2008, Sale Date: 3.500.000, Price: - kr./m2
+Sale Type: 26-03-2007, Sale Date: 6.000.000, Price: - kr./m2
+
+Link: /adresse/lille-bygade-11-2635-ishoej-01830400__11_______
+Address: Lille Bygade 11
+Sale Type: Tvangsauktion, Sale Date: 18-12-2012, Price: 1.055.000
+Sale Type: 18-06-2001, Sale Date: 1.326.853, Price: - kr./m2
+Sale Type: 07-04-1995, Sale Date: 574.610, Price: - kr./m2
+
+Link: /adresse/leen-d-4-3-4-2630-taastrup-01694320___4__3___4
+Address: Leen D 4, 3. 4.
+Sale Type: Tvangsauktion, Sale Date: 21-07-2011, Price: 376.000
+Sale Type: 14-12-2004, Sale Date: 617.080, Price: - kr./m2
+Sale Type: 18-06-2002, Sale Date: 512.182, Price: - kr./m2
+
+Link: /adresse/leen-d-2-3-4-2630-taastrup-01694320___2__3___4
+Address: Leen D 2, 3. 4.
+Sale Type: Tvangsauktion, Sale Date: 24-09-2019, Price: 895.000
+Sale Type: 03-11-2016, Sale Date: 765.000, Price: - kr./m2
+Sale Type: 05-07-2010, Sale Date: 605.000, Price: - kr./m2
+
+Link: /adresse/leen-d-2-1-4-2630-taastrup-01694320___2__1___4
+Address: Leen D 2, 1. 4.
+Sale Type: Tvangsauktion, Sale Date: 07-07-2022, Price: 1.350.000
+Sale Type: 08-04-1998, Sale Date: 462.000, Price: - kr./m2
+Sale Type: 29-09-1996, Sale Date: 361.771, Price: - kr./m2
+
+Link: /adresse/leen-c-1-0-2-2630-taastrup-01694318___1_st___2
+Address: Leen C 1, st. 2.
+Sale Type: Tvangsauktion, Sale Date: 11-03-2013, Price: 162.500
+Sale Type: 29-06-2003, Sale Date: 618.645, Price: - kr./m2
+Sale Type: 31-08-1999, Sale Date: 146.345, Price: - kr./m2
+
+Link: /adresse/leen-b-5-2-1-2630-taastrup-01694316___5__2___1
+Address: Leen B 5, 2. 1.
+Sale Type: Tvangsauktion, Sale Date: 19-10-1992, Price: 184.000
+Sale Type: 12-10-1992, Sale Date: 330.000, Price: - kr./m2
+
+Link: /adresse/leen-b-2-3-2-2630-taastrup-01694316___2__3___2
+Address: Leen B 2, 3. 2.
+Sale Type: Tvangsauktion, Sale Date: 22-10-2013, Price: 1.180.000
+Sale Type: 04-03-2004, Sale Date: 1.195.000, Price: - kr./m2
+Sale Type: 24-05-1993, Sale Date: 465.000, Price: - kr./m2
+
+Link: /adresse/leen-b-2-3-1-2630-taastrup-01694316___2__3___1
+Address: Leen B 2, 3. 1.
+Sale Type: Tvangsauktion, Sale Date: 09-02-2016, Price: 534.700
+Sale Type: 15-08-2005, Sale Date: 695.000, Price: - kr./m2
+Sale Type: 31-03-2003, Sale Date: 668.814, Price: - kr./m2
+
+Link: /adresse/leen-b-1-0-4-2630-taastrup-01694316___1_st___4
+Address: Leen B 1, st. 4.
+Sale Type: Tvangsauktion, Sale Date: 15-05-2012, Price: 120.000
+Sale Type: 09-01-2009, Sale Date: 595.000, Price: - kr./m2
+Sale Type: 02-01-2003, Sale Date: 594.607, Price: - kr./m2
+
+Link: /adresse/leen-b-1-3-1-2630-taastrup-01694316___1__3___1
+Address: Leen B 1, 3. 1.
+Sale Type: Tvangsauktion, Sale Date: 05-12-2012, Price: 315.000
+Sale Type: 20-09-1998, Sale Date: 264.000, Price: - kr./m2
+Sale Type: 13-09-1993, Sale Date: 198.000, Price: - kr./m2
+
+Link: /adresse/leen-a-3-3-1-2630-taastrup-01694314___3__3___1
+Address: Leen A 3, 3. 1.
+Sale Type: Tvangsauktion, Sale Date: 11-04-2016, Price: 550.000
+Sale Type: 15-07-2005, Sale Date: 600.000, Price: - kr./m2
+
+Link: /adresse/leen-a-3-2-1-2630-taastrup-01694314___3__2___1
+Address: Leen A 3, 2. 1.
+Sale Type: Tvangsauktion, Sale Date: 30-09-2013, Price: 546.500
+Sale Type: 26-09-2005, Sale Date: 1.160.000, Price: - kr./m2
+Sale Type: 02-02-2001, Sale Date: 635.000, Price: - kr./m2
+
+Link: /adresse/langemarksvej-35-2860-soeborg-01590493__35_______
+Address: Langemarksvej 35
+Sale Type: Tvangsauktion, Sale Date: 22-09-2009, Price: 1.270.000
+Sale Type: 17-04-1998, Sale Date: 1.047.000, Price: - kr./m2
+
+Link: /adresse/landsbygaden-30b-2630-taastrup-01694288_30b_______
+Address: Landsbygaden 30B
+Sale Type: Tvangsauktion, Sale Date: 20-05-2021, Price: 2.650.000
+
+Link: /adresse/landsbygaden-30a-2630-taastrup-01694288_30a_______
+Address: Landsbygaden 30A
+Sale Type: Tvangsauktion, Sale Date: 20-05-2021, Price: 2.650.000
+
+Link: /adresse/landlyst-vaenge-68-2635-ishoej-01830385__68_______
+Address: Landlyst Vænge 68
+Sale Type: Tvangsauktion, Sale Date: 20-01-2010, Price: 2.000.000
+Sale Type: 20-06-2005, Sale Date: 460.000, Price: - kr./m2
+Sale Type: 28-10-2001, Sale Date: 2.066.000, Price: - kr./m2
+
+Link: /adresse/landlyst-vaenge-50-2635-ishoej-01830385__50_______
+Address: Landlyst Vænge 50
+Sale Type: Tvangsauktion, Sale Date: 09-08-2011, Price: 800.000
+Sale Type: 02-06-2004, Sale Date: 1.495.000, Price: - kr./m2
+Sale Type: 15-01-1993, Sale Date: 608.000, Price: - kr./m2
+
+Link: /adresse/koegevej-200-2635-ishoej-01830380_200_______
+Address: Køgevej 200
+Sale Type: Tvangsauktion, Sale Date: 04-06-2013, Price: 420.000
+Sale Type: 10-05-2004, Sale Date: 1.434.611, Price: - kr./m2
+
+Link: /adresse/kaerbyvej-137-2610-roedovre-01750485_137_______
+Address: Kærbyvej 137
+Sale Type: Tvangsauktion, Sale Date: 24-01-2012, Price: 2.175.000
+Sale Type: 11-06-2007, Sale Date: 2.900.000, Price: - kr./m2
+Sale Type: 11-06-2007, Sale Date: 2.900.000, Price: - kr./m2
+
+Link: /adresse/kratvaenget-21-2920-charlottenlund-01570486__21_______
+Address: Kratvænget 21
+Sale Type: Tvangsauktion, Sale Date: 07-08-2013, Price: 7.595.073
+Sale Type: 07-09-1998, Sale Date: 2.600.000, Price: - kr./m2
+Sale Type: 15-04-1996, Sale Date: 2.785.900, Price: - kr./m2
+
+Link: /adresse/kratkrogen-3-2920-charlottenlund-01570485___3_______
+Address: Kratkrogen 3
+Sale Type: Tvangsauktion, Sale Date: 05-03-2013, Price: 8.267.300
+Sale Type: 08-06-2005, Sale Date: 7.200.000, Price: - kr./m2
+Sale Type: 01-07-1994, Sale Date: 2.200.000, Price: - kr./m2
+
+Link: /adresse/kratager-5-2620-albertslund-01650283___5_______
+Address: Kratager 5
+Sale Type: Tvangsauktion, Sale Date: 25-11-2015, Price: 2.241.000
+Sale Type: 04-10-2010, Sale Date: 2.495.000, Price: 19.960
+Sale Type: 17-03-2004, Sale Date: 1.680.000, Price: - kr./m2
+
+Link: /adresse/kratager-29-2620-albertslund-01650283__29_______
+Address: Kratager 29
+Sale Type: Tvangsauktion, Sale Date: 04-03-2015, Price: 2.089.000
+Sale Type: 15-10-2007, Sale Date: 2.820.000, Price: - kr./m2
+Sale Type: 11-07-2006, Sale Date: 3.095.000, Price: - kr./m2
+
+Link: /adresse/krarupvej-23-2610-roedovre-01750474__23_______
+Address: Krarupvej 23
+Sale Type: Tvangsauktion, Sale Date: 11-10-2019, Price: 4.283.500
+Sale Type: 16-03-2016, Sale Date: 1.400.000, Price: - kr./m2
+Sale Type: 30-07-2007, Sale Date: 2.300.000, Price: - kr./m2
+
+Link: /adresse/kraghave-parkvej-10-2630-taastrup-01694060__10_______
+Address: Kraghave Parkvej 10
+Sale Type: Tvangsauktion, Sale Date: 20-03-2013, Price: 2.750.000
+Sale Type: 13-03-2006, Sale Date: 3.295.000, Price: - kr./m2
+Sale Type: 16-01-1995, Sale Date: 1.100.000, Price: - kr./m2
+
+Link: /adresse/korsdalsvej-5-2610-roedovre-01750468___5_______
+Address: Korsdalsvej 5
+Sale Type: Tvangsauktion, Sale Date: 15-12-2009, Price: 1.430.000
+
+Link: /adresse/kongevejen-128a-2830-virum-01730458128a_______
+Address: Kongevejen 128A
+Sale Type: Tvangsauktion, Sale Date: 27-09-1993, Price: 775.000
+
+Link: /adresse/klovtofteparken-20-2630-taastrup-01693871__20_______
+Address: Klovtofteparken 20
+Sale Type: Tvangsauktion, Sale Date: 09-03-2011, Price: 1.520.000
+Sale Type: 12-12-2005, Sale Date: 2.179.000, Price: - kr./m2
+Sale Type: 05-12-2002, Sale Date: 1.525.000, Price: - kr./m2
+
+Link: /adresse/klovtofteparken-12-2630-taastrup-01693871__12_______
+Address: Klovtofteparken 12
+Sale Type: Tvangsauktion, Sale Date: 18-04-2017, Price: 2.100.000
+Sale Type: 01-08-2006, Sale Date: 2.550.000, Price: - kr./m2
+Sale Type: 31-05-1996, Sale Date: 750.000, Price: - kr./m2
+
+Link: /adresse/klausdalsbrovej-147-2860-soeborg-01590422_147_______
+Address: Klausdalsbrovej 147
+Sale Type: Tvangsauktion, Sale Date: 20-09-2010, Price: 2.200.000
+Sale Type: 26-05-2007, Sale Date: 3.250.000, Price: - kr./m2
+Sale Type: 21-11-2004, Sale Date: 2.524.966, Price: - kr./m2
+
+Link: /adresse/klardam-4-2650-hvidovre-01674719___4_______
+Address: Klardam 4
+Sale Type: Tvangsauktion, Sale Date: 22-06-2023, Price: 3.128.500
+Sale Type: 11-09-2005, Sale Date: 2.350.000, Price: - kr./m2
+Sale Type: 07-07-2004, Sale Date: 1.645.000, Price: - kr./m2
+
+Link: /adresse/klampenborgvej-13b-2930-klampenborg-01570460_13b_______
+Address: Klampenborgvej 13B
+Sale Type: Tvangsauktion, Sale Date: 20-02-1992, Price: 271.646
+
+Link: /adresse/kirkebjerg-vaenge-35-2635-ishoej-01830365__35_______
+Address: Kirkebjerg Vænge 35
+Sale Type: Tvangsauktion, Sale Date: 16-12-1993, Price: 632.283
+Sale Type: 30-11-1993, Sale Date: 1.025.000, Price: - kr./m2
+
+Link: /adresse/kirkebakken-8-2605-broendby-01530336___8_______
+Address: Kirkebakken 8
+Sale Type: Tvangsauktion, Sale Date: 26-05-2014, Price: 1.559.000
+Sale Type: 22-07-2010, Sale Date: 2.450.000, Price: - kr./m2
+Sale Type: 04-03-2005, Sale Date: 1.680.000, Price: - kr./m2
+
+Link: /adresse/kirkebakken-10-2605-broendby-01530336__10_______
+Address: Kirkebakken 10
+Sale Type: Tvangsauktion, Sale Date: 04-10-2010, Price: 1.510.000
+Sale Type: 27-05-2003, Sale Date: 1.473.272, Price: - kr./m2
+
+Link: /adresse/kingosvej-8b-2630-taastrup-01693708__8b_______
+Address: Kingosvej 8B
+Sale Type: Tvangsauktion, Sale Date: 07-04-2015, Price: 1.996.000
+Sale Type: 04-02-1994, Sale Date: 815.000, Price: - kr./m2
+
+Link: /adresse/kildemosen-25-2880-bagsvaerd-01590410__25_______
+Address: Kildemosen 25
+Sale Type: Tvangsauktion, Sale Date: 25-02-2024, Price: 6.066.440
+Sale Type: 27-10-2017, Sale Date: 4.695.000, Price: 25.656
+
+Link: /adresse/kildebakkegaards-alle-113c-2860-soeborg-01590404113c_______
+Address: Kildebakkegårds Alle 113C
+Sale Type: Tvangsauktion, Sale Date: 18-05-2011, Price: 1.999.384
+Sale Type: 20-02-2006, Sale Date: 2.000.000, Price: - kr./m2
+Sale Type: 19-02-2001, Sale Date: 1.425.000, Price: - kr./m2
+
+Link: /adresse/kanaltorvet-8-3-33-2620-albertslund-01650257___8__3__33
+Address: Kanaltorvet 8, 3. 33.
+Sale Type: Tvangsauktion, Sale Date: 23-04-2012, Price: 414.000
+Sale Type: 27-11-2006, Sale Date: 1.020.000, Price: - kr./m2
+Sale Type: 14-01-1998, Sale Date: 346.980, Price: - kr./m2
+
+Link: /adresse/kallerupvej-35-2640-hedehusene-01693627__35_______
+Address: Kallerupvej 35
+Sale Type: Tvangsauktion, Sale Date: 13-02-2018, Price: 780.000
+Sale Type: 29-06-2005, Sale Date: 1.475.000, Price: - kr./m2
+
+Link: /adresse/jaegersborg-alle-27b-1-mf-2920-charlottenlund-01570423_27b__1__mf
+Address: Jægersborg Alle 27B, 1. mf.
+Sale Type: Tvangsauktion, Sale Date: 04-08-2010, Price: 1.096.000
+Sale Type: 25-11-1993, Sale Date: 514.119, Price: - kr./m2
+
+Link: /adresse/jaegersborg-alle-247-1-th-2820-gentofte-01570423_247__1__th
+Address: Jægersborg Alle 247, 1. th.
+Sale Type: Tvangsauktion, Sale Date: 22-03-2010, Price: 1.350.000
+Sale Type: 02-06-2008, Sale Date: 1.900.000, Price: - kr./m2
+Sale Type: 05-04-2006, Sale Date: 1.376.000, Price: - kr./m2
+
+Link: /adresse/jaegersborg-alle-137c-1-2820-gentofte-01570423137c__1____
+Address: Jægersborg Alle 137C, 1.
+Sale Type: Tvangsauktion, Sale Date: 18-01-2012, Price: 1.261.867
+Sale Type: 28-06-2001, Sale Date: 3.031.918, Price: - kr./m2
+
+Link: /adresse/jaegersborg-alle-112-2920-charlottenlund-01570423_112_______
+Address: Jægersborg Alle 112
+Sale Type: Tvangsauktion, Sale Date: 14-04-1994, Price: 1.315.000
+
+Link: /adresse/jaegergangen-103-2880-bagsvaerd-01590383_103_______
+Address: Jægergangen 103
+Sale Type: Tvangsauktion, Sale Date: 29-09-2010, Price: 1.540.000
+Sale Type: 16-12-1998, Sale Date: 835.000, Price: - kr./m2
+Sale Type: 27-09-1997, Sale Date: 779.522, Price: - kr./m2
+
+Link: /adresse/jaegerbakken-15-2820-gentofte-01570420__15_______
+Address: Jægerbakken 15
+Sale Type: Tvangsauktion, Sale Date: 15-04-1994, Price: 1.045.000
+
+Link: /adresse/jyllingevej-255-2610-roedovre-01750415_255_______
+Address: Jyllingevej 255
+Sale Type: Tvangsauktion, Sale Date: 11-08-2011, Price: 1.000.000
+Sale Type: 28-03-2011, Sale Date: 1.750.000, Price: 16.990
+Sale Type: 27-09-2001, Sale Date: 1.085.000, Price: - kr./m2
+
+Link: /adresse/juni-alle-89-2860-soeborg-01590380__89_______
+Address: Juni Alle 89
+Sale Type: Tvangsauktion, Sale Date: 03-03-2011, Price: 1.930.000
+Sale Type: 14-10-2008, Sale Date: 1.507.500, Price: - kr./m2
+Sale Type: 01-12-2006, Sale Date: 3.015.000, Price: - kr./m2
+
+Link: /adresse/jonstrupvej-117-2750-ballerup-01510166_117_______
+Address: Jonstrupvej 117
+Sale Type: Tvangsauktion, Sale Date: 22-06-2009, Price: 450.000
+Sale Type: 13-07-2003, Sale Date: 2.150.000, Price: - kr./m2
+Sale Type: 18-12-2002, Sale Date: 2.150.000, Price: - kr./m2
+
+Link: /adresse/jernbanevej-6-1-a-2800-kongens-lyngby-01730387___6__1___a
+Address: Jernbanevej 6, 1. a.
+Sale Type: Tvangsauktion, Sale Date: 21-09-2012, Price: 2.150.000
+Sale Type: 27-08-2009, Sale Date: 2.006.604, Price: - kr./m2
+Sale Type: 18-01-2006, Sale Date: 3.150.000, Price: - kr./m2
+
+Link: /adresse/jernbane-alle-6-2630-taastrup-01693546___6_______
+Address: Jernbane Alle 6
+Sale Type: Tvangsauktion, Sale Date: 12-01-2023, Price: 3.725.157
+Sale Type: 05-10-2016, Sale Date: 1.490.566, Price: - kr./m2
+Sale Type: 04-09-2015, Sale Date: 2.175.000, Price: 13.679
+
+Link: /adresse/jernbane-alle-51a-2630-taastrup-01693546_51a_______
+Address: Jernbane Alle 51A
+Sale Type: Tvangsauktion, Sale Date: 28-01-2013, Price: 1.065.141
+Sale Type: 29-06-2001, Sale Date: 420.000, Price: - kr./m2
+
+Link: /adresse/jernbane-alle-15b-2630-taastrup-01693546_15b_______
+Address: Jernbane Alle 15B
+Sale Type: Tvangsauktion, Sale Date: 21-01-2019, Price: 2.895.000
+Sale Type: 21-01-2019, Sale Date: 2.895.000, Price: - kr./m2
+Sale Type: 09-03-2015, Sale Date: 2.430.000, Price: 20.593
+
+Link: /adresse/jernalderen-78-2640-hedehusene-01693530__78_______
+Address: Jernalderen 78
+Sale Type: Tvangsauktion, Sale Date: 13-09-2010, Price: 1.084.000
+Sale Type: 12-06-2006, Sale Date: 2.079.000, Price: - kr./m2
+
+Link: /adresse/jens-andersens-vaenge-7-2630-taastrup-01693519___7_______
+Address: Jens Andersens Vænge 7
+Sale Type: Tvangsauktion, Sale Date: 13-06-1992, Price: 810.000
+
+Link: /adresse/islevmark-3-2610-roedovre-01750395___3_______
+Address: Islevmark 3
+Sale Type: Tvangsauktion, Sale Date: 04-11-2009, Price: 1.995.000
+Sale Type: 15-02-2007, Sale Date: 2.450.000, Price: - kr./m2
+
+Link: /adresse/ishoej-bygade-90-2635-ishoej-01830290__90_______
+Address: Ishøj Bygade 90
+Sale Type: Tvangsauktion, Sale Date: 08-04-2013, Price: 500.000
+
+Link: /adresse/ibstrupvej-7a-2820-gentofte-01570395__7a_______
+Address: Ibstrupvej 7A
+Sale Type: Tvangsauktion, Sale Date: 04-11-2015, Price: 6.425.000
+Sale Type: 25-05-2000, Sale Date: 2.375.000, Price: - kr./m2
+Sale Type: 02-10-1995, Sale Date: 1.604.000, Price: - kr./m2
+
+Link: /adresse/i.h.mundts-vej-24-2830-virum-01730375__24_______
+Address: I.H.Mundts Vej 24
+Sale Type: Tvangsauktion, Sale Date: 15-06-2016, Price: 5.500.000
+Sale Type: 15-06-2016, Sale Date: 5.500.000, Price: - kr./m2
+Sale Type: 08-02-2001, Sale Date: 5.500.000, Price: - kr./m2
+
+Link: /adresse/hoejvangsvej-15-2640-hedehusene-01693328__15_______
+Address: Højvangsvej 15
+Sale Type: Tvangsauktion, Sale Date: 26-06-1998, Price: 2.400.000
+
+Link: /adresse/hoejsgaards-alle-37-2900-hellerup-01570386__37_______
+Address: Højsgårds Alle 37
+Sale Type: Tvangsauktion, Sale Date: 13-06-2018, Price: 4.183.589
+
+Link: /adresse/hoejmarksvej-30-2860-soeborg-01590342__30_______
+Address: Højmarksvej 30
+Sale Type: Tvangsauktion, Sale Date: 25-03-1993, Price: 445.000
+
+Link: /adresse/hoeje-taastrup-boulevard-86-3-2630-taastrup-01693200__86__3____
+Address: Høje Taastrup Boulevard 86, 3.
+Sale Type: Tvangsauktion, Sale Date: 04-08-2010, Price: 1.800.000
+
+Link: /adresse/hoejdevej-20a-2830-virum-01730364_20a_______
+Address: Højdevej 20A
+Sale Type: Tvangsauktion, Sale Date: 12-04-2005, Price: 3.915.000
+
+Link: /adresse/hoejagerparken-7-0-2750-ballerup-01510158___7_st____
+Address: Højagerparken 7, st.
+Sale Type: Tvangsauktion, Sale Date: 12-09-2011, Price: 390.000
+Sale Type: 25-07-2005, Sale Date: 825.000, Price: - kr./m2
+Sale Type: 12-02-1997, Sale Date: 371.000, Price: - kr./m2
+
+Link: /adresse/haekmosen-38-2730-herlev-01633594__38_______
+Address: Hækmosen 38
+Sale Type: Tvangsauktion, Sale Date: 01-06-2015, Price: 2.312.500
+Sale Type: 02-04-2008, Sale Date: 2.400.000, Price: - kr./m2
+Sale Type: 15-03-2002, Sale Date: 1.500.000, Price: - kr./m2
+
+Link: /adresse/hyttekrogen-20-2665-vallensbaek-strand-01872876__20_______
+Address: Hyttekrogen 20
+Sale Type: Tvangsauktion, Sale Date: 04-11-2009, Price: 1.924.000
+Sale Type: 04-11-2009, Sale Date: 1.924.000, Price: - kr./m2
+Sale Type: 09-04-2003, Sale Date: 1.799.458, Price: - kr./m2
+
+Link: /adresse/hyrdevangen-15-2640-hedehusene-01693167__15_______
+Address: Hyrdevangen 15
+Sale Type: Tvangsauktion, Sale Date: 18-09-2023, Price: 3.000.000
+Sale Type: 16-11-2022, Sale Date: 2.541.500, Price: - kr./m2
+Sale Type: 18-03-2016, Sale Date: 2.400.000, Price: 16.000
+
+Link: /adresse/hyldemorsvej-40a-2730-herlev-01633397_40a_______
+Address: Hyldemorsvej 40A
+Sale Type: Tvangsauktion, Sale Date: 07-01-2013, Price: 1.112.800
+Sale Type: 05-06-2002, Sale Date: 850.000, Price: - kr./m2
+
+Link: /adresse/hyldegaards-tvaervej-1-1-tv-2920-charlottenlund-01570376___1__1__tv
+Address: Hyldegårds Tværvej 1, 1. tv.
+Sale Type: Tvangsauktion, Sale Date: 29-11-2010, Price: 1.578.000
+Sale Type: 30-01-2007, Sale Date: 2.755.000, Price: - kr./m2
+Sale Type: 11-03-2005, Sale Date: 1.625.000, Price: - kr./m2
+
+Link: /adresse/hyldager-8-2640-hedehusene-01693140___8_______
+Address: Hyldager 8
+Sale Type: Tvangsauktion, Sale Date: 14-09-2015, Price: 1.200.000
+
+Link: /adresse/hybenvej-6-2830-virum-01730358___6_______
+Address: Hybenvej 6
+Sale Type: Tvangsauktion, Sale Date: 29-10-1992, Price: 480.000
+
+Link: /adresse/hybenvej-11-2605-broendby-01530256__11_______
+Address: Hybenvej 11
+Sale Type: Tvangsauktion, Sale Date: 25-05-2009, Price: 800.000
+Sale Type: 25-05-2004, Sale Date: 1.498.000, Price: - kr./m2
+
+Link: /adresse/hvidovrevej-422-1-th-2650-hvidovre-01674032_422__1__th
+Address: Hvidovrevej 422, 1. th.
+Sale Type: Tvangsauktion, Sale Date: 15-12-2009, Price: 475.000
+Sale Type: 30-06-2004, Sale Date: 950.000, Price: - kr./m2
+Sale Type: 20-04-2001, Sale Date: 719.156, Price: - kr./m2
+
+Link: /adresse/hvidovrevej-275-1-13-2650-hvidovre-01674032_275__1__13
+Address: Hvidovrevej 275, 1. 13.
+Sale Type: Tvangsauktion, Sale Date: 07-04-2010, Price: 500.000
+Sale Type: 09-11-2004, Sale Date: 695.000, Price: - kr./m2
+
+Link: /adresse/hvidovrevej-180-2-207-2650-hvidovre-01674032_180__2_207
+Address: Hvidovrevej 180, 2. 207.
+Sale Type: Tvangsauktion, Sale Date: 05-07-2010, Price: 370.000
+Sale Type: 10-06-2007, Sale Date: 875.348, Price: - kr./m2
+Sale Type: 30-01-2005, Sale Date: 698.000, Price: - kr./m2
+
+Link: /adresse/hvidovrevej-180-1-115-2650-hvidovre-01674032_180__1_115
+Address: Hvidovrevej 180, 1. 115.
+Sale Type: Tvangsauktion, Sale Date: 30-10-2012, Price: 404.000
+Sale Type: 21-08-2002, Sale Date: 630.000, Price: - kr./m2
+Sale Type: 08-12-2000, Sale Date: 556.700, Price: - kr./m2
+
+Link: /adresse/hvidovrevej-180-1-102-2650-hvidovre-01674032_180__1_102
+Address: Hvidovrevej 180, 1. 102.
+Sale Type: Tvangsauktion, Sale Date: 18-04-2012, Price: 270.000
+Sale Type: 25-02-2005, Sale Date: 743.638, Price: - kr./m2
+Sale Type: 11-07-2001, Sale Date: 559.900, Price: - kr./m2
+
+Link: /adresse/hvidovrevej-13d-2610-roedovre-01750365_13d_______
+Address: Hvidovrevej 13D
+Sale Type: Tvangsauktion, Sale Date: 02-01-1995, Price: 455.000
+
+Link: /adresse/hvidovregade-9-2650-hvidovre-01673912___9_______
+Address: Hvidovregade 9
+Sale Type: Tvangsauktion, Sale Date: 24-03-2010, Price: 1.712.000
+Sale Type: 10-03-2000, Sale Date: 1.181.005, Price: - kr./m2
+Sale Type: 18-05-1995, Sale Date: 579.540, Price: - kr./m2
+
+Link: /adresse/hulkaervej-2-2640-hedehusene-01692977___2_______
+Address: Hulkærvej 2
+Sale Type: Tvangsauktion, Sale Date: 31-10-2024, Price: 4.675.000
+Sale Type: 10-05-2023, Sale Date: 4.675.000, Price: - kr./m2
+Sale Type: 16-02-2021, Sale Date: 5.200.000, Price: 48.598
+
+Link: /adresse/hovmarken-6-2640-hedehusene-01692900___6_______
+Address: Hovmarken 6
+Sale Type: Tvangsauktion, Sale Date: 20-07-2015, Price: 1.760.000
+Sale Type: 29-01-2007, Sale Date: 2.800.000, Price: - kr./m2
+
+Link: /adresse/hovedvejen-60a-1-tv-2600-glostrup-01610213_60a__1__tv
+Address: Hovedvejen 60A, 1. tv.
+Sale Type: Tvangsauktion, Sale Date: 18-07-2018, Price: 1.395.000
+Sale Type: 03-07-2013, Sale Date: 850.000, Price: 16.667
+Sale Type: 05-09-2000, Sale Date: 529.524, Price: - kr./m2
+
+Link: /adresse/hovedgaden-484-2-2640-hedehusene-01692896_484__2____
+Address: Hovedgaden 484, 2.
+Sale Type: Tvangsauktion, Sale Date: 16-12-2009, Price: 1.860.000
+Sale Type: 02-08-2006, Sale Date: 18.424.000, Price: - kr./m2
+Sale Type: 03-07-2006, Sale Date: 3.300.000, Price: - kr./m2
+
+Link: /adresse/hovedgaden-484-1-2640-hedehusene-01692896_484__1____
+Address: Hovedgaden 484, 1.
+Sale Type: Tvangsauktion, Sale Date: 16-12-2009, Price: 1.860.000
+Sale Type: 02-08-2006, Sale Date: 18.424.000, Price: - kr./m2
+Sale Type: 03-07-2006, Sale Date: 3.300.000, Price: - kr./m2
+
+Link: /adresse/hovedgaden-405-1-tv-2640-hedehusene-01692896_405__1__tv
+Address: Hovedgaden 405, 1. tv.
+Sale Type: Tvangsauktion, Sale Date: 20-10-2010, Price: 7.500.000
+Sale Type: 16-08-2007, Sale Date: 12.950.000, Price: - kr./m2
+Sale Type: 22-09-2005, Sale Date: 5.700.000, Price: - kr./m2
+
+Link: /adresse/hovedgaden-405-1-th-2640-hedehusene-01692896_405__1__th
+Address: Hovedgaden 405, 1. th.
+Sale Type: Tvangsauktion, Sale Date: 20-10-2010, Price: 7.500.000
+Sale Type: 16-08-2007, Sale Date: 12.950.000, Price: - kr./m2
+Sale Type: 22-09-2005, Sale Date: 5.700.000, Price: - kr./m2
+
+Link: /adresse/hovedgaden-361-2640-hedehusene-01692896_361_______
+Address: Hovedgaden 361
+Sale Type: Tvangsauktion, Sale Date: 23-09-2009, Price: 1.250.000
+Sale Type: 06-08-1996, Sale Date: 585.000, Price: - kr./m2
+
+Link: /adresse/hortensiavej-9-0-2600-glostrup-01610208___9_st____
+Address: Hortensiavej 9, st.
+Sale Type: Tvangsauktion, Sale Date: 15-02-2012, Price: 6.800.000
+
+Link: /adresse/horsbred-123-2625-vallensbaek-01872449_123_______
+Address: Horsbred 123
+Sale Type: Tvangsauktion, Sale Date: 26-03-2012, Price: 1.789.000
+Sale Type: 14-08-1998, Sale Date: 1.495.055, Price: - kr./m2
+
+Link: /adresse/holstedparken-13-2660-broendby-strand-01530244__13_______
+Address: Holstedparken 13
+Sale Type: Tvangsauktion, Sale Date: 02-08-2010, Price: 1.650.000
+Sale Type: 26-01-2006, Sale Date: 2.345.000, Price: - kr./m2
+
+Link: /adresse/holmelins-tvaervej-8c-1-tv-2800-kongens-lyngby-01730347__8c__1__tv
+Address: Holmelins Tværvej 8C, 1. tv.
+Sale Type: Tvangsauktion, Sale Date: 10-01-2014, Price: 601.200
+Sale Type: 24-04-2007, Sale Date: 1.050.000, Price: - kr./m2
+Sale Type: 30-06-2004, Sale Date: 880.000, Price: - kr./m2
+
+Link: /adresse/hollandsvej-21-1-tv-2800-kongens-lyngby-01730344__21__1__tv
+Address: Hollandsvej 21, 1. tv.
+Sale Type: Tvangsauktion, Sale Date: 06-07-2016, Price: 1.186.385
+Sale Type: 05-06-2007, Sale Date: 1.600.000, Price: - kr./m2
+Sale Type: 23-03-2000, Sale Date: 689.931, Price: - kr./m2
+
+Link: /adresse/hold-an-vej-61-0-2750-ballerup-01510152__61_st____
+Address: Hold-An Vej 61, st.
+Sale Type: Tvangsauktion, Sale Date: 23-03-2006, Price: 594.000
+
+Link: /adresse/herstedoestergade-46-2620-albertslund-01650205__46_______
+Address: Herstedøstergade 46
+Sale Type: Tvangsauktion, Sale Date: 29-03-2011, Price: 3.750.000
+Sale Type: 15-01-2001, Sale Date: 5.900.000, Price: - kr./m2
+Sale Type: 19-02-1997, Sale Date: 2.310.172, Price: - kr./m2
+
+Link: /adresse/herstedvestervej-12-2620-albertslund-01650190__12_______
+Address: Herstedvestervej 12
+Sale Type: Tvangsauktion, Sale Date: 25-01-2021, Price: 3.087.200
+Sale Type: 11-04-2016, Sale Date: 841.132, Price: - kr./m2
+Sale Type: 21-07-1998, Sale Date: 1.277.000, Price: - kr./m2
+
+Link: /adresse/henningsens-alle-4b-1-2900-hellerup-01570337__4b__1____
+Address: Henningsens Alle 4B, 1.
+Sale Type: Tvangsauktion, Sale Date: 09-11-2011, Price: 2.150.000
+Sale Type: 13-01-2006, Sale Date: 2.044.680, Price: - kr./m2
+Sale Type: 28-06-2000, Sale Date: 2.242.000, Price: - kr./m2
+
+Link: /adresse/helmsvej-6a-2880-bagsvaerd-01590302__6a_______
+Address: Helmsvej 6A
+Sale Type: Tvangsauktion, Sale Date: 08-06-2015, Price: 4.400.000
+Sale Type: 17-05-1999, Sale Date: 2.915.780, Price: - kr./m2
+
+Link: /adresse/helmsvej-30-2880-bagsvaerd-01590302__30_______
+Address: Helmsvej 30
+Sale Type: Tvangsauktion, Sale Date: 15-12-2010, Price: 4.150.000
+Sale Type: 18-03-2002, Sale Date: 1.870.000, Price: - kr./m2
+
+Link: /adresse/hedevej-7-2640-hedehusene-01692707___7_______
+Address: Hedevej 7
+Sale Type: Tvangsauktion, Sale Date: 30-09-2014, Price: 1.000.000
+Sale Type: 07-03-2011, Sale Date: 1.600.000, Price: 8.466
+Sale Type: 30-07-2004, Sale Date: 1.800.000, Price: - kr./m2
+
+Link: /adresse/hedevej-27-2640-hedehusene-01692707__27_______
+Address: Hedevej 27
+Sale Type: Tvangsauktion, Sale Date: 13-04-2010, Price: 765.000
+Sale Type: 15-08-2000, Sale Date: 1.149.630, Price: - kr./m2
+
+Link: /adresse/hedekaeret-53-0-2-2640-hedehusene-01692652__53_st___2
+Address: Hedekæret 53, st. 2.
+Sale Type: Tvangsauktion, Sale Date: 15-12-2010, Price: 559.000
+Sale Type: 16-04-2004, Sale Date: 875.000, Price: - kr./m2
+Sale Type: 11-07-2000, Sale Date: 634.676, Price: - kr./m2
+
+Link: /adresse/hedekaeret-51-2-1-2640-hedehusene-01692652__51__2___1
+Address: Hedekæret 51, 2. 1.
+Sale Type: Tvangsauktion, Sale Date: 11-10-2011, Price: 275.000
+Sale Type: 10-05-2006, Sale Date: 929.000, Price: - kr./m2
+Sale Type: 20-09-2002, Sale Date: 570.000, Price: - kr./m2
+
+Link: /adresse/hedekaeret-44-2-th-2640-hedehusene-01692652__44__2__th
+Address: Hedekæret 44, 2. th.
+Sale Type: Tvangsauktion, Sale Date: 03-09-2014, Price: 883.000
+Sale Type: 23-04-2006, Sale Date: 1.695.000, Price: - kr./m2
+Sale Type: 19-02-2001, Sale Date: 765.000, Price: - kr./m2
+
+Link: /adresse/hedekaeret-43-1-tv-2640-hedehusene-01692652__43__1__tv
+Address: Hedekæret 43, 1. tv.
+Sale Type: Tvangsauktion, Sale Date: 13-08-2009, Price: 850.000
+Sale Type: 25-01-2007, Sale Date: 1.550.000, Price: - kr./m2
+
+Link: /adresse/hedegraensen-40-2605-broendby-01530231__40_______
+Address: Hedegrænsen 40
+Sale Type: Tvangsauktion, Sale Date: 06-03-2019, Price: 2.724.393
+Sale Type: 16-07-2007, Sale Date: 2.450.000, Price: - kr./m2
+
+Link: /adresse/havevej-20-2-th-2860-soeborg-01590291__20__2__th
+Address: Havevej 20, 2. th.
+Sale Type: Tvangsauktion, Sale Date: 10-09-2008, Price: 700.000
+Sale Type: 10-02-2005, Sale Date: 860.000, Price: - kr./m2
+Sale Type: 15-02-1999, Sale Date: 546.669, Price: - kr./m2
+
+Link: /adresse/hasselvej-26a-2740-skovlunde-01510581_26a_______
+Address: Hasselvej 26A
+Sale Type: Tvangsauktion, Sale Date: 21-12-2009, Price: 1.220.000
+
+Link: /adresse/haspegaardsvej-59b-2880-bagsvaerd-01590286_59b_______
+Address: Haspegårdsvej 59B
+Sale Type: Tvangsauktion, Sale Date: 25-07-2011, Price: 2.050.000
+Sale Type: 11-08-1997, Sale Date: 957.000, Price: - kr./m2
+
+Link: /adresse/hammeren-31-2-185-2630-taastrup-01692530__31__2_185
+Address: Hammeren 31, 2. 185.
+Sale Type: Tvangsauktion, Sale Date: 26-08-2013, Price: 895.000
+Sale Type: 02-06-2006, Sale Date: 1.499.000, Price: - kr./m2
+Sale Type: 15-08-2003, Sale Date: 825.000, Price: - kr./m2
+
+Link: /adresse/hammeren-30-4-176-2630-taastrup-01692530__30__4_176
+Address: Hammeren 30, 4. 176.
+Sale Type: Tvangsauktion, Sale Date: 10-05-2010, Price: 155.000
+Sale Type: 17-04-2005, Sale Date: 609.000, Price: - kr./m2
+Sale Type: 06-09-1995, Sale Date: 210.000, Price: - kr./m2
+
+Link: /adresse/hammeren-30-3-171-2630-taastrup-01692530__30__3_171
+Address: Hammeren 30, 3. 171.
+Sale Type: Tvangsauktion, Sale Date: 07-09-1992, Price: 192.500
+
+Link: /adresse/hallandsparken-66-2630-taastrup-01692520__66_______
+Address: Hallandsparken 66
+Sale Type: Tvangsauktion, Sale Date: 09-06-2009, Price: 1.750.000
+Sale Type: 21-02-2007, Sale Date: 2.495.000, Price: - kr./m2
+Sale Type: 07-11-1997, Sale Date: 950.000, Price: - kr./m2
+
+Link: /adresse/h-p-olsens-vaenge-32-2630-taastrup-01692950__32_______
+Address: H P Olsens Vænge 32
+Sale Type: Tvangsauktion, Sale Date: 19-03-2012, Price: 1.300.000
+
+Link: /adresse/h-c-bojsensvej-15-2650-hvidovre-01673315__15_______
+Address: H C Bojsensvej 15
+Sale Type: Tvangsauktion, Sale Date: 15-02-2012, Price: 2.725.000
+Sale Type: 14-07-1995, Sale Date: 804.540, Price: - kr./m2
+
+Link: /adresse/gyngemose-parkvej-59-1-tv-2860-soeborg-01590259__59__1__tv
+Address: Gyngemose Parkvej 59, 1. tv.
+Sale Type: Tvangsauktion, Sale Date: 27-11-2012, Price: 1.090.000
+
+Link: /adresse/gudrunsvej-10-0-2920-charlottenlund-01570302__10_st____
+Address: Gudrunsvej 10, st.
+Sale Type: Tvangsauktion, Sale Date: 20-09-1993, Price: 615.000
+
+Link: /adresse/gudrunsvej-10-2920-charlottenlund-01570302__10_______
+Address: Gudrunsvej 10
+Sale Type: Tvangsauktion, Sale Date: 20-09-1993, Price: 615.000
+
+Link: /adresse/gudrunsvej-10-1-2920-charlottenlund-01570302__10__1____
+Address: Gudrunsvej 10, 1.
+Sale Type: Tvangsauktion, Sale Date: 20-09-1993, Price: 615.000
+
+Link: /adresse/groennevej-42-2830-virum-01730302__42_______
+Address: Grønnevej 42
+Sale Type: Tvangsauktion, Sale Date: 01-03-2017, Price: 6.600.000
+
+Link: /adresse/groennemarksvej-2b-2610-roedovre-01750280__2b_______
+Address: Grønnemarksvej 2B
+Sale Type: Tvangsauktion, Sale Date: 10-02-2006, Price: 2.845.000
+Sale Type: 01-05-2005, Sale Date: 1.998.000, Price: - kr./m2
+
+Link: /adresse/groenlunds-alle-9-2610-roedovre-01750275___9_______
+Address: Grønlunds Alle 9
+Sale Type: Tvangsauktion, Sale Date: 29-09-2010, Price: 2.438.000
+Sale Type: 17-08-2001, Sale Date: 1.891.000, Price: - kr./m2
+
+Link: /adresse/grundkaer-27-2650-hvidovre-01672987__27_______
+Address: Grundkær 27
+Sale Type: Tvangsauktion, Sale Date: 19-07-2010, Price: 2.100.000
+Sale Type: 26-03-2004, Sale Date: 1.735.000, Price: - kr./m2
+Sale Type: 10-09-2002, Sale Date: 1.660.000, Price: - kr./m2
+
+Link: /adresse/greve-alle-84-2650-hvidovre-01672957__84_______
+Address: Greve Alle 84
+Sale Type: Tvangsauktion, Sale Date: 10-10-2000, Price: 1.027.008
+Sale Type: 27-11-1997, Sale Date: 1.117.000, Price: - kr./m2
+Sale Type: 27-11-1997, Sale Date: 1.117.000, Price: - kr./m2
+
+Link: /adresse/greve-alle-57-2650-hvidovre-01672957__57_______
+Address: Greve Alle 57
+Sale Type: Tvangsauktion, Sale Date: 25-02-2014, Price: 2.870.000
+Sale Type: 14-06-2007, Sale Date: 4.000.000, Price: - kr./m2
+Sale Type: 18-03-2003, Sale Date: 1.675.000, Price: - kr./m2
+
+Link: /adresse/gladsaxevej-101-2860-soeborg-01590215_101_______
+Address: Gladsaxevej 101
+Sale Type: Tvangsauktion, Sale Date: 21-09-2004, Price: 2.150.000
+Sale Type: 02-08-2002, Sale Date: 1.624.945, Price: - kr./m2
+Sale Type: 01-06-1997, Sale Date: 957.000, Price: - kr./m2
+
+Link: /adresse/gjoerdingvej-10-2760-maaloev-01510736__10_______
+Address: Gjørdingvej 10
+Sale Type: Tvangsauktion, Sale Date: 08-01-2013, Price: 2.350.000
+Sale Type: 28-07-2005, Sale Date: 2.595.000, Price: - kr./m2
+Sale Type: 09-08-2001, Sale Date: 1.995.000, Price: - kr./m2
+
+Link: /adresse/gildbrovej-51-2-196-2635-ishoej-01830205__51__2_196
+Address: Gildbrovej 51, 2. 196.
+Sale Type: Tvangsauktion, Sale Date: 02-12-2014, Price: 1.254.596
+Sale Type: 16-04-2008, Sale Date: 1.900.000, Price: - kr./m2
+Sale Type: 16-04-2008, Sale Date: 1.900.000, Price: - kr./m2
+
+Link: /adresse/giesegaardsvej-18a-2650-hvidovre-01672777_18a_______
+Address: Giesegårdsvej 18A
+Sale Type: Tvangsauktion, Sale Date: 10-06-2009, Price: 910.000
+Sale Type: 24-11-2000, Sale Date: 992.214, Price: - kr./m2
+Sale Type: 16-10-1992, Sale Date: 580.000, Price: - kr./m2
+
+Link: /adresse/gerdasvej-51-2600-glostrup-01610169__51_______
+Address: Gerdasvej 51
+Sale Type: Tvangsauktion, Sale Date: 01-04-2024, Price: 1.400.000
+Sale Type: 22-03-2024, Sale Date: 2.750.000, Price: 20.522
+Sale Type: 27-01-2014, Sale Date: 1.400.000, Price: - kr./m2
+
+Link: /adresse/georgs-vaenge-3-2635-ishoej-01830200___3_______
+Address: Georgs Vænge 3
+Sale Type: Tvangsauktion, Sale Date: 01-12-1994, Price: 562.927
+Sale Type: 22-01-1992, Sale Date: 665.000, Price: - kr./m2
+
+Link: /adresse/gentoftegade-46-1-th-2820-gentofte-01570278__46__1__th
+Address: Gentoftegade 46, 1. th.
+Sale Type: Tvangsauktion, Sale Date: 17-12-2014, Price: 1.139.000
+Sale Type: 14-11-2014, Sale Date: 1.250.000, Price: 24.038
+Sale Type: 04-11-2005, Sale Date: 1.295.000, Price: - kr./m2
+
+Link: /adresse/gentoftegade-36-3-mf-2820-gentofte-01570278__36__3__mf
+Address: Gentoftegade 36, 3. mf.
+Sale Type: Tvangsauktion, Sale Date: 02-11-2022, Price: 1.860.000
+Sale Type: 27-07-2021, Sale Date: 2.160.000, Price: 45.957
+Sale Type: 10-08-2020, Sale Date: 1.495.000, Price: 31.809
+
+Link: /adresse/gartnersvinget-5-2800-kongens-lyngby-01730279___5_______
+Address: Gartnersvinget 5
+Sale Type: Tvangsauktion, Sale Date: 15-12-2001, Price: 1.943.679
+
+Link: /adresse/gammelgaards-alle-7-0-3-2665-vallensbaek-strand-01871704___7_st___3
+Address: Gammelgårds Alle 7, st. 3.
+Sale Type: Tvangsauktion, Sale Date: 09-11-2013, Price: 462.000
+Sale Type: 23-02-2011, Sale Date: 570.000, Price: - kr./m2
+Sale Type: 22-08-2001, Sale Date: 610.000, Price: - kr./m2
+
+Link: /adresse/gammelgaards-alle-7-4-43-2665-vallensbaek-strand-01871704___7__4__43
+Address: Gammelgårds Alle 7, 4. 43.
+Sale Type: Tvangsauktion, Sale Date: 05-03-2012, Price: 438.900
+Sale Type: 15-02-1995, Sale Date: 242.000, Price: - kr./m2
+
+Link: /adresse/gammelgaards-alle-27-4-48-2665-vallensbaek-strand-01871704__27__4__48
+Address: Gammelgårds Alle 27, 4. 48.
+Sale Type: Tvangsauktion, Sale Date: 04-07-1994, Price: 180.000
+Sale Type: 17-06-1994, Sale Date: 234.000, Price: - kr./m2
+
+Link: /adresse/gammelgaards-alle-27-2-26-2665-vallensbaek-strand-01871704__27__2__26
+Address: Gammelgårds Alle 27, 2. 26.
+Sale Type: Tvangsauktion, Sale Date: 06-12-2017, Price: 1.551.000
+Sale Type: 24-01-2006, Sale Date: 1.650.000, Price: - kr./m2
+Sale Type: 18-02-1997, Sale Date: 422.800, Price: - kr./m2
+
+Link: /adresse/gammel-koege-landevej-735a-2660-broendby-strand-01530176735a_______
+Address: Gammel Køge Landevej 735A
+Sale Type: Tvangsauktion, Sale Date: 05-05-2014, Price: 1.440.000
+Sale Type: 17-02-1996, Sale Date: 738.000, Price: - kr./m2
+Sale Type: 12-05-1992, Sale Date: 595.000, Price: - kr./m2
+
+Link: /adresse/gammel-koege-landevej-516-2650-hvidovre-01672807_516_______
+Address: Gammel Køge Landevej 516
+Sale Type: Tvangsauktion, Sale Date: 09-04-2013, Price: 2.000.000
+Sale Type: 28-03-2007, Sale Date: 2.725.000, Price: - kr./m2
+Sale Type: 19-02-1997, Sale Date: 1.159.000, Price: - kr./m2
+
+Link: /adresse/gammel-koege-landevej-266-3-d-2650-hvidovre-01672807_266__3___d
+Address: Gammel Køge Landevej 266, 3. d.
+Sale Type: Tvangsauktion, Sale Date: 03-03-2010, Price: 305.500
+Sale Type: 28-04-2004, Sale Date: 334.000, Price: - kr./m2
+Sale Type: 26-01-2004, Sale Date: 415.000, Price: - kr./m2
+
+Link: /adresse/gammel-koege-landevej-266-1-d-2650-hvidovre-01672807_266__1___d
+Address: Gammel Køge Landevej 266, 1. d.
+Sale Type: Tvangsauktion, Sale Date: 12-03-2012, Price: 600.000
+Sale Type: 17-01-2007, Sale Date: 1.395.000, Price: - kr./m2
+Sale Type: 18-01-2000, Sale Date: 505.755, Price: - kr./m2
+
+Link: /adresse/gammel-koege-landevej-220b-1-th-2650-hvidovre-01672807220b__1__th
+Address: Gammel Køge Landevej 220B, 1. th.
+Sale Type: Tvangsauktion, Sale Date: 15-12-2015, Price: 910.000
+Sale Type: 09-10-1995, Sale Date: 260.000, Price: - kr./m2
+
+Link: /adresse/gammel-klausdalsbrovej-565-2730-herlev-01632030_565_______
+Address: Gammel Klausdalsbrovej 565
+Sale Type: Tvangsauktion, Sale Date: 28-03-2012, Price: 3.410.000
+Sale Type: 07-05-2001, Sale Date: 908.000, Price: - kr./m2
+
+Link: /adresse/gamlehave-alle-12-2920-charlottenlund-01570267__12_______
+Address: Gamlehave Alle 12
+Sale Type: Tvangsauktion, Sale Date: 15-08-2024, Price: 16.804.894
+Sale Type: 02-09-2004, Sale Date: 8.150.000, Price: - kr./m2
+Sale Type: 30-08-2002, Sale Date: 3.575.000, Price: - kr./m2
+
+Link: /adresse/fyrmestervej-16-2660-broendby-strand-01530168__16_______
+Address: Fyrmestervej 16
+Sale Type: Tvangsauktion, Sale Date: 25-10-2016, Price: 2.134.000
+Sale Type: 27-11-1996, Sale Date: 885.000, Price: - kr./m2
+
+Link: /adresse/fuglegaardsvaenget-90-1-th-2820-gentofte-01570262__90__1__th
+Address: Fuglegårdsvænget 90, 1. th.
+Sale Type: Tvangsauktion, Sale Date: 19-09-2018, Price: 1.257.500
+Sale Type: 28-07-2005, Sale Date: 1.191.697, Price: - kr./m2
+Sale Type: 29-06-1999, Sale Date: 575.000, Price: - kr./m2
+
+Link: /adresse/fuglegaardsvej-18-2820-gentofte-01570261__18_______
+Address: Fuglegårdsvej 18
+Sale Type: Tvangsauktion, Sale Date: 08-03-2010, Price: 4.950.000
+Sale Type: 12-09-2007, Sale Date: 5.500.000, Price: - kr./m2
+
+Link: /adresse/froehaven-28-2630-taastrup-01691908__28_______
+Address: Frøhaven 28
+Sale Type: Tvangsauktion, Sale Date: 17-05-2017, Price: 2.907.000
+
+Link: /adresse/friisvej-5-2635-ishoej-01830190___5_______
+Address: Friisvej 5
+Sale Type: Tvangsauktion, Sale Date: 26-05-2010, Price: 1.450.000
+Sale Type: 24-04-2007, Sale Date: 2.785.000, Price: - kr./m2
+
+Link: /adresse/frihedslyst-alle-23-2650-hvidovre-01672598__23_______
+Address: Frihedslyst Alle 23
+Sale Type: Tvangsauktion, Sale Date: 18-03-1994, Price: 535.000
+
+Link: /adresse/frederiksdalsvej-194-1-2830-virum-01730229_194__1____
+Address: Frederiksdalsvej 194, 1.
+Sale Type: Tvangsauktion, Sale Date: 04-04-2018, Price: 2.337.280
+Sale Type: 28-08-2000, Sale Date: 6.000.000, Price: - kr./m2
+Sale Type: 15-05-2000, Sale Date: 5.803.100, Price: - kr./m2
+
+Link: /adresse/forsvarsvej-15-2860-soeborg-01590180__15_______
+Address: Forsvarsvej 15
+Sale Type: Tvangsauktion, Sale Date: 30-01-2006, Price: 2.115.000
+Sale Type: 12-11-2001, Sale Date: 1.829.991, Price: - kr./m2
+Sale Type: 09-12-1996, Sale Date: 143.725, Price: - kr./m2
+
+Link: /adresse/flintevaenget-6-2640-hedehusene-01691651___6_______
+Address: Flintevænget 6
+Sale Type: Tvangsauktion, Sale Date: 11-10-1993, Price: 483.000
+Sale Type: 18-09-1993, Sale Date: 807.000, Price: - kr./m2
+
+Link: /adresse/flakhaven-16-2750-ballerup-01510109__16_______
+Address: Flakhaven 16
+Sale Type: Tvangsauktion, Sale Date: 02-11-2009, Price: 1.480.000
+Sale Type: 06-04-2008, Sale Date: 3.050.000, Price: - kr./m2
+Sale Type: 06-04-2008, Sale Date: 3.000.000, Price: - kr./m2
+
+Link: /adresse/fagerbo-57-2640-hedehusene-01691597__57_______
+Address: Fagerbo 57
+Sale Type: Tvangsauktion, Sale Date: 01-05-2018, Price: 1.780.000
+Sale Type: 15-09-2005, Sale Date: 900.000, Price: - kr./m2
+Sale Type: 29-03-2005, Sale Date: 1.675.000, Price: - kr./m2
+
+Link: /adresse/exnersvej-48-2930-klampenborg-01570221__48_______
+Address: Exnersvej 48
+Sale Type: Tvangsauktion, Sale Date: 22-08-2012, Price: 8.800.000
+Sale Type: 14-09-2004, Sale Date: 3.700.000, Price: - kr./m2
+Sale Type: 02-08-1999, Sale Date: 101.050, Price: - kr./m2
+
+Link: /adresse/ewaldsbakken-11a-2900-hellerup-01570217_11a_______
+Address: Ewaldsbakken 11A
+Sale Type: Tvangsauktion, Sale Date: 26-09-1994, Price: 1.350.000
+Sale Type: 08-04-1992, Sale Date: 1.515.000, Price: - kr./m2
+
+Link: /adresse/espensstraede-10-2620-albertslund-01650095__10_______
+Address: Espensstræde 10
+Sale Type: Tvangsauktion, Sale Date: 06-01-2014, Price: 1.977.000
+Sale Type: 08-06-2007, Sale Date: 578.750, Price: - kr./m2
+Sale Type: 24-02-2005, Sale Date: 2.300.000, Price: - kr./m2
+
+Link: /adresse/espens-vaenge-40-2630-taastrup-01691542__40_______
+Address: Espens Vænge 40
+Sale Type: Tvangsauktion, Sale Date: 14-12-2010, Price: 2.000.000
+Sale Type: 03-10-2003, Sale Date: 1.730.000, Price: - kr./m2
+Sale Type: 23-05-2000, Sale Date: 1.465.694, Price: - kr./m2
+
+Link: /adresse/ericavej-163-0-106-2820-gentofte-01570203_163_st_106
+Address: Ericavej 163, st. 106.
+Sale Type: Tvangsauktion, Sale Date: 16-05-2014, Price: 765.000
+Sale Type: 29-07-2005, Sale Date: 945.000, Price: - kr./m2
+Sale Type: 06-03-2003, Sale Date: 700.000, Price: - kr./m2
+
+Link: /adresse/ericavej-163-0-102-2820-gentofte-01570203_163_st_102
+Address: Ericavej 163, st. 102.
+Sale Type: Tvangsauktion, Sale Date: 28-02-2011, Price: 660.000
+Sale Type: 09-01-1997, Sale Date: 425.000, Price: - kr./m2
+
+Link: /adresse/eremitageparken-201-2-c-2800-kongens-lyngby-01730209_201__2___c
+Address: Eremitageparken 201, 2. c.
+Sale Type: Tvangsauktion, Sale Date: 07-12-2011, Price: 740.000
+Sale Type: 21-12-2006, Sale Date: 1.105.000, Price: - kr./m2
+Sale Type: 26-02-2005, Sale Date: 1.335.000, Price: - kr./m2
+
+Link: /adresse/emtedalen-1b-2730-herlev-01631526__1b_______
+Address: Emtedalen 1B
+Sale Type: Tvangsauktion, Sale Date: 06-11-2023, Price: 3.220.000
+Sale Type: 16-12-1998, Sale Date: 2.200.000, Price: - kr./m2
+
+Link: /adresse/emilievej-3-0-2920-charlottenlund-01570192___3_st____
+Address: Emilievej 3, st.
+Sale Type: Tvangsauktion, Sale Date: 17-06-2009, Price: 4.500.000
+Sale Type: 16-11-1997, Sale Date: 2.385.000, Price: - kr./m2
+Sale Type: 23-06-1996, Sale Date: 1.849.500, Price: - kr./m2
+
+Link: /adresse/elverhoejen-1e-1-tv-2730-herlev-01631477__1e__1__tv
+Address: Elverhøjen 1E, 1. tv.
+Sale Type: Tvangsauktion, Sale Date: 11-07-2012, Price: 560.000
+Sale Type: 11-06-2007, Sale Date: 1.419.000, Price: - kr./m2
+Sale Type: 25-06-2000, Sale Date: 650.000, Price: - kr./m2
+
+Link: /adresse/elverhoejen-16-0-2730-herlev-01631477__16_st____
+Address: Elverhøjen 16, st.
+Sale Type: Tvangsauktion, Sale Date: 09-02-2015, Price: 1.380.000
+Sale Type: 17-07-2008, Sale Date: 2.200.000, Price: - kr./m2
+Sale Type: 25-01-2003, Sale Date: 400.000, Price: - kr./m2
+
+Link: /adresse/elverhoejen-16-1-2730-herlev-01631477__16__1____
+Address: Elverhøjen 16, 1.
+Sale Type: Tvangsauktion, Sale Date: 09-02-2015, Price: 1.380.000
+Sale Type: 17-07-2008, Sale Date: 2.200.000, Price: - kr./m2
+Sale Type: 25-01-2003, Sale Date: 400.000, Price: - kr./m2
+
+Link: /adresse/ellegaardsvej-3-0-2820-gentofte-01570180___3_st____
+Address: Ellegårdsvej 3, st.
+Sale Type: Tvangsauktion, Sale Date: 24-08-1998, Price: 480.000
+Sale Type: 24-08-1995, Sale Date: 320.000, Price: - kr./m2
+Sale Type: 29-11-1994, Sale Date: 320.000, Price: - kr./m2
+
+Link: /adresse/ellegaardsvej-3-1-2820-gentofte-01570180___3__1____
+Address: Ellegårdsvej 3, 1.
+Sale Type: Tvangsauktion, Sale Date: 24-08-1998, Price: 480.000
+Sale Type: 24-08-1995, Sale Date: 320.000, Price: - kr./m2
+Sale Type: 29-11-1994, Sale Date: 320.000, Price: - kr./m2
+
+Link: /adresse/ellebaekvej-68-0-tv-2820-gentofte-01570177__68_st__tv
+Address: Ellebækvej 68, st. tv.
+Sale Type: Tvangsauktion, Sale Date: 18-05-2016, Price: 1.245.000
+Sale Type: 29-06-2012, Sale Date: 795.000, Price: 14.455
+Sale Type: 30-03-2009, Sale Date: 795.000, Price: - kr./m2
+
+Link: /adresse/ejgaardsvej-22--1-th-2920-charlottenlund-01570175__22_kl__th
+Address: Ejgårdsvej 22, kl. th.
+Sale Type: Tvangsauktion, Sale Date: 08-01-2013, Price: 650.000
+Sale Type: 25-07-2005, Sale Date: 1.225.243, Price: - kr./m2
+
+Link: /adresse/ejbyvej-133-2610-roedovre-01750177_133_______
+Address: Ejbyvej 133
+Sale Type: Tvangsauktion, Sale Date: 26-10-2009, Price: 2.950.000
+Sale Type: 22-02-2007, Sale Date: 3.775.000, Price: - kr./m2
+Sale Type: 24-11-1997, Sale Date: 1.574.126, Price: - kr./m2
+
+Link: /adresse/ejbysvinget-60-2600-glostrup-01610099__60_______
+Address: Ejbysvinget 60
+Sale Type: Tvangsauktion, Sale Date: 07-02-2023, Price: 3.910.000
+Sale Type: 03-11-2008, Sale Date: 3.275.000, Price: - kr./m2
+
+Link: /adresse/ejby-vaenge-16-2610-roedovre-01750178__16_______
+Address: Ejby Vænge 16
+Sale Type: Tvangsauktion, Sale Date: 15-09-2010, Price: 175.000
+Sale Type: 17-03-2006, Sale Date: 428.000, Price: - kr./m2
+Sale Type: 25-01-2001, Sale Date: 453.000, Price: - kr./m2
+
+Link: /adresse/egholmsvej-5f-2830-virum-01730187__5f_______
+Address: Egholmsvej 5F
+Sale Type: Tvangsauktion, Sale Date: 21-02-2014, Price: 4.786.000
+Sale Type: 06-09-1997, Sale Date: 2.850.000, Price: - kr./m2
+
+Link: /adresse/egebjergvej-57a-2750-ballerup-01510093_57a_______
+Address: Egebjergvej 57A
+Sale Type: Tvangsauktion, Sale Date: 05-11-2011, Price: 3.075.000
+Sale Type: 16-06-2004, Sale Date: 2.875.000, Price: - kr./m2
+Sale Type: 14-10-1998, Sale Date: 2.317.000, Price: - kr./m2
+
+Link: /adresse/dyssegaardsvej-18-1-2900-hellerup-01570152__18__1____
+Address: Dyssegårdsvej 18, 1.
+Sale Type: Tvangsauktion, Sale Date: 10-03-2010, Price: 4.000.000
+Sale Type: 01-10-2008, Sale Date: 4.000.000, Price: - kr./m2
+Sale Type: 01-05-1998, Sale Date: 1.974.000, Price: - kr./m2
+
+Link: /adresse/digterparken-14-2750-ballerup-01510080__14_______
+Address: Digterparken 14
+Sale Type: Tvangsauktion, Sale Date: 08-06-2015, Price: 3.475.000
+Sale Type: 14-02-1995, Sale Date: 1.255.000, Price: - kr./m2
+
+Link: /adresse/digterparken-110-2750-ballerup-01510080_110_______
+Address: Digterparken 110
+Sale Type: Tvangsauktion, Sale Date: 08-08-2011, Price: 2.650.000
+Sale Type: 29-10-1997, Sale Date: 1.887.000, Price: - kr./m2
+
+Link: /adresse/damgaardsvej-19-2620-albertslund-01650065__19_______
+Address: Damgårdsvej 19
+Sale Type: Tvangsauktion, Sale Date: 08-08-2011, Price: 800.000
+Sale Type: 25-06-2007, Sale Date: 2.415.000, Price: - kr./m2
+Sale Type: 18-12-2005, Sale Date: 2.225.000, Price: - kr./m2
+
+Link: /adresse/dalvangsvej-13-0-6-2600-glostrup-01610064__13_st___6
+Address: Dalvangsvej 13, st. 6.
+Sale Type: Tvangsauktion, Sale Date: 09-06-2010, Price: 540.000
+Sale Type: 08-12-2006, Sale Date: 1.130.000, Price: - kr./m2
+Sale Type: 24-08-2006, Sale Date: 1.175.000, Price: - kr./m2
+
+Link: /adresse/dalstroeget-78-0-2870-dyssegaard-01570133__78_st____
+Address: Dalstrøget 78, st.
+Sale Type: Tvangsauktion, Sale Date: 19-10-2009, Price: 200.000
+Sale Type: 20-06-2007, Sale Date: 1.960.783, Price: - kr./m2
+Sale Type: 18-06-2007, Sale Date: 1.568.627, Price: - kr./m2
+
+Link: /adresse/dalen-3-2860-soeborg-01590119___3_______
+Address: Dalen 3
+Sale Type: Tvangsauktion, Sale Date: 16-06-2010, Price: 2.700.000
+Sale Type: 17-01-1997, Sale Date: 1.595.630, Price: - kr./m2
+
+Link: /adresse/daglykkevej-6-2650-hvidovre-01671523___6_______
+Address: Daglykkevej 6
+Sale Type: Tvangsauktion, Sale Date: 18-06-2013, Price: 4.000.000
+Sale Type: 27-11-1997, Sale Date: 688.500, Price: - kr./m2
+
+Link: /adresse/christoffers-alle-94-2800-kongens-lyngby-01590111__94_______
+Address: Christoffers Alle 94
+Sale Type: Tvangsauktion, Sale Date: 01-07-2009, Price: 2.150.000
+Sale Type: 24-10-2005, Sale Date: 2.995.000, Price: - kr./m2
+
+Link: /adresse/christoffers-alle-88a-1-th-2800-kongens-lyngby-01590111_88a__1__th
+Address: Christoffers Alle 88A, 1. th.
+Sale Type: Tvangsauktion, Sale Date: 18-02-2015, Price: 674.000
+Sale Type: 10-12-1999, Sale Date: 559.807, Price: - kr./m2
+Sale Type: 28-07-1997, Sale Date: 369.760, Price: - kr./m2
+
+Link: /adresse/christoffers-alle-40-2800-kongens-lyngby-01590111__40_______
+Address: Christoffers Alle 40
+Sale Type: Tvangsauktion, Sale Date: 24-05-2011, Price: 1.408.000
+Sale Type: 11-12-2006, Sale Date: 1.425.711, Price: - kr./m2
+Sale Type: 17-06-2004, Sale Date: 1.660.000, Price: - kr./m2
+
+Link: /adresse/christiansdal-4-2610-roedovre-01750122___4_______
+Address: Christiansdal 4
+Sale Type: Tvangsauktion, Sale Date: 29-11-2019, Price: 2.884.166
+Sale Type: 03-12-2007, Sale Date: 3.100.000, Price: - kr./m2
+
+Link: /adresse/c-l-ibsens-vej-10-0-2820-gentofte-01570123__10_st____
+Address: C L Ibsens Vej 10, st.
+Sale Type: Tvangsauktion, Sale Date: 24-08-2011, Price: 4.700.000
+Sale Type: 08-11-2004, Sale Date: 1.492.150, Price: - kr./m2
+Sale Type: 02-06-2003, Sale Date: 1.400.000, Price: - kr./m2
+
+Link: /adresse/c-l-ibsens-vej-10-2-2820-gentofte-01570123__10__2____
+Address: C L Ibsens Vej 10, 2.
+Sale Type: Tvangsauktion, Sale Date: 24-08-2011, Price: 4.700.000
+Sale Type: 08-11-2004, Sale Date: 1.492.150, Price: - kr./m2
+Sale Type: 02-06-2003, Sale Date: 1.400.000, Price: - kr./m2
+
+Link: /adresse/c-l-ibsens-vej-10-1-2820-gentofte-01570123__10__1____
+Address: C L Ibsens Vej 10, 1.
+Sale Type: Tvangsauktion, Sale Date: 24-08-2011, Price: 4.700.000
+Sale Type: 08-11-2004, Sale Date: 1.492.150, Price: - kr./m2
+Sale Type: 02-06-2003, Sale Date: 1.400.000, Price: - kr./m2
+
+Link: /adresse/baekkelunden-130-2660-broendby-strand-01530108_130_______
+Address: Bækkelunden 130
+Sale Type: Tvangsauktion, Sale Date: 22-03-2010, Price: 1.250.000
+Sale Type: 31-03-2003, Sale Date: 645.000, Price: - kr./m2
+
+Link: /adresse/baekgaardsvej-6-2640-hedehusene-01690974___6_______
+Address: Bækgårdsvej 6
+Sale Type: Tvangsauktion, Sale Date: 15-10-2016, Price: 1.100.000
+Sale Type: 18-12-2006, Sale Date: 1.041.250, Price: - kr./m2
+
+Link: /adresse/byskovvej-26-2730-herlev-01630738__26_______
+Address: Byskovvej 26
+Sale Type: Tvangsauktion, Sale Date: 03-12-2008, Price: 1.800.000
+
+Link: /adresse/bygaden-73b-2630-taastrup-01690920_73b_______
+Address: Bygaden 73B
+Sale Type: Tvangsauktion, Sale Date: 18-05-2011, Price: 1.810.000
+Sale Type: 23-12-2005, Sale Date: 4.500.000, Price: - kr./m2
+Sale Type: 30-12-2002, Sale Date: 2.650.000, Price: - kr./m2
+
+Link: /adresse/bygaden-73a-2630-taastrup-01690920_73a_______
+Address: Bygaden 73A
+Sale Type: Tvangsauktion, Sale Date: 18-05-2011, Price: 1.810.000
+Sale Type: 23-12-2005, Sale Date: 4.500.000, Price: - kr./m2
+Sale Type: 30-12-2002, Sale Date: 2.650.000, Price: - kr./m2
+
+Link: /adresse/bygaden-44-2605-broendby-01530096__44_______
+Address: Bygaden 44
+Sale Type: Tvangsauktion, Sale Date: 23-11-2015, Price: 1.518.900
+Sale Type: 12-02-2007, Sale Date: 2.645.000, Price: - kr./m2
+Sale Type: 12-01-2004, Sale Date: 1.570.000, Price: - kr./m2
+
+Link: /adresse/bueparken-12-2750-ballerup-01510054__12_______
+Address: Bueparken 12
+Sale Type: Tvangsauktion, Sale Date: 17-04-2013, Price: 2.171.033
+Sale Type: 17-05-2006, Sale Date: 2.900.000, Price: - kr./m2
+Sale Type: 25-05-1999, Sale Date: 1.357.432, Price: - kr./m2
+
+Link: /adresse/buddingevej-297-0-tv-2860-soeborg-01590088_297_st__tv
+Address: Buddingevej 297, st. tv.
+Sale Type: Tvangsauktion, Sale Date: 30-09-2013, Price: 880.000
+Sale Type: 05-10-2005, Sale Date: 1.270.000, Price: - kr./m2
+Sale Type: 04-05-1999, Sale Date: 571.660, Price: - kr./m2
+
+Link: /adresse/buddingevej-260-1-o-2860-soeborg-01590088_260__1___o
+Address: Buddingevej 260, 1. o.
+Sale Type: Tvangsauktion, Sale Date: 05-01-2011, Price: 440.000
+Sale Type: 09-01-2006, Sale Date: 875.000, Price: - kr./m2
+Sale Type: 01-08-2003, Sale Date: 645.612, Price: - kr./m2
+
+Link: /adresse/buddingevej-260-1-i-2860-soeborg-01590088_260__1___i
+Address: Buddingevej 260, 1. i.
+Sale Type: Tvangsauktion, Sale Date: 10-01-2011, Price: 450.000
+Sale Type: 14-11-2005, Sale Date: 735.000, Price: - kr./m2
+Sale Type: 27-08-2003, Sale Date: 646.506, Price: - kr./m2
+
+Link: /adresse/buddinge-hovedgade-135b-1-th-2860-soeborg-01590086135b__1__th
+Address: Buddinge Hovedgade 135B, 1. th.
+Sale Type: Tvangsauktion, Sale Date: 02-11-1992, Price: 142.000
+
+Link: /adresse/buddinge-hovedgade-134-2860-soeborg-01590086_134_______
+Address: Buddinge Hovedgade 134
+Sale Type: Tvangsauktion, Sale Date: 04-06-2002, Price: 1.375.000
+
+Link: /adresse/broendbyoestervej-92-2605-broendby-01530091__92_______
+Address: Brøndbyøstervej 92
+Sale Type: Tvangsauktion, Sale Date: 06-04-2011, Price: 1.400.000
+
+Link: /adresse/broendbyvestervej-68b-0-3-2605-broendby-01530071_68b_st___3
+Address: Brøndbyvestervej 68B, st. 3.
+Sale Type: Tvangsauktion, Sale Date: 14-11-2003, Price: 535.000
+Sale Type: 15-03-2001, Sale Date: 450.000, Price: - kr./m2
+Sale Type: 21-06-1995, Sale Date: 259.000, Price: - kr./m2
+
+Link: /adresse/broendbyvestervej-68a-0-2-2605-broendby-01530071_68a_st___2
+Address: Brøndbyvestervej 68A, st. 2.
+Sale Type: Tvangsauktion, Sale Date: 25-05-2011, Price: 550.000
+Sale Type: 03-10-2005, Sale Date: 840.067, Price: - kr./m2
+Sale Type: 24-08-2003, Sale Date: 695.000, Price: - kr./m2
+
+Link: /adresse/broendbyvestervej-60a-1-2-2605-broendby-01530071_60a__1___2
+Address: Brøndbyvestervej 60A, 1. 2.
+Sale Type: Tvangsauktion, Sale Date: 18-12-2012, Price: 448.447
+Sale Type: 27-11-2001, Sale Date: 520.848, Price: - kr./m2
+Sale Type: 15-12-2000, Sale Date: 459.460, Price: - kr./m2
+
+Link: /adresse/broendbyvestervej-10-2-m-2600-glostrup-01610044__10__2___m
+Address: Brøndbyvestervej 10, 2. m.
+Sale Type: Tvangsauktion, Sale Date: 25-11-2014, Price: 976.000
+Sale Type: 01-06-2006, Sale Date: 1.650.000, Price: - kr./m2
+Sale Type: 02-11-2003, Sale Date: 926.000, Price: - kr./m2
+
+Link: /adresse/brunevang-92-2-31-2610-roedovre-01750108__92__2__31
+Address: Brunevang 92, 2. 31.
+Sale Type: Tvangsauktion, Sale Date: 18-05-2011, Price: 320.000
+Sale Type: 09-11-1998, Sale Date: 272.000, Price: - kr./m2
+
+Link: /adresse/brunevang-88-0-2610-roedovre-01750108__88_st____
+Address: Brunevang 88, st.
+Sale Type: Tvangsauktion, Sale Date: 07-05-2007, Price: 1.207.100
+Sale Type: 13-09-2005, Sale Date: 1.450.000, Price: - kr./m2
+Sale Type: 12-11-1999, Sale Date: 652.000, Price: - kr./m2
+
+Link: /adresse/brostykkevej-121-0-5-2650-hvidovre-01671194_121_st___5
+Address: Brostykkevej 121, st. 5.
+Sale Type: Tvangsauktion, Sale Date: 07-06-2011, Price: 335.000
+
+Link: /adresse/broksoevej-47-2665-vallensbaek-strand-01870639__47_______
+Address: Broksøvej 47
+Sale Type: Tvangsauktion, Sale Date: 01-07-2014, Price: 2.260.000
+Sale Type: 22-05-2002, Sale Date: 1.565.000, Price: - kr./m2
+Sale Type: 25-01-1997, Sale Date: 1.048.500, Price: - kr./m2
+
+Link: /adresse/brogaardsvej-69-0-tv-2820-gentofte-01570087__69_st__tv
+Address: Brogårdsvej 69, st. tv.
+Sale Type: Tvangsauktion, Sale Date: 10-01-2012, Price: 1.035.000
+Sale Type: 06-12-2004, Sale Date: 600.000, Price: - kr./m2
+Sale Type: 05-03-2001, Sale Date: 439.000, Price: - kr./m2
+
+Link: /adresse/brobyvej-38-2650-hvidovre-01671135__38_______
+Address: Brobyvej 38
+Sale Type: Tvangsauktion, Sale Date: 22-11-2004, Price: 1.630.000
+Sale Type: 11-02-2000, Sale Date: 1.624.000, Price: - kr./m2
+
+Link: /adresse/broager-4-2600-glostrup-01610603___4_______
+Address: Broager 4
+Sale Type: Tvangsauktion, Sale Date: 02-11-2015, Price: 3.575.000
+Sale Type: 01-07-2001, Sale Date: 1.921.115, Price: - kr./m2
+
+Link: /adresse/bredesvinget-13-2830-virum-01730093__13_______
+Address: Bredesvinget 13
+Sale Type: Tvangsauktion, Sale Date: 08-07-2009, Price: 3.500.000
+Sale Type: 19-11-2007, Sale Date: 4.350.000, Price: - kr./m2
+Sale Type: 22-07-2002, Sale Date: 2.345.000, Price: - kr./m2
+
+Link: /adresse/bredekaers-vaenge-33-2635-ishoej-01830082__33_______
+Address: Bredekærs Vænge 33
+Sale Type: Tvangsauktion, Sale Date: 25-06-2009, Price: 1.345.000
+Sale Type: 31-03-2006, Sale Date: 2.140.000, Price: - kr./m2
+Sale Type: 19-01-2003, Sale Date: 1.350.000, Price: - kr./m2
+
+Link: /adresse/bredebovej-23-5-mf-2800-kongens-lyngby-01730092__23__5__mf
+Address: Bredebovej 23, 5. mf.
+Sale Type: Tvangsauktion, Sale Date: 12-01-1993, Price: 400.000
+
+Link: /adresse/brannersvej-25-1-59-2920-charlottenlund-01570078__25__1__59
+Address: Brannersvej 25, 1. 59.
+Sale Type: Tvangsauktion, Sale Date: 18-04-2012, Price: 630.000
+Sale Type: 18-12-2002, Sale Date: 1.025.000, Price: - kr./m2
+Sale Type: 27-04-1999, Sale Date: 714.000, Price: - kr./m2
+
+Link: /adresse/brandmosevej-3-2750-ballerup-01510047___3_______
+Address: Brandmosevej 3
+Sale Type: Tvangsauktion, Sale Date: 21-02-1994, Price: 56.000
+Sale Type: 05-04-1993, Sale Date: 100.000, Price: - kr./m2
+
+Link: /adresse/brandhoejgaardsvej-98-2640-hedehusene-01690680__98_______
+Address: Brandhøjgårdsvej 98
+Sale Type: Tvangsauktion, Sale Date: 05-07-2011, Price: 1.000.000
+Sale Type: 23-08-2007, Sale Date: 2.049.000, Price: - kr./m2
+
+Link: /adresse/brandholms-alle-2f-2610-roedovre-01750085__2f_______
+Address: Brandholms Alle 2F
+Sale Type: Tvangsauktion, Sale Date: 01-03-2010, Price: 950.000
+Sale Type: 28-11-2003, Sale Date: 995.000, Price: - kr./m2
+Sale Type: 01-08-2003, Sale Date: 574.678, Price: - kr./m2
+
+Link: /adresse/brandholms-alle-22h-1-2-2610-roedovre-01750085_22h__1___2
+Address: Brandholms Alle 22H, 1. 2.
+Sale Type: Tvangsauktion, Sale Date: 03-10-2011, Price: 425.000
+Sale Type: 03-10-2002, Sale Date: 715.000, Price: - kr./m2
+
+Link: /adresse/bovang-18-2660-broendby-strand-01530036__18_______
+Address: Bovang 18
+Sale Type: Tvangsauktion, Sale Date: 20-03-2012, Price: 2.150.000
+Sale Type: 10-07-2007, Sale Date: 3.200.000, Price: - kr./m2
+Sale Type: 12-01-1993, Sale Date: 775.000, Price: - kr./m2
+
+Link: /adresse/boulevarden-14-0-65-2800-kongens-lyngby-01730086__14_st__65
+Address: Boulevarden 14, st. 65.
+Sale Type: Tvangsauktion, Sale Date: 24-08-2022, Price: 4.350.000
+
+Link: /adresse/bondehavevej-12-0-th-2880-bagsvaerd-01590069__12_st__th
+Address: Bondehavevej 12, st. th.
+Sale Type: Tvangsauktion, Sale Date: 01-04-1996, Price: 235.000
+
+Link: /adresse/bjaelkevangen-11b-2800-kongens-lyngby-01730071_11b_______
+Address: Bjælkevangen 11B
+Sale Type: Tvangsauktion, Sale Date: 26-05-2010, Price: 3.983.322
+Sale Type: 10-11-2008, Sale Date: 4.950.000, Price: - kr./m2
+Sale Type: 27-09-2003, Sale Date: 1.715.000, Price: - kr./m2
+
+Link: /adresse/bjeverskov-alle-2-0-th-2650-hvidovre-01670866___2_st__th
+Address: Bjeverskov Alle 2, st. th.
+Sale Type: Tvangsauktion, Sale Date: 02-06-2010, Price: 9.300.000
+
+Link: /adresse/bjeverskov-alle-2-2-tv-2650-hvidovre-01670866___2__2__tv
+Address: Bjeverskov Alle 2, 2. tv.
+Sale Type: Tvangsauktion, Sale Date: 02-06-2010, Price: 9.300.000
+
+Link: /adresse/bjeverskov-alle-2-2-th-2650-hvidovre-01670866___2__2__th
+Address: Bjeverskov Alle 2, 2. th.
+Sale Type: Tvangsauktion, Sale Date: 02-06-2010, Price: 9.300.000
+
+Link: /adresse/bjeverskov-alle-2-1-tv-2650-hvidovre-01670866___2__1__tv
+Address: Bjeverskov Alle 2, 1. tv.
+Sale Type: Tvangsauktion, Sale Date: 02-06-2010, Price: 9.300.000
+
+Link: /adresse/bjeverskov-alle-2-1-th-2650-hvidovre-01670866___2__1__th
+Address: Bjeverskov Alle 2, 1. th.
+Sale Type: Tvangsauktion, Sale Date: 02-06-2010, Price: 9.300.000
+
+Link: /adresse/birkevang-74-2640-hedehusene-01690430__74_______
+Address: Birkevang 74
+Sale Type: Tvangsauktion, Sale Date: 15-03-1993, Price: 560.000
+
+Link: /adresse/birkevang-40-2640-hedehusene-01690430__40_______
+Address: Birkevang 40
+Sale Type: Tvangsauktion, Sale Date: 05-12-2017, Price: 1.857.000
+Sale Type: 01-07-2007, Sale Date: 2.500.000, Price: - kr./m2
+Sale Type: 05-01-2004, Sale Date: 1.285.000, Price: - kr./m2
+
+Link: /adresse/bindesboellsvej-8-2920-charlottenlund-01570058___8_______
+Address: Bindesbøllsvej 8
+Sale Type: Tvangsauktion, Sale Date: 18-04-2018, Price: 13.750.000
+Sale Type: 24-05-2007, Sale Date: 15.700.000, Price: - kr./m2
+Sale Type: 20-10-1995, Sale Date: 4.100.000, Price: - kr./m2
+
+Link: /adresse/bibliotekvej-9-2650-hvidovre-01670746___9_______
+Address: Bibliotekvej 9
+Sale Type: Tvangsauktion, Sale Date: 15-06-1994, Price: 480.000
+Sale Type: 05-08-1992, Sale Date: 565.000, Price: - kr./m2
+
+Link: /adresse/bernstorffsvej-100-0-tv-2900-hellerup-01570054_100_st__tv
+Address: Bernstorffsvej 100, st. tv.
+Sale Type: Tvangsauktion, Sale Date: 21-02-2011, Price: 2.250.000
+Sale Type: 01-10-2002, Sale Date: 2.055.000, Price: - kr./m2
+Sale Type: 01-07-2000, Sale Date: 800.000, Price: - kr./m2
+
+Link: /adresse/berings-gade-20-1-th-2630-taastrup-01690370__20__1__th
+Address: Berings Gade 20, 1. th.
+Sale Type: Tvangsauktion, Sale Date: 27-05-2014, Price: 1.895.000
+Sale Type: 23-11-2005, Sale Date: 1.840.000, Price: - kr./m2
+
+Link: /adresse/bellevuekrogen-16-2930-klampenborg-01570043__16_______
+Address: Bellevuekrogen 16
+Sale Type: Tvangsauktion, Sale Date: 02-09-2020, Price: 6.600.000
+
+Link: /adresse/baunevej-196-2630-taastrup-01690324_196_______
+Address: Baunevej 196
+Sale Type: Tvangsauktion, Sale Date: 24-06-1994, Price: 866.122
+
+Link: /adresse/batterivej-1-2860-soeborg-01590055___1_______
+Address: Batterivej 1
+Sale Type: Tvangsauktion, Sale Date: 10-10-2017, Price: 3.050.000
+Sale Type: 29-03-2003, Sale Date: 1.524.600, Price: - kr./m2
+Sale Type: 18-10-1993, Sale Date: 670.000, Price: - kr./m2
+
+Link: /adresse/bakkedraget-31-0-2860-soeborg-01590050__31_st____
+Address: Bakkedraget 31, st.
+Sale Type: Tvangsauktion, Sale Date: 05-08-1996, Price: 337.000
+
+Link: /adresse/bakkedraget-31-1-2860-soeborg-01590050__31__1____
+Address: Bakkedraget 31, 1.
+Sale Type: Tvangsauktion, Sale Date: 05-08-1996, Price: 337.000
+
+Link: /adresse/bagsvaerdvej-147a-2800-kongens-lyngby-01590045147a_______
+Address: Bagsværdvej 147A
+Sale Type: Tvangsauktion, Sale Date: 03-08-2009, Price: 1.904.000
+Sale Type: 26-10-2005, Sale Date: 2.300.000, Price: - kr./m2
+
+Link: /adresse/bagsvaerd-hovedgade-99-9-a-2880-bagsvaerd-01590039__99__9___a
+Address: Bagsværd Hovedgade 99, 9. a.
+Sale Type: Tvangsauktion, Sale Date: 29-08-2012, Price: 360.000
+Sale Type: 24-11-2003, Sale Date: 625.000, Price: - kr./m2
+Sale Type: 23-04-1998, Sale Date: 279.150, Price: - kr./m2
+
+Link: /adresse/bagsvaerd-hovedgade-99-2-j-2880-bagsvaerd-01590039__99__2___j
+Address: Bagsværd Hovedgade 99, 2. j.
+Sale Type: Tvangsauktion, Sale Date: 16-01-2012, Price: 310.000
+Sale Type: 19-03-2007, Sale Date: 725.000, Price: - kr./m2
+Sale Type: 21-09-2002, Sale Date: 661.653, Price: - kr./m2
+
+Link: /adresse/bagsvaerd-hovedgade-33-2880-bagsvaerd-01590039__33_______
+Address: Bagsværd Hovedgade 33
+Sale Type: Tvangsauktion, Sale Date: 27-04-2009, Price: 2.830.000
+Sale Type: 27-06-2005, Sale Date: 4.965.000, Price: - kr./m2
+Sale Type: 11-03-2002, Sale Date: 3.000.000, Price: - kr./m2
+
+Link: /adresse/augustvej-50-2860-soeborg-01590033__50_______
+Address: Augustvej 50
+Sale Type: Tvangsauktion, Sale Date: 29-07-2013, Price: 2.000.000
+Sale Type: 22-10-2001, Sale Date: 1.075.000, Price: - kr./m2
+
+Link: /adresse/augustvej-2-2860-soeborg-01590033___2_______
+Address: Augustvej 2
+Sale Type: Tvangsauktion, Sale Date: 14-03-2012, Price: 2.875.000
+Sale Type: 09-04-2007, Sale Date: 2.850.000, Price: - kr./m2
+Sale Type: 17-05-1999, Sale Date: 1.162.590, Price: - kr./m2
+
+Link: /adresse/annexgaardsvej-2-0-2610-roedovre-01750021___2_st____
+Address: Annexgårdsvej 2, st.
+Sale Type: Tvangsauktion, Sale Date: 24-11-2010, Price: 2.100.000
+Sale Type: 26-05-1998, Sale Date: 1.475.400, Price: - kr./m2
+Sale Type: 30-06-1997, Sale Date: 1.100.000, Price: - kr./m2
+
+Link: /adresse/annexgaardsvej-2-1-2610-roedovre-01750021___2__1____
+Address: Annexgårdsvej 2, 1.
+Sale Type: Tvangsauktion, Sale Date: 24-11-2010, Price: 2.100.000
+Sale Type: 26-05-1998, Sale Date: 1.475.400, Price: - kr./m2
+Sale Type: 30-06-1997, Sale Date: 1.100.000, Price: - kr./m2
+
+Link: /adresse/almeengen-3-2740-skovlunde-01510507___3_______
+Address: Almeengen 3
+Sale Type: Tvangsauktion, Sale Date: 16-05-2017, Price: 3.495.000
+Sale Type: 15-11-2003, Sale Date: 2.200.000, Price: - kr./m2
+
+Link: /adresse/aldershvilevej-80b-2880-bagsvaerd-01590009_80b_______
+Address: Aldershvilevej 80B
+Sale Type: Tvangsauktion, Sale Date: 17-01-2011, Price: 3.525.000
+Sale Type: 24-03-2008, Sale Date: 6.800.000, Price: - kr./m2
+Sale Type: 18-01-1994, Sale Date: 265.000, Price: - kr./m2
+
+Link: /adresse/aldershvilevej-125-2-th-2880-bagsvaerd-01590009_125__2__th
+Address: Aldershvilevej 125, 2. th.
+Sale Type: Tvangsauktion, Sale Date: 25-05-2023, Price: 2.019.946
+Sale Type: 24-01-2017, Sale Date: 1.995.000, Price: 24.036
+Sale Type: 01-08-2011, Sale Date: 1.550.000, Price: 18.675
+
+Link: /adresse/aldershvilevej-123-0-th-2880-bagsvaerd-01590009_123_st__th
+Address: Aldershvilevej 123, st. th.
+Sale Type: Tvangsauktion, Sale Date: 06-06-2012, Price: 380.000
+
+Link: /adresse/albertslundvej-87-0-tv-2625-vallensbaek-01870106__87_st__tv
+Address: Albertslundvej 87, st. tv.
+Sale Type: Tvangsauktion, Sale Date: 30-10-2012, Price: 622.000
+Sale Type: 23-11-2006, Sale Date: 1.300.000, Price: - kr./m2
+Sale Type: 08-07-2006, Sale Date: 1.500.000, Price: - kr./m2
+
+Link: /adresse/agerlunden-34-2660-broendby-strand-01530002__34_______
+Address: Agerlunden 34
+Sale Type: Tvangsauktion, Sale Date: 29-05-2018, Price: 3.995.000
+Sale Type: 19-08-2002, Sale Date: 595.000, Price: - kr./m2
+
