@@ -1,0 +1,101 @@
+Link: /adresse/aagesholmsvej-2-2640-hedehusene-01699726___2_______
+Address: Ågesholmsvej 2
+Sale Type: Tvangsauktion, Sale Date: 08-08-2011, Price: 2.500.000
+Sale Type: 10-01-1999, Sale Date: 700.000, Price: - kr./m2
+Sale Type: 27-11-1997, Sale Date: 3.498.852, Price: - kr./m2
+
+Link: /adresse/oestervej-34-2750-ballerup-01510379__34_______
+Address: Østervej 34
+Sale Type: Tvangsauktion, Sale Date: 17-05-2010, Price: 2.200.000
+Sale Type: 17-08-2006, Sale Date: 3.549.000, Price: - kr./m2
+
+Link: /adresse/oestervang-30-2800-kongens-lyngby-01590987__30_______
+Address: Østervang 30
+Sale Type: Tvangsauktion, Sale Date: 09-07-2009, Price: 3.480.000
+Sale Type: 23-01-2006, Sale Date: 4.575.000, Price: - kr./m2
+
+Link: /adresse/aertemarken-119a-0-tv-2860-soeborg-01590981119a_st__tv
+Address: Ærtemarken 119A, st. tv.
+Sale Type: Tvangsauktion, Sale Date: 05-08-2020, Price: 8.592.634
+Sale Type: 25-06-2001, Sale Date: 900.000, Price: - kr./m2
+
+Link: /adresse/aertemarken-119a-0-th-2860-soeborg-01590981119a_st__th
+Address: Ærtemarken 119A, st. th.
+Sale Type: Tvangsauktion, Sale Date: 05-08-2020, Price: 8.592.634
+Sale Type: 25-06-2001, Sale Date: 900.000, Price: - kr./m2
+
+Link: /adresse/aertemarken-119a-1-2860-soeborg-01590981119a__1____
+Address: Ærtemarken 119A, 1.
+Sale Type: Tvangsauktion, Sale Date: 05-08-2020, Price: 8.592.634
+Sale Type: 25-06-2001, Sale Date: 900.000, Price: - kr./m2
+
+Link: /adresse/winthersmindevej-60-2635-ishoej-01830900__60_______
+Address: Winthersmindevej 60
+Sale Type: Tvangsauktion, Sale Date: 14-12-2009, Price: 6.250.000
+Sale Type: 17-07-2007, Sale Date: 25.000, Price: - kr./m2
+Sale Type: 01-04-2005, Sale Date: 6.700.000, Price: - kr./m2
+
+Link: /adresse/vaarfluevej-21-2610-roedovre-01750968__21_______
+Address: Vårfluevej 21
+Sale Type: Tvangsauktion, Sale Date: 30-05-2023, Price: 5.325.000
+Sale Type: 06-11-2019, Sale Date: 5.150.000, Price: 25.622
+Sale Type: 18-10-2017, Sale Date: 2.850.000, Price: 27.941
+
+Link: /adresse/vaerebrovej-65-2880-bagsvaerd-01590971__65_______
+Address: Værebrovej 65
+Sale Type: Tvangsauktion, Sale Date: 15-07-2015, Price: 4.630.000
+
+Link: /adresse/vojensvej-49-2610-roedovre-01679409__49_______
+Address: Vojensvej 49
+Sale Type: Tvangsauktion, Sale Date: 29-03-2011, Price: 1.600.000
+
+Link: /adresse/virumvej-86-2830-virum-01730873__86_______
+Address: Virumvej 86
+Sale Type: Tvangsauktion, Sale Date: 30-03-2011, Price: 1.600.000
+Sale Type: 04-09-2008, Sale Date: 4.700.000, Price: - kr./m2
+Sale Type: 14-11-2005, Sale Date: 2.300.000, Price: - kr./m2
+
+Link: /adresse/virumvej-28-0-5-2830-virum-01730873__28_st___5
+Address: Virumvej 28, st. 5.
+Sale Type: Tvangsauktion, Sale Date: 26-10-2011, Price: 10.459.700
+
+Link: /adresse/virumvej-28-0-4-2830-virum-01730873__28_st___4
+Address: Virumvej 28, st. 4.
+Sale Type: Tvangsauktion, Sale Date: 26-10-2011, Price: 10.459.700
+
+Link: /adresse/virumvej-28-0-1-2830-virum-01730873__28_st___1
+Address: Virumvej 28, st. 1.
+Sale Type: Tvangsauktion, Sale Date: 26-10-2011, Price: 10.459.700
+
+Link: /adresse/virumvej-28-1-2-2830-virum-01730873__28__1___2
+Address: Virumvej 28, 1. 2.
+Sale Type: Tvangsauktion, Sale Date: 26-10-2011, Price: 10.459.700
+
+Link: /adresse/virum-stationsvej-141b-1-tv-2830-virum-01730869141b__1__tv
+Address: Virum Stationsvej 141B, 1. tv.
+Sale Type: Tvangsauktion, Sale Date: 05-07-2013, Price: 279.000
+Sale Type: 07-08-2002, Sale Date: 675.000, Price: - kr./m2
+Sale Type: 17-10-1999, Sale Date: 485.000, Price: - kr./m2
+
+Link: /adresse/virum-overdrevsvej-26-2830-virum-01730868__26_______
+Address: Virum Overdrevsvej 26
+Sale Type: Tvangsauktion, Sale Date: 05-03-2024, Price: 3.876.000
+Sale Type: 26-05-2021, Sale Date: 3.100.000, Price: - kr./m2
+Sale Type: 05-03-2004, Sale Date: 2.350.000, Price: - kr./m2
+
+Link: /adresse/vilvordeparken-17-2920-charlottenlund-01570941__17_______
+Address: Vilvordeparken 17
+Sale Type: Tvangsauktion, Sale Date: 16-08-2010, Price: 6.150.000
+Sale Type: 01-09-2001, Sale Date: 3.670.000, Price: - kr./m2
+Sale Type: 15-03-2000, Sale Date: 3.600.000, Price: - kr./m2
+
+Link: /adresse/vildtbaneparken-75-2635-ishoej-01830889__75_______
+Address: Vildtbaneparken 75
+Sale Type: Tvangsauktion, Sale Date: 07-02-2012, Price: 1.215.000
+Sale Type: 30-01-2008, Sale Date: 2.100.000, Price: - kr./m2
+Sale Type: 09-08-1995, Sale Date: 827.600, Price: - kr./m2
+
+Link: /adresse/vildtbaneparken-112c-2635-ishoej-01830889112c_______
+Address: Vildtbaneparken 112C
+Sale Type: Tvangsauktion, Sale Date: 31-01-1994, Price: 360.000
+
