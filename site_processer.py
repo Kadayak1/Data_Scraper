@@ -313,6 +313,35 @@ def main(sample_size=None):
         properties_df.to_csv(output_file, index=False, encoding='utf-8-sig')
         logging.info(f"Property details have been saved to '{output_file}'")
 
+def get_user_choice():
+    while True:
+        print("\nPlease select a run mode:")
+        print("1. Small sample (5 properties, ~3 minutes)")
+        print("2. Medium sample (50 properties, ~20 minutes)")
+        print("3. Full dataset (552 properties, ~3.5 hours)")
+        choice = input("Enter your choice (1-3): ").strip()
+        
+        if choice == "1":
+            return 5
+        elif choice == "2":
+            return 50
+        elif choice == "3":
+            return None
+        else:
+            print("Invalid choice. Please enter 1, 2, or 3.")
+
 if __name__ == '__main__':
-    # Run with a sample of 5 properties for testing
-    main(sample_size=5)
+    try:
+        sample_size = get_user_choice()
+        if sample_size is None:
+            print("\nStarting full dataset run (552 properties)...")
+            print("Estimated time: 3.5 hours")
+        else:
+            print(f"\nStarting sample run with {sample_size} properties...")
+        
+        main(sample_size=sample_size)
+    except KeyboardInterrupt:
+        print("\nProcess interrupted by user. Check property_details_interrupted.csv for partial results.")
+    except Exception as e:
+        print(f"\nAn error occurred: {e}")
+        raise
