@@ -1,60 +1,72 @@
 import csv
 import uuid
-from selenium import webdriver
-from selenium.webdriver.chrome.service import Service
-from selenium.webdriver.chrome.options import Options
-from webdriver_manager.chrome import ChromeDriverManager
+from playwright.sync_api import sync_playwright
 from bs4 import BeautifulSoup
-from concurrent.futures import ThreadPoolExecutor, as_completed
 import time
 import random
+import os
+import logging
 
-# Set up Chrome options
-chrome_options = Options()
-chrome_options.add_argument('--headless')  # Run in headless mode
-chrome_options.add_argument('--disable-gpu')
+# Set up logging
+logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
 
-def fetch_page_data(page_number):
-    # Initialize the driver
-    driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()), options=chrome_options)
+def setup_browser():
+    playwright = sync_playwright().start()
+    browser = playwright.chromium.launch(headless=True)
+    return browser, playwright
+
+def fetch_page_data(page, page_number):
     page_data_list = []
+    
     try:
         url = f'https://www.boligsiden.dk/landsdel/koebenhavns-omegn/solgte/alle?sortAscending=false&registrationTypes=auction&latestRegistrationType=auction&page={page_number}'
-        print(f"Loading page {page_number}: {url}")
-        driver.get(url)
-
-        # Let the page load
-        driver.implicitly_wait(10)
-
+        logging.info(f"Loading page {page_number}: {url}")
+        
+        # Navigate to the page
+        page.goto(url, wait_until='networkidle')
+        
         # Add a random delay to help with server load
-        time.sleep(random.uniform(2, 5))  # Waits between 2 and 5 seconds
-
+        time.sleep(random.uniform(2, 5))
+        
+        # Wait for the property containers to be visible
+        page.wait_for_selector('div.shadow.overflow-hidden.mx-4', timeout=10000)
+        
+        # Save screenshot for debugging
+        os.makedirs('debug_screenshots', exist_ok=True)
+        page.screenshot(path=f'debug_screenshots/page_{page_number}.png')
+        
+        # Save HTML for debugging
+        os.makedirs('debug_html', exist_ok=True)
+        with open(f'debug_html/page_{page_number}.html', 'w', encoding='utf-8') as f:
+            f.write(page.content())
+        
         # Get the HTML content after JavaScript has been executed
-        html = driver.page_source
-
+        html = page.content()
+        
         # Use BeautifulSoup to parse the HTML content
         soup = BeautifulSoup(html, 'html.parser')
-
+        
         # Find property containers
         containers = soup.find_all('div', class_='shadow overflow-hidden mx-4')
-        print(f"Page {page_number}: Found {len(containers)} target containers.")
-
+        logging.info(f"Page {page_number}: Found {len(containers)} target containers.")
+        
         # Extract information from each container
         for container in containers:
             # Generate a unique ID for each property container
             unique_id = str(uuid.uuid4())
             link_tag = container.find('a')
             link = link_tag['href'] if link_tag else ""
-
+            
             # Extract property type
-            property_type_el = container.find('div', class_='text-gray-600').text.strip()
-            property_type = property_type_el.split(' ', 1)[-1] if property_type_el else "N/A"
-
-            address_div = link_tag.find('div', class_='font-black text-sm')
+            property_type_el = container.find('div', class_='text-gray-600')
+            property_type = property_type_el.text.strip().split(' ', 1)[-1] if property_type_el else "N/A"
+            
+            # Extract address
+            address_div = link_tag.find('div', class_='font-black text-sm') if link_tag else None
             address_details = address_div.find_all('font') if address_div else []
             address_lines = [line.text for line in address_details]
             address = ', '.join(address_lines) if address_lines else ""
-
+            
             # Process sale records within the container
             table = container.find('table')
             if table:
@@ -65,45 +77,55 @@ def fetch_page_data(page_number):
                         sale_type = cells[0].text.strip()
                         sale_date = cells[1].text.strip()
                         price = cells[2].text.strip()
-
+                        
                         page_data_list.append({
                             'ID': unique_id,
                             'Link': link,
                             'Address': address,
-                            'Property Type': property_type,  # Include the property type
+                            'Property Type': property_type,
                             'Sale Type': sale_type,
                             'Sale Date': sale_date,
                             'Price': price,
                             'Page Number': page_number
                         })
-    finally:
-        driver.quit()
-
+                        
+    except Exception as e:
+        logging.error(f"Error processing page {page_number}: {e}")
+    
     return page_data_list
 
-# List to store all the data
-all_data_list = []
-
-# Use ThreadPoolExecutor to scrape data from multiple pages concurrently with limited threads
-with ThreadPoolExecutor(max_workers=3) as executor:  # Reduced number of threads
-    # Submit tasks to load each page in the specified range
-    future_to_page = {executor.submit(fetch_page_data, page_number): page_number for page_number in range(1, 30)}
+def main():
+    browser, playwright = setup_browser()
+    context = browser.new_context()
+    page = context.new_page()
+    all_data_list = []
     
-    # Collect the results as they complete
-    for future in as_completed(future_to_page):
-        page_number = future_to_page[future]
-        try:
-            page_data = future.result()
-            all_data_list.extend(page_data)
-        except Exception as e:
-            print(f"Error processing page {page_number}: {e}")
+    try:
+        # Process pages sequentially
+        for page_number in range(1, 30):
+            try:
+                page_data = fetch_page_data(page, page_number)
+                all_data_list.extend(page_data)
+                # Add a small delay between pages
+                time.sleep(random.uniform(1, 3))
+            except Exception as e:
+                logging.error(f"Error processing page {page_number}: {e}")
+                continue
+        
+        # Write the data to a CSV file
+        csv_columns = ['ID', 'Link', 'Address', 'Property Type', 'Sale Type', 'Sale Date', 'Price', 'Page Number']
+        with open('scraped_properties.csv', 'w', newline='', encoding='utf-8') as csvfile:
+            writer = csv.DictWriter(csvfile, fieldnames=csv_columns)
+            writer.writeheader()
+            for data in all_data_list:
+                writer.writerow(data)
+        
+        logging.info("Scraped data has been saved to 'scraped_properties.csv'")
+        
+    finally:
+        context.close()
+        browser.close()
+        playwright.stop()
 
-# Write the data to a CSV file
-csv_columns = ['ID', 'Link', 'Address', 'Property Type', 'Sale Type', 'Sale Date', 'Price', 'Page Number']
-with open('scraped_properties.csv', 'w', newline='', encoding='utf-8') as csvfile:
-    writer = csv.DictWriter(csvfile, fieldnames=csv_columns)
-    writer.writeheader()
-    for data in all_data_list:
-        writer.writerow(data)
-
-print("Scraped data with unique IDs and page numbers per property has been saved to 'scraped_properties.csv'.")
+if __name__ == "__main__":
+    main()
