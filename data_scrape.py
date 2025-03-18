@@ -15,11 +15,12 @@ def setup_browser():
     browser = playwright.chromium.launch(headless=True)
     return browser, playwright
 
-def fetch_page_data(page, page_number):
+def fetch_page_data(page, page_number, base_url):
     page_data_list = []
     
     try:
-        url = f'https://www.boligsiden.dk/landsdel/koebenhavns-omegn/solgte/alle?sortAscending=false&registrationTypes=auction&latestRegistrationType=auction&page={page_number}'
+        # Construct URL with page number
+        url = f'{base_url}&page={page_number}'
         logging.info(f"Loading page {page_number}: {url}")
         
         # Navigate to the page
@@ -100,17 +101,34 @@ def main():
     page = context.new_page()
     all_data_list = []
     
+    # Define the base URLs to scrape
+    base_urls = [
+        'https://www.boligsiden.dk/landsdel/koebenhavns-omegn/solgte/alle?sortAscending=false&registrationTypes=auction&latestRegistrationType=auction',
+        'https://www.boligsiden.dk/omraade/sjaelland/solgte?sortAscending=false&registrationTypes=auction&latestRegistrationType=auction',
+        'https://www.boligsiden.dk/omraade/jylland/solgte?sortAscending=false&registrationTypes=auction&latestRegistrationType=auction',
+        'https://www.boligsiden.dk/landsdel/fyn/solgte?sortAscending=false&registrationTypes=auction&latestRegistrationType=auction'
+    ]
+    
     try:
-        # Process pages sequentially
-        for page_number in range(1, 30):
-            try:
-                page_data = fetch_page_data(page, page_number)
-                all_data_list.extend(page_data)
-                # Add a small delay between pages
-                time.sleep(random.uniform(1, 3))
-            except Exception as e:
-                logging.error(f"Error processing page {page_number}: {e}")
-                continue
+        # Process each base URL
+        for base_url in base_urls:
+            logging.info(f"Processing URL: {base_url}")
+            # Process pages sequentially for each URL
+            for page_number in range(1, 30):  # Keep the same page limit for each URL
+                try:
+                    page_data = fetch_page_data(page, page_number, base_url)
+                    if not page_data:  # If no data was found, we've reached the end of pages
+                        logging.info(f"No more data found for URL: {base_url}")
+                        break
+                    all_data_list.extend(page_data)
+                    # Add a small delay between pages
+                    time.sleep(random.uniform(1, 3))
+                except Exception as e:
+                    logging.error(f"Error processing page {page_number} for URL {base_url}: {e}")
+                    continue
+            
+            # Add a longer delay between different URLs
+            time.sleep(random.uniform(5, 8))
         
         # Write the data to a CSV file
         csv_columns = ['ID', 'Link', 'Address', 'Property Type', 'Sale Type', 'Sale Date', 'Price', 'Page Number']
@@ -120,7 +138,7 @@ def main():
             for data in all_data_list:
                 writer.writerow(data)
         
-        logging.info("Scraped data has been saved to 'scraped_properties.csv'")
+        logging.info(f"Scraped data has been saved to 'scraped_properties.csv'. Total properties: {len(all_data_list)}")
         
     finally:
         context.close()

@@ -108,13 +108,14 @@ def fetch_property_data(page, relative_link, unique_id):
         'Num_Rooms': None,
         'Num_Toilets': None,
         'Sale_Price_DKK': None,
-        'Construction_Year': None,
-        'Built_Year': None,
+        'Last_Renovation_Year': None,  # Year of most recent renovation/construction
+        'Original_Construction_Year': None,  # Year the property was originally built
         'Num_Floors': None,
         'Floor_Number': None,
         'Heating_Type': "N/A",
         'Wall_Material': "N/A",
-        'Weighted_Area': None,
+        'Weighted_Area': None,  # Total usable area with different weights for different room types
+        'Regular_Area': None,  # Total unweighted area of all rooms
         'Roof_Type': "N/A"
     }
     
@@ -195,24 +196,44 @@ def fetch_property_data(page, relative_link, unique_id):
             if built_year_div:
                 year_text = built_year_div.find('p', class_='text-sm text-gray-800')
                 if year_text:
-                    property_data['Built_Year'] = format_value_for_ml(year_text.get_text(strip=True), 'year')
+                    property_data['Original_Construction_Year'] = format_value_for_ml(year_text.get_text(strip=True), 'year')
         
         # Extract additional property details
         details = extract_property_details(soup)
         
         # Map the extracted details to our formatted structure
         if details['Seneste ombygningsår'] != "Ikke oplyst":
-            property_data['Construction_Year'] = format_value_for_ml(details['Seneste ombygningsår'], 'year')
+            property_data['Last_Renovation_Year'] = format_value_for_ml(details['Seneste ombygningsår'], 'year')
         
         if details['Antal plan og etage'] != "Ikke oplyst":
-            # Parse floor information (e.g., "5 plan - 3" -> floors=5, floor_number=3)
-            # Also handle cases like "1 plan - " where floor number is missing
-            floor_info = details['Antal plan og etage']
+            # Parse floor information with improved pattern matching
+            floor_info = details['Antal plan og etage'].lower()
+            
+            # Handle different formats:
+            # 1. "X plan - Y" format
             floor_match = re.search(r'(\d+)\s*plan\s*-\s*(\d+)?', floor_info)
             if floor_match:
                 property_data['Num_Floors'] = int(floor_match.group(1))
                 if floor_match.group(2):  # Only set floor number if it exists
                     property_data['Floor_Number'] = int(floor_match.group(2))
+            else:
+                # 2. "X plan" format (single floor)
+                single_floor_match = re.search(r'(\d+)\s*plan', floor_info)
+                if single_floor_match:
+                    property_data['Num_Floors'] = int(single_floor_match.group(1))
+                    property_data['Floor_Number'] = 1  # Single floor means it's on the first floor
+                else:
+                    # 3. "X etage" format
+                    etage_match = re.search(r'(\d+)\s*etage', floor_info)
+                    if etage_match:
+                        property_data['Floor_Number'] = int(etage_match.group(1))
+                        # If floor number is given but total floors not specified, try to infer
+                        if property_data['Floor_Number'] > 1:
+                            property_data['Num_Floors'] = property_data['Floor_Number']
+                        else:
+                            property_data['Num_Floors'] = 1
+                    else:
+                        logging.warning(f"Could not parse floor information: {floor_info}")
         
         if details['Antal toiletter'] != "Ikke oplyst":
             property_data['Num_Toilets'] = format_value_for_ml(details['Antal toiletter'], 'number')
@@ -221,11 +242,19 @@ def fetch_property_data(page, relative_link, unique_id):
         property_data['Wall_Material'] = details['Ydervægge']
         property_data['Roof_Type'] = details['Tagtype']
         
+        # Extract both weighted and regular area
         if details['Vægtet areal'] != "Ikke oplyst":
             # Extract just the number from "143.15 m²"
             weighted_area_match = re.search(r'([\d.]+)', details['Vægtet areal'])
             if weighted_area_match:
                 property_data['Weighted_Area'] = float(weighted_area_match.group(1))
+        
+        # Try to find regular area from the living area field
+        if living_area_el is not None:
+            regular_area_text = living_area_el.get_text(strip=True)
+            regular_area_match = re.search(r'([\d.]+)', regular_area_text)
+            if regular_area_match:
+                property_data['Regular_Area'] = float(regular_area_match.group(1))
         
     except Exception as e:
         logging.error(f"Error processing {unique_id}: {e}")
