@@ -6,6 +6,7 @@ import os
 import time
 import random
 import re
+import datetime
 
 # Set up logging
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
@@ -68,23 +69,32 @@ def parse_address(address_text):
 
 def format_value_for_ml(value, value_type='string'):
     """Format values for machine learning."""
-    if value == "N/A" or value == "Ikke oplyst":
+    if value == "N/A" or value == "Ikke oplyst" or not value:
         return None
     
     if value_type == 'number':
-        # Extract numbers from strings like "110 m² (2025)" or "5 værelser"
+        # Extract numbers from strings like "110 m² (2025)" or "5 værelser" or "2 toiletter"
         match = re.search(r'(\d+(?:\.\d+)?)', value)
         if match:
             return float(match.group(1))
         return None
     
     if value_type == 'price':
-        # Extract price value from strings like "422.250 kr."
-        match = re.search(r'([\d.]+)', value)
-        if match:
-            # Remove dots and convert to float
-            return float(match.group(1).replace('.', ''))
-        return None
+        # Extract price value from strings like "4.250.000 kr." or "422.250 kr."
+        # Remove all dots and "kr." to get the pure number
+        if not value:
+            return None
+            
+        # Remove everything after the first parenthesis if it exists
+        value = value.split('(')[0].strip()
+        
+        # Remove dots and "kr." and any other non-numeric characters
+        clean_value = re.sub(r'[^\d]', '', value)
+        
+        try:
+            return float(clean_value)
+        except ValueError:
+            return None
     
     if value_type == 'year':
         # Extract year
@@ -101,22 +111,21 @@ def fetch_property_data(page, relative_link, unique_id):
     property_data = {
         'ID': unique_id,
         'Link': full_url,
-        'Street': "N/A",
-        'Postal_Code': "N/A",
-        'City': "N/A",
+        'Street': None,
+        'Postal_Code': None,
+        'City': None,
         'Living_Area_M2': None,
         'Num_Rooms': None,
         'Num_Toilets': None,
         'Sale_Price_DKK': None,
-        'Last_Renovation_Year': None,  # Year of most recent renovation/construction
-        'Original_Construction_Year': None,  # Year the property was originally built
+        'Construction_Year': None,
+        'Built_Year': None,
         'Num_Floors': None,
         'Floor_Number': None,
-        'Heating_Type': "N/A",
-        'Wall_Material': "N/A",
-        'Weighted_Area': None,  # Total usable area with different weights for different room types
-        'Regular_Area': None,  # Total unweighted area of all rooms
-        'Roof_Type': "N/A"
+        'Heating_Type': None,
+        'Wall_Material': None,
+        'Weighted_Area': None,
+        'Roof_Type': None
     }
     
     logging.info(f"Processing {unique_id}: {full_url}")
@@ -125,153 +134,290 @@ def fetch_property_data(page, relative_link, unique_id):
         # Navigate to the page with a longer timeout
         page.goto(full_url, wait_until='domcontentloaded', timeout=60000)
         
-        # Wait for any dynamic content to load
-        try:
-            page.wait_for_load_state('networkidle', timeout=30000)
-        except Exception as e:
-            logging.warning(f"Network idle timeout for {unique_id}, proceeding anyway: {e}")
+        # Wait for the main content to load
+        page.wait_for_selector('div[class*="flex flex-wrap gap-2"]', timeout=30000)
         
         # Add random delay to avoid rate limiting
         time.sleep(random.uniform(2, 4))
         
-        # Try to click the expand button if it exists, with a shorter timeout
+        # Extract main details from the flex container
         try:
-            expand_button = page.locator("button:has-text('Se flere detaljer fra BBR')").first
-            if expand_button:
-                expand_button.click(timeout=10000)
-                time.sleep(1)  # Wait for the content to expand
+            main_details = page.evaluate('''() => {
+                const container = document.querySelector('div[class*="flex flex-wrap gap-2"]');
+                if (!container) return null;
+                
+                const details = {};
+                
+                // Find living area
+                const area_el = container.querySelector('span[class*="text-blue-900"]');
+                if (area_el && area_el.textContent.includes('m²')) {
+                    details.area = area_el.textContent.trim();
+                }
+                
+                // Find number of rooms
+                const rooms_el = Array.from(container.querySelectorAll('span[class*="text-blue-900"]'))
+                    .find(el => el.textContent.includes('værelser'));
+                if (rooms_el) {
+                    details.rooms = rooms_el.textContent.trim();
+                }
+                
+                // Find number of toilets
+                const toilets_el = Array.from(container.querySelectorAll('span[class*="text-blue-900"]'))
+                    .find(el => el.textContent.includes('toiletter'));
+                if (toilets_el) {
+                    details.toilets = toilets_el.textContent.trim();
+                }
+                
+                // Try to find construction year in the main view
+                const year_el = Array.from(container.querySelectorAll('span[class*="text-blue-900"]'))
+                    .find(el => /\d{4}/.test(el.textContent));
+                if (year_el) {
+                    const year_match = year_el.textContent.match(/\d{4}/);
+                    if (year_match) {
+                        const year = parseInt(year_match[0]);
+                        if (1800 <= year && year <= new Date().getFullYear()) {
+                            details.year = year;
+                        }
+                    }
+                }
+                
+                return details;
+            }''')
+            
+            if main_details:
+                if main_details.get('area'):
+                    property_data['Living_Area_M2'] = format_value_for_ml(main_details['area'], 'number')
+                if main_details.get('rooms'):
+                    property_data['Num_Rooms'] = format_value_for_ml(main_details['rooms'], 'number')
+                if main_details.get('toilets'):
+                    property_data['Num_Toilets'] = format_value_for_ml(main_details['toilets'], 'number')
+                if main_details.get('year'):
+                    property_data['Construction_Year'] = main_details['year']
+                    property_data['Built_Year'] = main_details['year']
         except Exception as e:
-            logging.warning(f"Expand button interaction failed for {unique_id}: {e}")
-        
-        # Save screenshot and HTML for debugging
-        os.makedirs('debug_screenshots', exist_ok=True)
-        os.makedirs('debug_html', exist_ok=True)
-        page.screenshot(path=f'debug_screenshots/property_{unique_id}.png')
-        
-        with open(f'debug_html/property_{unique_id}.html', 'w', encoding='utf-8') as f:
-            f.write(page.content())
-        
-        # Get the page content directly without waiting for specific elements
-        html_content = page.content()
-        soup = BeautifulSoup(html_content, 'html.parser')
-        
-        # Extract and parse address
-        address_el = soup.find('h1')
-        if address_el is not None:
-            address_text = address_el.get_text(strip=True).replace('\n', ' ')
-            address_parts = parse_address(address_text)
-            property_data.update(address_parts)
-        else:
-            logging.warning(f"Address not found for {unique_id}")
-        
-        # Extract living area
-        living_area_el = soup.find(lambda tag: tag.name == "span" and "m²" in tag.text)
-        if living_area_el is not None:
-            property_data['Living_Area_M2'] = format_value_for_ml(living_area_el.get_text(strip=True), 'number')
-        else:
-            logging.warning(f"Living area not found for {unique_id}")
-        
-        # Extract rooms
-        rooms_el = soup.find(lambda tag: tag.name == "span" and "værelser" in tag.text)
-        if rooms_el is not None:
-            property_data['Num_Rooms'] = format_value_for_ml(rooms_el.get_text(strip=True), 'number')
-        else:
-            logging.warning(f"Rooms not found for {unique_id}")
+            logging.error(f"Error parsing main details for {unique_id}: {e}")
         
         # Extract sale price
-        for div in soup.find_all('div', class_='text-gray-600'):
-            if 'Seneste salgspris' in div.get_text():
-                sale_price_text = div.get_text()
-                property_data['Sale_Price_DKK'] = format_value_for_ml(sale_price_text, 'price')
-                break
-        
-        # Extract built year from the pris_og_udvikling section
-        pris_section = soup.find('div', id='pris_og_udvikling')
-        if pris_section:
-            # Look for the built year information
-            built_year_div = pris_section.find(lambda tag: tag.name == 'div' and 
-                                             tag.find('p', string='Bygget') and 
-                                             tag.get('class') and 
-                                             'hidden' in tag.get('class'))
-            if built_year_div:
-                year_text = built_year_div.find('p', class_='text-sm text-gray-800')
-                if year_text:
-                    property_data['Original_Construction_Year'] = format_value_for_ml(year_text.get_text(strip=True), 'year')
-        
-        # Extract additional property details
-        details = extract_property_details(soup)
-        
-        # Map the extracted details to our formatted structure
-        if details['Seneste ombygningsår'] != "Ikke oplyst":
-            property_data['Last_Renovation_Year'] = format_value_for_ml(details['Seneste ombygningsår'], 'year')
-        
-        if details['Antal plan og etage'] != "Ikke oplyst":
-            # Parse floor information with improved pattern matching
-            floor_info = details['Antal plan og etage'].lower()
+        try:
+            # Wait for the page to load
+            page.wait_for_load_state('networkidle')
             
-            # Handle different formats:
-            # 1. "X plan - Y" format
-            floor_match = re.search(r'(\d+)\s*plan\s*-\s*(\d+)?', floor_info)
-            if floor_match:
-                property_data['Num_Floors'] = int(floor_match.group(1))
-                if floor_match.group(2):  # Only set floor number if it exists
-                    property_data['Floor_Number'] = int(floor_match.group(2))
-            else:
-                # 2. "X plan" format (single floor)
-                single_floor_match = re.search(r'(\d+)\s*plan', floor_info)
-                if single_floor_match:
-                    property_data['Num_Floors'] = int(single_floor_match.group(1))
-                    property_data['Floor_Number'] = 1  # Single floor means it's on the first floor
+            # Get all price elements
+            price_elements = page.query_selector_all('div[class*="text-blue-900"]')
+            
+            # Find the price element containing "kr."
+            price = None
+            for el in price_elements:
+                text = el.text_content()
+                if "kr." in text:
+                    price = text
+                    break
+            
+            if price:
+                # Check if this is a shared property (same address but different units)
+                is_shared_property = "mf" in relative_link.lower() or "tv" in relative_link.lower() or "th" in relative_link.lower()
+                if is_shared_property:
+                    # For shared properties, we need to find the specific unit price
+                    unit_price = page.evaluate('''() => {
+                        const price_el = document.querySelector('div[class*="text-blue-900"]:has-text("kr.")');
+                        return price_el ? price_el.textContent.trim() : null;
+                    }''')
+                    if unit_price:
+                        price = unit_price
+                
+                # Additional check for price in the property details
+                if not price:
+                    price = page.evaluate('''() => {
+                        const price_el = document.querySelector('div[class*="text-blue-900"]:has-text("kr.")');
+                        return price_el ? price_el.textContent.trim() : null;
+                    }''')
+                
+                # Format the price
+                formatted_price = format_value_for_ml(price, 'price')
+                if formatted_price:
+                    property_data['Sale_Price_DKK'] = formatted_price
+                    logging.info(f"Found price for {unique_id}: {price}")
                 else:
-                    # 3. "X etage" format
-                    etage_match = re.search(r'(\d+)\s*etage', floor_info)
-                    if etage_match:
-                        property_data['Floor_Number'] = int(etage_match.group(1))
-                        # If floor number is given but total floors not specified, try to infer
-                        if property_data['Floor_Number'] > 1:
-                            property_data['Num_Floors'] = property_data['Floor_Number']
-                        else:
-                            property_data['Num_Floors'] = 1
-                    else:
-                        logging.warning(f"Could not parse floor information: {floor_info}")
+                    logging.warning(f"Could not format price for {unique_id}: {price}")
+            else:
+                logging.warning(f"Could not find price for {unique_id}")
+        except Exception as e:
+            logging.error(f"Error parsing sale price for {unique_id}: {e}")
         
-        if details['Antal toiletter'] != "Ikke oplyst":
-            property_data['Num_Toilets'] = format_value_for_ml(details['Antal toiletter'], 'number')
+        # Try to click the "Se flere detaljer" button and wait for the popup
+        try:
+            # Wait for the button to be visible and clickable
+            details_button = page.wait_for_selector('button:has-text("Se flere detaljer")', timeout=10000)
+            if details_button:
+                details_button.click()
+                # Wait for the popup to appear
+                page.wait_for_selector('div[class*="bg-white space-y-4"]', timeout=10000)
+                time.sleep(2)  # Give the popup time to fully load
+                
+                # Extract details from the popup
+                popup_details = page.evaluate('''() => {
+                    const popup = document.querySelector('div[class*="bg-white space-y-4"]');
+                    if (!popup) return null;
+                    
+                    const details = {};
+                    const rows = popup.querySelectorAll('div[class*="h-14 flex text-blue-900"]');
+                    
+                    rows.forEach(row => {
+                        const label_div = row.querySelector('div:first-child');
+                        const value_div = row.querySelector('div[class*="font-semibold"]');
+                        
+                        if (label_div && value_div) {
+                            const label = label_div.textContent.trim();
+                            const value = value_div.textContent.trim();
+                            if (value && value !== "Ikke oplyst") {
+                                details[label] = value;
+                            }
+                        }
+                    });
+                    
+                    return details;
+                }''')
+                
+                if popup_details:
+                    for label, value in popup_details.items():
+                        if 'Seneste ombygningsår' in label:
+                            year_match = re.search(r'(\d{4})', value)
+                            if year_match:
+                                year = int(year_match.group(1))
+                                if 1800 <= year <= 2100:
+                                    property_data['Construction_Year'] = year
+                                    property_data['Built_Year'] = year
+                        
+                        elif 'Antal plan og etage' in label:
+                            floor_match = re.search(r'(\d+)\s*plan', value)
+                            if floor_match:
+                                property_data['Num_Floors'] = int(floor_match.group(1))
+                                # Try to extract floor number
+                                floor_num_match = re.search(r'etage\s*(\d+)', value)
+                                if floor_num_match:
+                                    property_data['Floor_Number'] = int(floor_num_match.group(1))
+                                elif '-' not in value:
+                                    # For shared properties, try to extract floor from the address
+                                    if "mf" in relative_link.lower() or "tv" in relative_link.lower() or "th" in relative_link.lower():
+                                        floor_match = re.search(r'(\d+)(?:st|th|mf)', relative_link.lower())
+                                        if floor_match:
+                                            property_data['Floor_Number'] = int(floor_match.group(1))
+                                        else:
+                                            # Try to extract floor from the address number
+                                            floor_match = re.search(r'(\d+)(?:st|th|mf)', relative_link.lower())
+                                            if floor_match:
+                                                property_data['Floor_Number'] = int(floor_match.group(1))
+                                            else:
+                                                property_data['Floor_Number'] = 1
+                                    else:
+                                        property_data['Floor_Number'] = 1
+                        
+                        elif 'Antal toiletter' in label:
+                            # Only update if we don't already have a value from the main view
+                            if property_data['Num_Toilets'] is None:
+                                property_data['Num_Toilets'] = format_value_for_ml(value, 'number')
+                        
+                        elif 'Varmeinstallation' in label:
+                            property_data['Heating_Type'] = value if value != "Ikke oplyst" else None
+                        
+                        elif 'Ydervægge' in label:
+                            property_data['Wall_Material'] = value if value != "Ikke oplyst" else None
+                        
+                        elif 'Vægtet areal' in label:
+                            # Extract the numeric value from the weighted area
+                            area_match = re.search(r'(\d+(?:\.\d+)?)\s*m²', value)
+                            if area_match:
+                                property_data['Weighted_Area'] = float(area_match.group(1))
+                            else:
+                                # If no weighted area, use living area as fallback
+                                property_data['Weighted_Area'] = property_data['Living_Area_M2']
+                        
+                        elif 'Tagtype' in label:
+                            property_data['Roof_Type'] = value if value != "Ikke oplyst" else None
+                
+                # Click the close button
+                close_button = page.query_selector('button:has-text("Luk")')
+                if close_button:
+                    close_button.click()
+                    time.sleep(1)
+        except Exception as e:
+            logging.warning(f"Could not process popup details for {unique_id}: {e}")
         
-        property_data['Heating_Type'] = details['Varmeinstallation']
-        property_data['Wall_Material'] = details['Ydervægge']
-        property_data['Roof_Type'] = details['Tagtype']
-        
-        # Extract both weighted and regular area
-        if details['Vægtet areal'] != "Ikke oplyst":
-            # Extract just the number from "143.15 m²"
-            weighted_area_match = re.search(r'([\d.]+)', details['Vægtet areal'])
-            if weighted_area_match:
-                property_data['Weighted_Area'] = float(weighted_area_match.group(1))
-        
-        # Try to find regular area from the living area field
-        if living_area_el is not None:
-            regular_area_text = living_area_el.get_text(strip=True)
-            regular_area_match = re.search(r'([\d.]+)', regular_area_text)
-            if regular_area_match:
-                property_data['Regular_Area'] = float(regular_area_match.group(1))
+        # Extract address from schema.org data
+        try:
+            script_content = page.evaluate('''() => {
+                const script = document.querySelector('script[type="application/ld+json"]');
+                return script ? script.textContent : null;
+            }''')
+            
+            if script_content:
+                import json
+                schema_data = json.loads(script_content)
+                if isinstance(schema_data, list):
+                    schema_data = schema_data[0]
+                
+                if 'Address' in schema_data:
+                    address = schema_data['Address']
+                    street = address.get('streetAddress', '').split(',')[0]
+                    postal_code = address.get('postalCode')
+                    city = address.get('addressLocality')
+                    
+                    property_data['Street'] = street if street else None
+                    property_data['Postal_Code'] = postal_code if postal_code else None
+                    property_data['City'] = city if city else None
+        except Exception as e:
+            logging.error(f"Error parsing schema data for {unique_id}: {e}")
         
     except Exception as e:
         logging.error(f"Error processing {unique_id}: {e}")
+    
+    # Ensure all empty strings are converted to None
+    for key in property_data:
+        if property_data[key] == "":
+            property_data[key] = None
+    
+    # Set default values for missing data
+    if property_data['Weighted_Area'] is None and property_data['Living_Area_M2'] is not None:
+        property_data['Weighted_Area'] = property_data['Living_Area_M2']
+    
+    if property_data['Floor_Number'] is None and property_data['Num_Floors'] is not None:
+        # For shared properties, try to extract floor from the address
+        if "mf" in relative_link.lower() or "tv" in relative_link.lower() or "th" in relative_link.lower():
+            floor_match = re.search(r'(\d+)(?:st|th|mf)', relative_link.lower())
+            if floor_match:
+                property_data['Floor_Number'] = int(floor_match.group(1))
+            else:
+                # Try to extract floor from the address number
+                floor_match = re.search(r'(\d+)(?:st|th|mf)', relative_link.lower())
+                if floor_match:
+                    property_data['Floor_Number'] = int(floor_match.group(1))
+                else:
+                    property_data['Floor_Number'] = 1
+        else:
+            property_data['Floor_Number'] = 1
+    
+    # Validate construction year
+    if property_data['Construction_Year'] is not None:
+        current_year = datetime.datetime.now().year
+        if property_data['Construction_Year'] > current_year:
+            property_data['Construction_Year'] = None
+            property_data['Built_Year'] = None
     
     return property_data
 
 def main(sample_size=None):
     # Load list of property links from CSV
-    df = pd.read_csv('scraped_properties.csv')
-    links = df['Link'].unique()
+    df = pd.read_csv('data/scraped_properties.csv')
+    
+    # Get unique properties (since we now have consolidated data)
+    unique_properties = df[['Property ID', 'Link']].drop_duplicates()
+    links = unique_properties['Link'].tolist()
+    unique_ids = unique_properties.set_index('Link')['Property ID'].to_dict()
     
     # Take a random sample if sample_size is specified
     if sample_size and sample_size < len(links):
         logging.info(f"Taking a random sample of {sample_size} links from {len(links)} total links")
         links = pd.Series(links).sample(n=sample_size, random_state=42).tolist()
-    
-    unique_ids = df.set_index('Link')['ID'].to_dict()
     
     browser, playwright = setup_browser()
     context = browser.new_context()
@@ -279,12 +425,24 @@ def main(sample_size=None):
     all_property_data = []
     
     start_time = time.time()
+    total_links = len(links)
     
     try:
         for i, link in enumerate(links):
             unique_id = unique_ids.get(link, "Unknown ID")
             max_retries = 3
             retry_count = 0
+            
+            # Calculate progress
+            progress = (i + 1) / total_links * 100
+            elapsed_time = time.time() - start_time
+            avg_time_per_item = elapsed_time / (i + 1) if i > 0 else 0
+            remaining_items = total_links - (i + 1)
+            estimated_remaining_time = remaining_items * avg_time_per_item
+            
+            logging.info(f"Processing property {i+1}/{total_links} ({progress:.1f}%)")
+            logging.info(f"ID: {unique_id}")
+            logging.info(f"Estimated time remaining: {estimated_remaining_time/60:.1f} minutes")
             
             while retry_count < max_retries:
                 try:
@@ -293,14 +451,7 @@ def main(sample_size=None):
                     
                     # Add a longer delay every 10 requests
                     if i > 0 and i % 10 == 0:
-                        elapsed_time = time.time() - start_time
-                        avg_time_per_item = elapsed_time / (i + 1)
-                        remaining_items = len(links) - (i + 1)
-                        estimated_remaining_time = remaining_items * avg_time_per_item
-                        
                         logging.info(f"Taking a longer break after {i} requests...")
-                        logging.info(f"Average time per item: {avg_time_per_item:.2f} seconds")
-                        logging.info(f"Estimated remaining time: {estimated_remaining_time/60:.2f} minutes")
                         time.sleep(random.uniform(10, 15))
                     else:
                         time.sleep(random.uniform(3, 5))
@@ -318,13 +469,13 @@ def main(sample_size=None):
             # Save progress every 20 items
             if i > 0 and i % 20 == 0:
                 temp_df = pd.DataFrame(all_property_data)
-                temp_df.to_csv(f'property_details_partial_{i}.csv', index=False, encoding='utf-8-sig')
+                temp_df.to_csv(f'data/property_details_partial_{i}.csv', index=False, encoding='utf-8-sig')
                 logging.info(f"Saved partial progress after processing {i} items")
     
     except KeyboardInterrupt:
         logging.info("Received keyboard interrupt, saving current progress...")
         if all_property_data:
-            pd.DataFrame(all_property_data).to_csv('property_details_interrupted.csv', index=False, encoding='utf-8-sig')
+            pd.DataFrame(all_property_data).to_csv('data/property_details_interrupted.csv', index=False, encoding='utf-8-sig')
         raise
     
     finally:
@@ -338,9 +489,21 @@ def main(sample_size=None):
     # Save final results
     if all_property_data:
         properties_df = pd.DataFrame(all_property_data)
-        output_file = 'property_details_sample.csv' if sample_size else 'property_details.csv'
+        output_file = 'data/property_details_sample.csv' if sample_size else 'data/property_details.csv'
         properties_df.to_csv(output_file, index=False, encoding='utf-8-sig')
         logging.info(f"Property details have been saved to '{output_file}'")
+        
+        # Log summary statistics
+        total_properties = len(properties_df)
+        properties_with_area = properties_df['Living_Area_M2'].notna().sum()
+        properties_with_rooms = properties_df['Num_Rooms'].notna().sum()
+        properties_with_year = properties_df['Construction_Year'].notna().sum()
+        
+        logging.info("\nScraping Summary:")
+        logging.info(f"Total properties processed: {total_properties}")
+        logging.info(f"Properties with area information: {properties_with_area} ({properties_with_area/total_properties*100:.1f}%)")
+        logging.info(f"Properties with room count: {properties_with_rooms} ({properties_with_rooms/total_properties*100:.1f}%)")
+        logging.info(f"Properties with construction year: {properties_with_year} ({properties_with_year/total_properties*100:.1f}%)")
 
 def get_user_choice():
     while True:

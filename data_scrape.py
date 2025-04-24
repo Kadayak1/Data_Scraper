@@ -1,149 +1,640 @@
 import csv
 import uuid
-from playwright.sync_api import sync_playwright
+from playwright.sync_api import sync_playwright, TimeoutError
 from bs4 import BeautifulSoup
 import time
 import random
 import os
 import logging
+from typing import List, Dict, Optional
+from datetime import datetime, timedelta
+import sys
+from tqdm import tqdm
+import urllib.parse
+import json
+import re
 
 # Set up logging
-logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
+logging.basicConfig(
+    level=logging.INFO,
+    format='%(asctime)s - %(levelname)s - %(message)s',
+    handlers=[
+        logging.FileHandler('scraper.log'),
+        logging.StreamHandler(sys.stdout)
+    ]
+)
+
+class ProgressTracker:
+    def __init__(self, total_pages: int):
+        self.start_time = datetime.now()
+        self.total_pages = total_pages
+        self.processed_pages = 0
+        self.total_containers = 0
+        self.processed_containers = 0
+        self.container_times = []
+        self.page_times = []
+        
+    def start_page(self, page_number: int):
+        self.page_start_time = datetime.now()
+        logging.info(f"\n{'='*50}")
+        logging.info(f"Starting page {page_number}/{self.total_pages}")
+        
+    def end_page(self, containers_count: int):
+        page_time = (datetime.now() - self.page_start_time).total_seconds()
+        self.page_times.append(page_time)
+        self.processed_pages += 1
+        self.total_containers += containers_count
+        
+        avg_page_time = sum(self.page_times) / len(self.page_times)
+        remaining_pages = self.total_pages - self.processed_pages
+        estimated_remaining_time = avg_page_time * remaining_pages
+        
+        logging.info(f"Page completed in {page_time:.2f}s")
+        logging.info(f"Found {containers_count} containers")
+        logging.info(f"Average page time: {avg_page_time:.2f}s")
+        logging.info(f"Estimated remaining time: {timedelta(seconds=int(estimated_remaining_time))}")
+        logging.info(f"Progress: {self.processed_pages}/{self.total_pages} pages ({self.processed_pages/self.total_pages*100:.1f}%)")
+        
+    def start_container(self):
+        self.container_start_time = datetime.now()
+        
+    def end_container(self):
+        container_time = (datetime.now() - self.container_start_time).total_seconds()
+        self.container_times.append(container_time)
+        self.processed_containers += 1
+        
+        if self.processed_containers % 10 == 0:  # Update progress every 10 containers
+            avg_container_time = sum(self.container_times) / len(self.container_times)
+            remaining_containers = self.total_containers - self.processed_containers
+            estimated_remaining_time = avg_container_time * remaining_containers
+            
+            logging.info(f"Processed {self.processed_containers}/{self.total_containers} containers")
+            logging.info(f"Average container time: {avg_container_time:.2f}s")
+            logging.info(f"Estimated remaining time: {timedelta(seconds=int(estimated_remaining_time))}")
+            
+    def get_summary(self):
+        total_time = (datetime.now() - self.start_time).total_seconds()
+        avg_page_time = sum(self.page_times) / len(self.page_times) if self.page_times else 0
+        avg_container_time = sum(self.container_times) / len(self.container_times) if self.container_times else 0
+        
+        logging.info("\n" + "="*50)
+        logging.info("Scraping Summary:")
+        logging.info(f"Total time: {timedelta(seconds=int(total_time))}")
+        logging.info(f"Total pages processed: {self.processed_pages}")
+        logging.info(f"Total containers processed: {self.processed_containers}")
+        logging.info(f"Average page time: {avg_page_time:.2f}s")
+        logging.info(f"Average container time: {avg_container_time:.2f}s")
+        logging.info("="*50)
 
 def setup_browser():
     playwright = sync_playwright().start()
-    browser = playwright.chromium.launch(headless=True)
+    browser = playwright.chromium.launch(
+        headless=True,
+        args=[
+            '--disable-blink-features=AutomationControlled',
+            '--disable-features=IsolateOrigins,site-per-process',
+            '--disable-site-isolation-trials',
+            '--disable-web-security',
+            '--disable-features=IsolateOrigins,site-per-process'
+        ]
+    )
     return browser, playwright
 
-def fetch_page_data(page, page_number, base_url):
-    page_data_list = []
+def wait_for_network_idle(page, timeout=30000):
+    """Wait for network activity to settle down"""
+    try:
+        page.wait_for_load_state('networkidle', timeout=timeout)
+    except TimeoutError:
+        logging.warning("Network idle timeout, continuing anyway")
+
+def construct_page_url(base_url: str, page_number: int) -> str:
+    """Properly construct a URL with page parameter"""
+    parsed_url = urllib.parse.urlparse(base_url)
+    query_params = urllib.parse.parse_qs(parsed_url.query)
+    
+    # Update the page parameter
+    query_params['page'] = [str(page_number)]
+    
+    # Rebuild the query string
+    new_query = urllib.parse.urlencode(query_params, doseq=True)
+    
+    # Reconstruct the URL
+    new_url = urllib.parse.urlunparse((
+        parsed_url.scheme,
+        parsed_url.netloc,
+        parsed_url.path,
+        parsed_url.params,
+        new_query,
+        parsed_url.fragment
+    ))
+    
+    return new_url
+
+def format_price(price_text: str) -> float:
+    """Format and convert price string to numeric value"""
+    if not price_text or price_text == "N/A":
+        return None
+    
+    # Remove any non-numeric characters except for decimal points
+    price_text = price_text.replace("kr.", "").replace(".", "").strip()
+    # Keep only digits and decimal points
+    price_text = re.sub(r'[^\d,]', '', price_text)
+    # Replace comma with dot for decimal
+    price_text = price_text.replace(",", ".")
     
     try:
-        # Construct URL with page number
-        url = f'{base_url}&page={page_number}'
-        logging.info(f"Loading page {page_number}: {url}")
-        
-        # Navigate to the page
-        page.goto(url, wait_until='networkidle')
-        
-        # Add a random delay to help with server load
-        time.sleep(random.uniform(2, 5))
-        
-        # Wait for the property containers to be visible
-        page.wait_for_selector('div.shadow.overflow-hidden.mx-4', timeout=10000)
-        
-        # Save screenshot for debugging
-        os.makedirs('debug_screenshots', exist_ok=True)
-        page.screenshot(path=f'debug_screenshots/page_{page_number}.png')
-        
-        # Save HTML for debugging
-        os.makedirs('debug_html', exist_ok=True)
-        with open(f'debug_html/page_{page_number}.html', 'w', encoding='utf-8') as f:
-            f.write(page.content())
-        
-        # Get the HTML content after JavaScript has been executed
-        html = page.content()
-        
-        # Use BeautifulSoup to parse the HTML content
-        soup = BeautifulSoup(html, 'html.parser')
-        
-        # Find property containers
-        containers = soup.find_all('div', class_='shadow overflow-hidden mx-4')
-        logging.info(f"Page {page_number}: Found {len(containers)} target containers.")
-        
-        # Extract information from each container
-        for container in containers:
-            # Generate a unique ID for each property container
-            unique_id = str(uuid.uuid4())
-            link_tag = container.find('a')
-            link = link_tag['href'] if link_tag else ""
+        return float(price_text)
+    except ValueError:
+        logging.warning(f"Could not convert price: {price_text}")
+        return None
+
+def format_date(date_text: str) -> str:
+    """Format and validate date string"""
+    if not date_text or date_text == "N/A":
+        return None
+    
+    # Check if it contains a date pattern DD-MM-YYYY
+    date_match = re.search(r'(\d{2})[.-](\d{2})[.-](\d{4})', date_text)
+    if date_match:
+        day, month, year = date_match.groups()
+        return f"{day}-{month}-{year}"
+    
+    return date_text
+
+def determine_sale_type(sale_type_text: str) -> str:
+    """Clean and standardize the sale type"""
+    if not sale_type_text or sale_type_text == "N/A":
+        return "Unknown"
+    
+    # Lowercase for comparison
+    sale_type_lower = sale_type_text.lower()
+    
+    # Map of known sale types
+    sale_type_mapping = {
+        "fri handel": "Free Sale",
+        "tvangsauktion": "Foreclosure",
+        "familie handel": "Family Sale",
+        "andet": "Other"
+    }
+    
+    # Check each known sale type
+    for key, value in sale_type_mapping.items():
+        if key in sale_type_lower:
+            return value
+    
+    # If we have a street address, it's likely misclassified and should be "Foreclosure"
+    if re.search(r'\d{4}', sale_type_lower):  # Contains postal code (4 digits)
+        return "Foreclosure"
+    
+    return sale_type_text
+
+def fetch_page_data(page, page_number: int, base_url: str, max_retries: int = 3) -> List[Dict]:
+    page_data_list = []
+    processed_property_ids = set()  # Track processed property IDs
+    
+    for attempt in range(max_retries):
+        try:
+            # Construct URL with page number
+            url = construct_page_url(base_url, page_number)
+            logging.info(f"Loading page {page_number} (attempt {attempt + 1}/{max_retries}): {url}")
             
-            # Extract property type
-            property_type_el = container.find('div', class_='text-gray-600')
-            property_type = property_type_el.text.strip().split(' ', 1)[-1] if property_type_el else "N/A"
+            # Navigate to the page and wait for network idle
+            page.goto(url, wait_until='domcontentloaded', timeout=60000)
+            wait_for_network_idle(page)
             
-            # Extract address
-            address_div = link_tag.find('div', class_='font-black text-sm') if link_tag else None
-            address_details = address_div.find_all('font') if address_div else []
-            address_lines = [line.text for line in address_details]
-            address = ', '.join(address_lines) if address_lines else ""
+            # Wait for the main content to load with specific selector
+            page.wait_for_selector('div[class*="shadow overflow-hidden mx-4"]', timeout=30000)
             
-            # Process sale records within the container
-            table = container.find('table')
-            if table:
-                table_rows = table.find_all('tr')
-                for row in table_rows:
-                    cells = row.find_all('td')
-                    if len(cells) >= 4:
-                        sale_type = cells[0].text.strip()
-                        sale_date = cells[1].text.strip()
-                        price = cells[2].text.strip()
+            # Add a random delay to help with server load
+            time.sleep(random.uniform(3, 6))
+            
+            # Save screenshot and HTML for debugging (only for first and failed pages)
+            if page_number == 1 or attempt > 0:
+                os.makedirs('debug/screenshots', exist_ok=True)
+                page.screenshot(path=f'debug/screenshots/page_{page_number}_attempt_{attempt+1}.png')
+                
+                os.makedirs('debug/html', exist_ok=True)
+                with open(f'debug/html/page_{page_number}_attempt_{attempt+1}.html', 'w', encoding='utf-8') as f:
+                    f.write(page.content())
+            
+            # Get the HTML content after JavaScript has been executed
+            html = page.content()
+            
+            # Use BeautifulSoup to parse the HTML content
+            soup = BeautifulSoup(html, 'html.parser')
+            
+            # Find property containers with specific selector
+            containers = soup.select('div[class*="shadow overflow-hidden mx-4"]')
+            
+            logging.info(f"Page {page_number}: Found {len(containers)} property containers.")
+            
+            if not containers:
+                logging.warning(f"No containers found on page {page_number}, retrying...")
+                time.sleep(random.uniform(5, 10))
+                continue
+            
+            # Extract information from each container with progress tracking
+            for container in tqdm(containers, desc="Containers", position=1, leave=False):
+                try:
+                    # Find link with specific selector
+                    link_tag = container.select_one('a[href*="/adresse/"]')
+                    if not link_tag:
+                        continue
                         
-                        page_data_list.append({
-                            'ID': unique_id,
-                            'Link': link,
-                            'Address': address,
-                            'Property Type': property_type,
-                            'Sale Type': sale_type,
-                            'Sale Date': sale_date,
-                            'Price': price,
-                            'Page Number': page_number
+                    link = link_tag['href']
+                    # Use the link as the unique identifier for the property
+                    property_id = link.split('/')[-1]
+                    
+                    # Skip if we've already processed this property
+                    if property_id in processed_property_ids:
+                        continue
+                        
+                    processed_property_ids.add(property_id)
+                    
+                    # Extract property type
+                    property_type = "N/A"
+                    type_el = container.select_one('div[class*="text-gray"]')
+                    if type_el:
+                        property_type = type_el.text.strip()
+                    
+                    # Extract address
+                    address = ""
+                    address_div = container.select_one('div[class*="font-black"]')
+                    if address_div:
+                        address = address_div.text.strip()
+                    
+                    # Process sale records within the container
+                    sales = []
+                    
+                    # Try desktop view first
+                    table = container.find('table')
+                    if table:
+                        table_rows = table.find_all('tr')
+                        for row in table_rows:
+                            cells = row.find_all('td')
+                            if len(cells) >= 4:
+                                raw_sale_type = cells[0].text.strip()
+                                raw_sale_date = cells[1].text.strip()
+                                raw_price = cells[2].text.strip()
+                                
+                                # Format and clean the data
+                                sale_type = determine_sale_type(raw_sale_type)
+                                sale_date = format_date(raw_sale_date)
+                                price = format_price(raw_price)
+                                
+                                sales.append({
+                                    'Sale Type': sale_type,
+                                    'Raw Sale Type': raw_sale_type,
+                                    'Sale Date': sale_date,
+                                    'Raw Sale Date': raw_sale_date,
+                                    'Price': price,
+                                    'Raw Price': raw_price
+                                })
+                    else:
+                        # Handle mobile view format with safer selector usage
+                        try:
+                            mobile_grid = container.select_one('div[class*="grid"]')
+                            if mobile_grid:
+                                # Safely get elements with error handling
+                                sale_type_element = mobile_grid.select_one('div:nth-child(1) span:last-child')
+                                sale_date_element = mobile_grid.select_one('div:nth-child(2) span:last-child')
+                                price_element = mobile_grid.select_one('div:nth-child(3) span:last-child')
+                                
+                                if sale_type_element and sale_date_element and price_element:
+                                    raw_sale_type = sale_type_element.text.strip()
+                                    raw_sale_date = sale_date_element.text.strip()
+                                    raw_price = price_element.text.strip()
+                                    
+                                    # Format and clean the data
+                                    sale_type = determine_sale_type(raw_sale_type)
+                                    sale_date = format_date(raw_sale_date)
+                                    price = format_price(raw_price)
+                                    
+                                    sales.append({
+                                        'Sale Type': sale_type,
+                                        'Raw Sale Type': raw_sale_type,
+                                        'Sale Date': sale_date,
+                                        'Raw Sale Date': raw_sale_date,
+                                        'Price': price,
+                                        'Raw Price': raw_price
+                                    })
+                        except Exception as e:
+                            logging.warning(f"Error parsing mobile view for property {property_id}: {e}")
+                    
+                    # If no sales records were found, add a record with N/A values
+                    if not sales:
+                        sales.append({
+                            'Sale Type': 'Unknown',
+                            'Raw Sale Type': 'N/A',
+                            'Sale Date': None,
+                            'Raw Sale Date': 'N/A',
+                            'Price': None,
+                            'Raw Price': 'N/A'
                         })
+                    
+                    # Create a single entry for this property with all sales data
+                    property_data = {
+                        'Property ID': property_id,
+                        'Link': link,
+                        'Address': address,
+                        'Property Type': property_type,
+                        'Sales': json.dumps(sales),  # Store all sales as JSON
+                        'First Sale Type': sales[0]['Sale Type'],
+                        'First Sale Date': sales[0]['Sale Date'],
+                        'First Sale Price': sales[0]['Price'],
+                        'Sales Count': len(sales),
+                        'Page Number': page_number
+                    }
+                    
+                    page_data_list.append(property_data)
                         
-    except Exception as e:
-        logging.error(f"Error processing page {page_number}: {e}")
+                except Exception as e:
+                    logging.error(f"Error processing container on page {page_number}: {e}")
+                    continue
+            
+            # Log the actual number of unique properties processed
+            logging.info(f"Processed {len(processed_property_ids)} unique properties on page {page_number}")
+            
+            return page_data_list
+            
+        except TimeoutError:
+            logging.warning(f"Timeout on page {page_number}, attempt {attempt + 1}/{max_retries}")
+            if attempt < max_retries - 1:
+                time.sleep(random.uniform(10, 15))
+                continue
+            else:
+                logging.error(f"All retries failed for page {page_number}")
+                return []
+        except Exception as e:
+            logging.error(f"Error processing page {page_number}: {e}")
+            if attempt < max_retries - 1:
+                time.sleep(random.uniform(5, 10))
+                continue
+            else:
+                return []
     
     return page_data_list
 
 def main():
-    browser, playwright = setup_browser()
-    context = browser.new_context()
-    page = context.new_page()
     all_data_list = []
+    all_property_ids = set()  # Track all unique property IDs
     
     # Define the base URLs to scrape
     base_urls = [
-        'https://www.boligsiden.dk/landsdel/koebenhavns-omegn/solgte/alle?sortAscending=false&registrationTypes=auction&latestRegistrationType=auction',
-        'https://www.boligsiden.dk/omraade/sjaelland/solgte?sortAscending=false&registrationTypes=auction&latestRegistrationType=auction',
-        'https://www.boligsiden.dk/omraade/jylland/solgte?sortAscending=false&registrationTypes=auction&latestRegistrationType=auction',
-        'https://www.boligsiden.dk/landsdel/fyn/solgte?sortAscending=false&registrationTypes=auction&latestRegistrationType=auction'
+        'https://www.boligsiden.dk/landsdel/koebenhavns-omegn/solgte/alle?sortAscending=false&mapBounds=12.144761,55.587612,12.609994,55.82086&registrationTypes=auction&latestRegistrationType=auction',
+        #'https://www.boligsiden.dk/omraade/jylland/solgte?sortAscending=false&registrationTypes=auction&latestRegistrationType=auction',
+        #'https://www.boligsiden.dk/landsdel/fyn/solgte?sortAscending=false&registrationTypes=auction&latestRegistrationType=auction'
     ]
     
+    # Set up browser outside the try block so we can refer to it in the finally block
+    browser = None
+    playwright = None
+    
     try:
+        browser, playwright = setup_browser()
+        context = browser.new_context(
+            user_agent='Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36'
+        )
+        page = context.new_page()
+        
         # Process each base URL
         for base_url in base_urls:
-            logging.info(f"Processing URL: {base_url}")
-            # Process pages sequentially for each URL
-            for page_number in range(1, 30):  # Keep the same page limit for each URL
-                try:
-                    page_data = fetch_page_data(page, page_number, base_url)
-                    if not page_data:  # If no data was found, we've reached the end of pages
-                        logging.info(f"No more data found for URL: {base_url}")
-                        break
-                    all_data_list.extend(page_data)
-                    # Add a small delay between pages
-                    time.sleep(random.uniform(1, 3))
-                except Exception as e:
-                    logging.error(f"Error processing page {page_number} for URL {base_url}: {e}")
-                    continue
+            logging.info(f"\n{'='*50}")
+            logging.info(f"Starting to process URL: {base_url}")
             
-            # Add a longer delay between different URLs
-            time.sleep(random.uniform(5, 8))
+            try:
+                # First, determine the total number of pages
+                page.goto(base_url, wait_until='domcontentloaded', timeout=60000)
+                wait_for_network_idle(page)
+                
+                # Try to find the total number of pages
+                try:
+                    # Look for pagination elements
+                    pagination = page.query_selector('div[class*="pagination"]')
+                    if pagination:
+                        # Try to find the last page number
+                        page_links = pagination.query_selector_all('a')
+                        if page_links:
+                            last_page = page_links[-2].text_content()
+                            total_pages = int(last_page)
+                            logging.info(f"Found {total_pages} total pages in pagination")
+                        else:
+                            # If no page links found, check if there's a "next" button
+                            next_button = pagination.query_selector('a[class*="next"]')
+                            if next_button:
+                                # If there's a next button, we'll need to determine pages dynamically
+                                total_pages = 29  # Default to known value
+                                logging.info("Found pagination with next button, using default of 29 pages")
+                            else:
+                                total_pages = 1
+                                logging.info("No pagination links found, assuming single page")
+                    else:
+                        # Check if there are any results at all
+                        no_results = page.query_selector('div[class*="no-results"]')
+                        if no_results:
+                            logging.warning("No results found for this URL")
+                            continue
+                        else:
+                            total_pages = 29  # Default to known value
+                            logging.info("No pagination found, using default of 29 pages")
+                except Exception as e:
+                    logging.warning(f"Could not determine total pages: {e}")
+                    total_pages = 29  # Default to known value
+                    logging.info("Using default of 29 pages")
+                
+                progress_tracker = ProgressTracker(total_pages)
+                page_number = 1
+                consecutive_empty_pages = 0
+                has_next_page = True
+                
+                with tqdm(total=total_pages, desc="Pages", position=0) as pbar:
+                    while has_next_page and consecutive_empty_pages < 3:
+                        try:
+                            progress_tracker.start_page(page_number)
+                            page_data = fetch_page_data(page, page_number, base_url)
+                            
+                            if not page_data:
+                                consecutive_empty_pages += 1
+                                logging.warning(f"Empty page {page_number}, consecutive empty pages: {consecutive_empty_pages}")
+                                # Call end_page with 0 containers if no data
+                                progress_tracker.end_page(0)
+                            else:
+                                consecutive_empty_pages = 0
+                                # Count unique properties for this page
+                                page_property_ids = set()
+                                for data in page_data:
+                                    page_property_ids.add(data['Property ID'])
+                                    all_property_ids.add(data['Property ID'])
+                                
+                                all_data_list.extend(page_data)
+                                logging.info(f"Successfully processed page {page_number}, total unique properties: {len(all_property_ids)}")
+                                
+                                # Update progress tracker with actual count of unique properties on this page
+                                progress_tracker.end_page(len(page_property_ids))
+                            
+                            pbar.update(1)
+                            
+                            # Check if there's a next page
+                            if page_number < total_pages:
+                                # Add a small delay between pages
+                                time.sleep(random.uniform(3, 6))
+                                page_number += 1
+                            else:
+                                has_next_page = False
+                            
+                        except Exception as e:
+                            logging.error(f"Error processing page {page_number} for URL {base_url}: {e}")
+                            consecutive_empty_pages += 1
+                            # Call end_page with 0 containers on error
+                            progress_tracker.end_page(0)
+                            
+                            # Check if we need to restart the browser due to a crash
+                            try:
+                                # Try a simple operation to check if browser is still usable
+                                page.evaluate("1 + 1")
+                            except Exception:
+                                logging.error("Browser appears to have crashed, restarting...")
+                                # Close and restart browser
+                                try:
+                                    if context:
+                                        context.close()
+                                    if browser:
+                                        browser.close()
+                                    if playwright:
+                                        playwright.stop()
+                                except Exception as close_error:
+                                    logging.error(f"Error closing browser: {close_error}")
+                                
+                                # Restart browser
+                                browser, playwright = setup_browser()
+                                context = browser.new_context(
+                                    user_agent='Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36'
+                                )
+                                page = context.new_page()
+                                logging.info("Browser restarted successfully")
+                            
+                            time.sleep(random.uniform(10, 15))
+                            continue
+                
+                progress_tracker.get_summary()
+                logging.info(f"Finished processing URL: {base_url}")
+                
+                # Save intermediate results after each base URL is processed
+                save_data_to_csv(all_data_list, f"data/scraped_properties_intermediate_{len(all_property_ids)}_properties.csv")
+                
+                time.sleep(random.uniform(10, 15))
+            except Exception as url_error:
+                logging.error(f"Error processing URL {base_url}: {url_error}")
+                # Continue with the next URL
+                continue
         
-        # Write the data to a CSV file
-        csv_columns = ['ID', 'Link', 'Address', 'Property Type', 'Sale Type', 'Sale Date', 'Price', 'Page Number']
-        with open('scraped_properties.csv', 'w', newline='', encoding='utf-8') as csvfile:
+        # Write final data to CSV file
+        save_data_to_csv(all_data_list, "data/scraped_properties.csv")
+        
+        # Also save a separate file with expanded sales data (one row per sale)
+        save_expanded_sales_data(all_data_list, "data/scraped_properties_expanded.csv")
+        
+        # Calculate and log summary statistics
+        unique_properties = len(all_property_ids)
+        total_sales = sum(data['Sales Count'] for data in all_data_list)
+        logging.info(f"\n{'='*50}")
+        logging.info("Scraping Summary:")
+        logging.info(f"Total unique properties: {unique_properties}")
+        logging.info(f"Total sale records: {total_sales}")
+        if unique_properties > 0:
+            logging.info(f"Average sales per property: {total_sales/unique_properties:.2f}")
+        logging.info(f"Scraped data has been saved to 'data/scraped_properties.csv'")
+        logging.info(f"Expanded sales data has been saved to 'data/scraped_properties_expanded.csv'")
+        logging.info(f"{'='*50}")
+        
+    except Exception as e:
+        logging.critical(f"Critical error in main function: {e}")
+        # Save any data we've collected so far
+        if all_data_list:
+            save_data_to_csv(all_data_list, "data/scraped_properties_error_recovery.csv")
+            logging.info(f"Saved {len(all_data_list)} records to error recovery file")
+    
+    finally:
+        # Clean up resources
+        try:
+            if 'context' in locals() and context:
+                context.close()
+            if browser:
+                browser.close()
+            if playwright:
+                playwright.stop()
+        except Exception as close_error:
+            logging.error(f"Error during cleanup: {close_error}")
+
+def save_data_to_csv(data_list: List[Dict], filepath: str):
+    """Save data to a CSV file"""
+    if not data_list:
+        logging.warning(f"No data to save to {filepath}")
+        return
+        
+    os.makedirs(os.path.dirname(filepath), exist_ok=True)
+    csv_columns = ['Property ID', 'Link', 'Address', 'Property Type', 'Sales', 
+                   'First Sale Type', 'First Sale Date', 'First Sale Price', 
+                   'Sales Count', 'Page Number']
+    
+    try:
+        with open(filepath, 'w', newline='', encoding='utf-8') as csvfile:
             writer = csv.DictWriter(csvfile, fieldnames=csv_columns)
             writer.writeheader()
-            for data in all_data_list:
+            for data in data_list:
                 writer.writerow(data)
+        logging.info(f"Successfully saved {len(data_list)} records to {filepath}")
+    except Exception as e:
+        logging.error(f"Error saving to CSV {filepath}: {e}")
+
+def save_expanded_sales_data(data_list: List[Dict], filepath: str):
+    """Save expanded sales data with one row per sale"""
+    if not data_list:
+        logging.warning(f"No data to save to {filepath}")
+        return
         
-        logging.info(f"Scraped data has been saved to 'scraped_properties.csv'. Total properties: {len(all_data_list)}")
-        
-    finally:
-        context.close()
-        browser.close()
-        playwright.stop()
+    os.makedirs(os.path.dirname(filepath), exist_ok=True)
+    expanded_data = []
+    
+    # Expand the sales data
+    for property_data in data_list:
+        try:
+            sales = json.loads(property_data['Sales'])
+            for i, sale in enumerate(sales):
+                expanded_row = {
+                    'Property ID': property_data['Property ID'],
+                    'Link': property_data['Link'],
+                    'Address': property_data['Address'],
+                    'Property Type': property_data['Property Type'],
+                    'Sale Type': sale['Sale Type'],
+                    'Sale Date': sale['Sale Date'],
+                    'Price': sale['Price'],
+                    'Raw Sale Type': sale['Raw Sale Type'],
+                    'Raw Sale Date': sale['Raw Sale Date'],
+                    'Raw Price': sale['Raw Price'],
+                    'Sale Index': i + 1,
+                    'Total Sales': len(sales),
+                    'Page Number': property_data['Page Number']
+                }
+                expanded_data.append(expanded_row)
+        except Exception as e:
+            logging.error(f"Error expanding sales data for property {property_data['Property ID']}: {e}")
+    
+    # Define columns for the expanded data
+    csv_columns = ['Property ID', 'Link', 'Address', 'Property Type', 
+                   'Sale Type', 'Sale Date', 'Price', 
+                   'Raw Sale Type', 'Raw Sale Date', 'Raw Price',
+                   'Sale Index', 'Total Sales', 'Page Number']
+    
+    try:
+        with open(filepath, 'w', newline='', encoding='utf-8') as csvfile:
+            writer = csv.DictWriter(csvfile, fieldnames=csv_columns)
+            writer.writeheader()
+            for data in expanded_data:
+                writer.writerow(data)
+        logging.info(f"Successfully saved {len(expanded_data)} expanded sales records to {filepath}")
+    except Exception as e:
+        logging.error(f"Error saving expanded data to CSV {filepath}: {e}")
 
 if __name__ == "__main__":
     main()

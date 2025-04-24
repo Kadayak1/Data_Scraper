@@ -34,7 +34,11 @@ ENV/
 *.swo
 
 # Project specific
+debug/
 debug_screenshots/
 debug_html/
-*.csv
+data/*.csv
+!data/property_details.csv
+!data/property_details_sample.csv
+!data/scraped_properties.csv
 *.log 
