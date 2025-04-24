@@ -1,0 +1,54 @@
+MIT License
+
+Copyright (c) 2025 Juan Daniel Sepúlveda Olarte (GitHub: Kadayak1)
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+
+Additional Terms and Conditions:
+
+1. Data Usage and Privacy:
+   - The software is designed to scrape publicly available real estate data from Boligsiden.
+   - Users must comply with Boligsiden's terms of service and robots.txt guidelines.
+   - Users are responsible for ensuring their data collection practices comply with applicable laws and regulations.
+
+2. Rate Limiting and Ethical Scraping:
+   - Users must implement reasonable rate limiting to avoid overloading the source website.
+   - The software includes built-in delays and should not be modified to increase scraping frequency.
+   - Users should respect the source website's bandwidth and server resources.
+
+3. Data Usage Restrictions:
+   - The scraped data should be used for research and analysis purposes only.
+   - Users must not use the data for commercial purposes without proper authorization.
+   - Any published research using this data must properly cite the source.
+
+4. Machine Learning Applications:
+   - The software is optimized for machine learning applications in real estate analysis.
+   - Users are encouraged to share improvements and modifications to the data processing pipeline.
+   - Any derived models or insights should be used responsibly and ethically.
+
+5. Attribution:
+   - When using this software for research or analysis, proper attribution should be given.
+   - Any modifications to the code should be clearly documented and shared with the community.
+
+6. Disclaimer:
+   - The authors make no representations or warranties about the accuracy of the scraped data.
+   - Users are responsible for validating and cleaning the data for their specific use cases.
+   - The software is provided for research purposes only and should not be used for making financial decisions.
+
+By using this software, you agree to these additional terms and conditions. 
