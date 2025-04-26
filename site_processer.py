@@ -1,19 +1,14 @@
 import logging
-import pandas as pd
-from playwright.sync_api import sync_playwright
 from bs4 import BeautifulSoup
 import os
 import time
 import random
 import re
 import datetime
-import json
 from selenium.webdriver.common.by import By
 from selenium import webdriver
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
-import concurrent.futures
-import multiprocessing
 import csv
 
 # Set up logging
@@ -49,34 +44,12 @@ REGEX_PATTERNS = {
     ]
 }
 
-def setup_browser():
-    """Sets up a browser with appropriate configuration for JavaScript-heavy sites."""
-    playwright = sync_playwright().start()
-    
-    # Use non-headless mode for debugging if needed
-    headless = True  # Set to False for debugging
-    
-    # Configure browser with appropriate settings
-    browser = playwright.chromium.launch(
-        headless=headless,
-        args=[
-            '--disable-web-security',  # Bypasses CORS for better data extraction
-            '--disable-features=IsolateOrigins,site-per-process',  # Helps with some complex sites
-            '--disable-site-isolation-trials',
-            '--disable-setuid-sandbox',
-            '--no-sandbox'
-        ],
-        timeout=60000  # Increase launch timeout to 60 seconds
-    )
-    
-    return browser, playwright
-
 def extract_property_details(soup):
     """
     Extract property details from the soup object.
     Returns a dictionary of property details.
     """
-    details = {}
+    processed_details = {}
     
     # Try multiple selectors for detail sections
     detail_sections = []
@@ -84,7 +57,13 @@ def extract_property_details(soup):
         ".property-details", ".property-specs", ".property-info", 
         "[class*='details']", "[class*='specs']", "[class*='info']",
         "[id*='details']", "[id*='specifications']", "[id*='info']",
-        "section", "article", ".facts-table", ".estateFacts"
+        "section", "article", ".facts-table", ".estateFacts", 
+        # Add new selectors based on observed HTML structure
+        "div.scroll-mt-0", "div[id='oversigt']", 
+        # Replace Tailwind-style selectors with more compatible alternatives
+        "div.pt-22", ".pt-22", 
+        "div.flex", "div.space-y-2",
+        "div.whitespace-nowrap"
     ]:
         sections = soup.select(selector)
         if sections:
@@ -97,7 +76,11 @@ def extract_property_details(soup):
         for row_selector in [
             "tr", ".fact-row", ".detail-row", "li", ".item", 
             "[class*='row']", "[class*='item']", "[class*='field']",
-            "div.row", "div.flex"
+            "div.row", "div.flex", 
+            # Add new selectors based on observed HTML structure
+            "div.inline-flex", "div.space-y-2", "div.justify-between",
+            "div.mt-4", "div.mb-6", "div.whitespace-nowrap",
+            "div[class*='tag']", "span[class*='text']"
         ]:
             rows = section.select(row_selector)
             if rows:
@@ -105,7 +88,6 @@ def extract_property_details(soup):
                 logging.info(f"Found {len(rows)} detail rows with selector: {row_selector}")
     
     # Process each detail row
-    processed_details = {}
     for row in detail_rows:
         try:
             # Try to find label and value divs in various formats
@@ -113,11 +95,11 @@ def extract_property_details(soup):
             value_div = None
             
             # Method 1: Common class names for label and value
-            for label_selector in [".label", ".key", ".name", "dt", "th", "[class*='label']", "[class*='key']"]:
+            for label_selector in [".label", ".key", ".name", "dt", "th", "[class*='label']", "[class*='key']", "label", "div.text-xs"]:
                 if not label_div:
                     label_div = row.select_one(label_selector)
             
-            for value_selector in [".value", ".val", ".data", "dd", "td", "[class*='value']", "[class*='val']"]:
+            for value_selector in [".value", ".val", ".data", "dd", "td", "[class*='value']", "[class*='val']", "div.text-sm", "div.text-blue-900", "span.text-blue-900"]:
                 if not value_div:
                     value_div = row.select_one(value_selector)
             
@@ -140,7 +122,53 @@ def extract_property_details(soup):
                     label_div = headers[0]
                     value_div = row.find("p")
             
-            # Method 4: Last resort - use first and second divs or spans
+            # Method 4: Check for SVG icons with adjacent text
+            if not label_div or not value_div:
+                # If there's an SVG and text/span element, the text might be a property value
+                if row.find("svg") and (row.find("span") or row.get_text().strip()):
+                    # The text content after the SVG could be a property value
+                    svg = row.find("svg")
+                    if svg and svg.next_sibling:
+                        if isinstance(svg.next_sibling, str) and svg.next_sibling.strip():
+                            # SVG followed by text directly
+                            value_div = svg.next_sibling
+                        elif svg.next_sibling.name == "span":
+                            # SVG followed by span
+                            value_div = svg.next_sibling
+                            
+                    # Try to determine the property type from the SVG
+                    if svg and svg.get('class'):
+                        svg_classes = ' '.join(svg.get('class'))
+                        if 'floor' in svg_classes or 'home' in svg_classes:
+                            label_div = "living_area"
+                        elif 'bed' in svg_classes or 'bedroom' in svg_classes:
+                            label_div = "rooms"
+                        elif 'bath' in svg_classes or 'toilet' in svg_classes:
+                            label_div = "bathrooms"
+            
+            # Method 5: For div.inline-flex elements, check for property-specific patterns
+            if not label_div or not value_div:
+                row_text = row.get_text().strip()
+                if 'm²' in row_text:
+                    label_div = "living_area"
+                    # Extract the number before m²
+                    match = re.search(r'(\d+)\s*m²', row_text)
+                    if match:
+                        value_div = match.group(1)
+                elif 'værelser' in row_text:
+                    label_div = "rooms"
+                    # Extract the number before værelser
+                    match = re.search(r'(\d+)\s*værelser', row_text)
+                    if match:
+                        value_div = match.group(1)
+                elif 'toilet' in row_text:
+                    label_div = "toilets"
+                    # Extract the number before toilet
+                    match = re.search(r'(\d+)\s*toilet', row_text)
+                    if match:
+                        value_div = match.group(1)
+                
+            # Method 6: Last resort - use first and second divs or spans
             if not label_div or not value_div:
                 divs = row.find_all("div", recursive=False)
                 if len(divs) >= 2:
@@ -154,8 +182,17 @@ def extract_property_details(soup):
             
             # If we have both label and value
             if label_div and value_div:
-                label = label_div.get_text().strip().lower()
-                value = value_div.get_text().strip()
+                # Handle the case where label_div is a string (from our detection logic)
+                if isinstance(label_div, str):
+                    label = label_div
+                else:
+                    label = label_div.get_text().strip().lower()
+                
+                # Handle the case where value_div is a string (from our detection logic)
+                if isinstance(value_div, str):
+                    value = value_div.strip()
+                else:
+                    value = value_div.get_text().strip()
                 
                 # Clean up the label by removing any trailing colons
                 label = label.rstrip(":").strip()
@@ -181,7 +218,13 @@ def extract_property_details(soup):
                     'boligtype': 'property_type',
                     'etage': 'floor',
                     'kælder': 'basement',
-                    'liggetid': 'days_on_market'
+                    'liggetid': 'days_on_market',
+                    'toilet': 'toilets',
+                    'badeværelse': 'bathrooms',
+                    'varme': 'heating_type',
+                    'tag': 'roof_type',
+                    'ydervæg': 'wall_material',
+                    'ydermur': 'wall_material'
                 }
                 
                 # Map the label to English if possible
@@ -220,7 +263,10 @@ def extract_property_details(soup):
         energy_selectors = [
             "img[src*='energy'], img[alt*='energy'], img[src*='energi'], img[alt*='energi']",
             "[class*='energy-label'], [class*='energi'], [id*='energy'], [id*='energi']",
-            ".energy-rating, .energy-class, .energy-certificate"
+            ".energy-rating, .energy-class, .energy-certificate",
+            # Add new selectors for energy labels
+            "svg[class*='w-7'][class*='h-7']", "div.cursor-pointer svg", 
+            "div[data-tooltipped] svg", "div.w-10.h-10 svg"
         ]
         
         for selector in energy_selectors:
@@ -237,7 +283,20 @@ def extract_property_details(soup):
                         if energy_match:
                             processed_details['energy_label'] = energy_match.group(1).upper()
                             break
-                    
+                    # Check for SVG title element that might contain energy rating
+                    elif element.name == 'svg':
+                        title_elem = element.find('title')
+                        if title_elem:
+                            title_text = title_elem.get_text()
+                            if 'energimærke' in title_text.lower() or 'energy' in title_text.lower():
+                                energy_match = re.search(r'\b([A-G][+\-]?)\b', title_text, re.IGNORECASE)
+                                if energy_match:
+                                    processed_details['energy_label'] = energy_match.group(1).upper()
+                                    break
+                                elif 'intet' in title_text.lower() or 'no' in title_text.lower():
+                                    # "Intet energimærke" means "No energy label"
+                                    processed_details['energy_label'] = "N/A"
+                                    break
                     # Check if it's an element with energy class as text content
                     else:
                         text = element.get_text().strip()
@@ -245,6 +304,76 @@ def extract_property_details(soup):
                         if energy_match:
                             processed_details['energy_label'] = energy_match.group(1).upper()
                             break
+    
+    # Try to extract price specifically from the page
+    if 'price' not in processed_details:
+        price_selectors = [
+            "h2.text-blue-900", 
+            "div.text-blue-900.text-28px", 
+            "h2.text-28px",
+            ".text-blue-900.font-semibold"
+        ]
+        
+        for selector in price_selectors:
+            price_elements = soup.select(selector)
+            for element in price_elements:
+                price_text = element.get_text().strip()
+                if 'kr' in price_text or '.' in price_text:
+                    # Looks like a price
+                    price_match = re.search(r'([\d.,]+)', price_text)
+                    if price_match:
+                        price = price_match.group(1).replace('.', '').replace(',', '')
+                        processed_details['price'] = price
+                        break
+    
+    # Extract property type if not found yet
+    if 'property_type' not in processed_details:
+        type_selectors = [
+            "span.text-gray-700", 
+            "p.text-xs span.text-gray-700"
+        ]
+        
+        for selector in type_selectors:
+            type_elements = soup.select(selector)
+            if type_elements:
+                property_type = type_elements[0].get_text().strip()
+                processed_details['property_type'] = property_type
+                break
+    
+    # Extract rooms from specific tags if not found yet
+    if 'rooms' not in processed_details:
+        rooms_selectors = [
+            "div.inline-flex span.text-blue-900",
+            "div[class*='tag'] span.text-blue-900"
+        ]
+        
+        for selector in rooms_selectors:
+            room_elements = soup.select(selector)
+            for element in room_elements:
+                text = element.get_text().strip()
+                if 'værelser' in text:
+                    rooms_match = re.search(r'(\d+)', text)
+                    if rooms_match:
+                        processed_details['rooms'] = rooms_match.group(1)
+                        break
+    
+    # Extract living area from specific tags if not found yet
+    if 'living_area' not in processed_details:
+        area_selectors = [
+            "div.inline-flex span.text-blue-900",
+            "div[class*='tag'] span.text-blue-900",
+            "span[class*='whitespace-nowrap']"
+        ]
+        
+        for selector in area_selectors:
+            area_elements = soup.select(selector)
+            for element in area_elements:
+                text = element.get_text().strip()
+                if 'm²' in text:
+                    area_match = re.search(r'(\d+)', text)
+                    if area_match:
+                        processed_details['living_area'] = area_match.group(1)
+                        break
     
     return processed_details
 
@@ -294,186 +423,6 @@ def parse_address(address_text):
         address_parts['Street'] = address_text.strip()
     
     return address_parts
-
-def format_value_for_ml(value, value_type='string'):
-    """Enhanced value formatting with better handling of edge cases."""
-    if not value or value in ["N/A", "Ikke oplyst"]:
-        return None
-        
-    if value_type == 'number':
-        # Handle decimal numbers and ranges
-        matches = re.findall(r'(\d+(?:[,.]\d+)?)', value)
-        if matches:
-            # If multiple numbers found, take the first one
-            num_str = matches[0].replace(',', '.')
-            try:
-                return float(num_str)
-            except ValueError:
-                return None
-        return None
-        
-    if value_type == 'price':
-        if not value:
-            return None
-            
-        # Remove parenthetical content
-        value = re.sub(r'\([^)]*\)', '', value)
-        
-        # Extract price value, handling different formats
-        price_match = re.search(r'([\d.,]+)(?:\s*(?:kr\.?|DKK))?', value)
-        if price_match:
-            price_str = price_match.group(1)
-            # Remove dots and replace comma with dot
-            price_str = price_str.replace('.', '').replace(',', '.')
-            try:
-                return float(price_str)
-            except ValueError:
-                return None
-        return None
-        
-    if value_type == 'year':
-        # Extract year, handling ranges and approximate years
-        year_match = re.search(r'(\d{4})', value)
-        if year_match:
-            try:
-                year = int(year_match.group(1))
-                current_year = datetime.datetime.now().year
-                # Basic validation
-                if 1500 <= year <= current_year + 5:  # Allow for planned construction
-                    return year
-            except ValueError:
-                pass
-        return None
-        
-    # For string values, clean and standardize
-    return value.strip()
-
-def extract_modal_data(driver):
-    """Extracts property data from a modal dialog that has been opened."""
-    try:
-        # Initialize the dictionary to store extracted modal data
-        modal_data = {}
-        
-        # Dictionary mapping Danish field names to our standardized field names
-        field_mapping = {
-            'Boligareal': 'Living_Area',
-            'Grundareal': 'Lot_Size',
-            'Vægtet areal': 'Weighted_Area',
-            'Opførelsesår': 'Built_Year',
-            'Antal værelser': 'Rooms',
-            'Antal toiletter': 'Toilets',
-            'Antal badeværelser': 'Bathrooms',
-            'Antal etager': 'Floor_Count',
-            'Seneste ombygningsår': 'Last_Remodel_Year',
-            'Kælderareal': 'Basement_Size',
-            'Energimærke': 'Energy_Label'
-        }
-        
-        # Wait briefly for the modal to be fully visible
-        time.sleep(1)
-        
-        # Find all rows in the modal that might contain property information
-        try:
-            # Try different approaches to find the rows
-            rows = driver.find_elements(By.XPATH, "//div[@role='dialog']//div[contains(@class, 'row')] | //div[@role='dialog']//div[contains(@class, 'grid')] | //div[@id='modal-root']//div[contains(@class, 'flex')]")
-            
-            if not rows:
-                # If no rows found with class-based approach, try more general approach
-                rows = driver.find_elements(By.XPATH, "//div[@role='dialog']//div | //div[@id='modal-root']//div")
-                
-            # Process each row
-            for row in rows:
-                row_text = row.text.strip()
-                
-                # Skip empty rows or very short text (probably not a data row)
-                if not row_text or len(row_text) < 3:
-                    continue
-                
-                # Check if this row contains any of our field names
-                for danish_name, field_name in field_mapping.items():
-                    if danish_name in row_text:
-                        # Found a match, extract the value
-                        # The value is typically after the field name, separated by a delimiter
-                        value_text = row_text.split(danish_name, 1)[1].strip()
-                        if value_text:
-                            # Remove any common delimiters like ":" at the beginning
-                            value_text = value_text.lstrip(':').strip()
-                            modal_data[field_name] = value_text
-                            logging.debug(f"Found {field_name}: {value_text}")
-                            break
-        except Exception as e:
-            logging.error(f"Error processing rows in modal: {e}")
-        
-        # If we didn't find rows with the above approach, try looking for labels and values
-        if not modal_data:
-            try:
-                # Find all label elements
-                labels = driver.find_elements(By.XPATH, "//div[@role='dialog']//span | //div[@role='dialog']//div | //div[@id='modal-root']//span | //div[@id='modal-root']//div")
-                
-                for label in labels:
-                    label_text = label.text.strip()
-                    
-                    # Check if this label matches any of our field names
-                    for danish_name, field_name in field_mapping.items():
-                        if danish_name in label_text:
-                            # Try to find the value in the next element
-                            try:
-                                # Find the parent of this label
-                                parent_element = driver.execute_script("return arguments[0].parentNode;", label)
-                                
-                                # Find all elements within the parent that might contain the value
-                                value_elements = parent_element.find_elements(By.XPATH, ".//div | .//span | .//p")
-                                
-                                for value_elem in value_elements:
-                                    value_text = value_elem.text.strip()
-                                    
-                                    # Skip if it's the label itself or too short
-                                    if value_text == label_text or not value_text or len(value_text) < 2:
-                                        continue
-                                    
-                                    # Skip if it contains other field names (likely another label)
-                                    if any(name in value_text for name in field_mapping.keys()):
-                                        continue
-                                    
-                                    modal_data[field_name] = value_text
-                                    logging.debug(f"Found {field_name}: {value_text}")
-                                    break
-                            except Exception as e:
-                                logging.error(f"Error finding value for {field_name}: {e}")
-                            break
-            except Exception as e:
-                logging.error(f"Error finding labels in modal: {e}")
-        
-        # Special handling for energy label which might be displayed differently
-        if 'Energy_Label' not in modal_data:
-            try:
-                # Try to find energy label directly
-                energy_elements = driver.find_elements(By.XPATH, "//div[contains(@class, 'energy')] | //div[contains(text(), 'Energimærke')] | //span[contains(text(), 'Energimærke')]")
-                
-                for element in energy_elements:
-                    element_text = element.text.strip()
-                    if "Energimærke" in element_text:
-                        # Extract the energy rating (usually a letter A-G, possibly with +/-)
-                        energy_match = re.search(r'[A-G][+\-]?', element_text, re.IGNORECASE)
-                        if energy_match:
-                            modal_data['Energy_Label'] = energy_match.group(0)
-                            break
-                        
-                        # If no match with regex, try to extract the part after "Energimærke"
-                        parts = element_text.split("Energimærke", 1)
-                        if len(parts) > 1 and parts[1].strip():
-                            # Take the first word/character after "Energimærke"
-                            energy_value = parts[1].strip().split()[0]
-                            if energy_value:
-                                modal_data['Energy_Label'] = energy_value
-                                break
-            except Exception as e:
-                logging.error(f"Error extracting energy label: {e}")
-        
-        return modal_data
-    except Exception as e:
-        logging.error(f"Error extracting data from modal: {e}")
-        return {}
 
 def handle_didomi_consent(driver):
     """Handle Didomi cookie consent using direct JavaScript methods to bypass UI interactions"""
@@ -535,6 +484,345 @@ def handle_didomi_consent(driver):
     except Exception as e:
         logging.warning(f"Error in JavaScript Didomi consent handling: {str(e)}")
         return False
+
+def extract_modal_data(driver):
+    """
+    Extracts property data from the modal dialog that appears after clicking 'Se flere detaljer'.
+    """
+    try:
+        # Find and click the "Se flere detaljer" button
+        try:
+            # Try multiple selectors to find the button
+            detail_button_selectors = [
+                "//button[contains(., 'Se flere detaljer')]",
+                "//button[contains(., 'detaljer')]",
+                "//span[contains(., 'Se flere detaljer')]/parent::button",
+                "//button[contains(@class, 'text-blue-900')][.//span[contains(text(), 'Se flere detaljer')]]",
+                # Adding new selectors based on the provided HTML
+                "//button[contains(@class, 'flex justify-center items-center')][.//span[contains(text(), 'Se flere detaljer')]]",
+                "//div[contains(@class, 'sm:hidden')]//button[.//span[contains(text(), 'Se flere detaljer')]]",
+                "//div[contains(@class, 'hidden sm:flex')]//button[.//span[contains(text(), 'Se flere detaljer')]]"
+            ]
+            
+            button_found = False
+            for selector in detail_button_selectors:
+                buttons = driver.find_elements(By.XPATH, selector)
+                for button in buttons:
+                    if button.is_displayed():
+                        logging.info("Found 'Se flere detaljer' button, clicking...")
+                        driver.execute_script("arguments[0].click();", button)
+                        button_found = True
+                        break
+                if button_found:
+                    break
+            
+            if not button_found:
+                logging.warning("Could not find 'Se flere detaljer' button")
+                return {}
+                
+            # Wait for the modal to appear - updated selectors
+            WebDriverWait(driver, 5).until(
+                EC.presence_of_element_located((By.XPATH, "//div[@id='modal-root'] | //div[contains(@class, 'modal')] | //div[contains(@role, 'dialog')]"))
+            )
+            logging.info("Modal dialog appeared successfully")
+        except Exception as e:
+            logging.warning(f"Error clicking 'Se flere detaljer' button: {e}")
+            return {}
+        
+        # Wait a moment for modal to be fully rendered
+        time.sleep(1)
+        
+        # Initialize the result dictionary
+        modal_data = {}
+        property_id = None
+        
+        # Extract the property ID from the URL
+        try:
+            current_url = driver.current_url
+            url_parts = current_url.split('/')
+            if len(url_parts) > 0:
+                last_part = url_parts[-1]
+                property_id = last_part
+                modal_data['Property_ID'] = property_id
+        except Exception as e:
+            logging.warning(f"Error extracting property ID from URL: {e}")
+        
+        # Look for all the property detail rows in the modal - updated selectors to match new structure
+        try:
+            # Try multiple selectors for the modal content based on observed HTML
+            modal_content_selectors = [
+                "//div[@id='modal-root']//div[contains(@class, 'divide-y')]/div[contains(@class, 'flex')]",
+                "//div[contains(@class, 'modal')]//div[contains(@class, 'divide-y')]/div",
+                "//div[contains(@role, 'dialog')]//div[contains(@class, 'divide-y')]/div",
+                "//div[contains(@role, 'dialog')]//div[contains(@class, 'grid')]/div",
+                "//div[contains(@id, 'modal')]//tbody/tr",
+                "//div[contains(@class, 'modal')]//div[contains(@class, 'flex justify-between')]"
+            ]
+            
+            detail_rows = []
+            for selector in modal_content_selectors:
+                rows = driver.find_elements(By.XPATH, selector)
+                if rows:
+                    detail_rows = rows
+                    break
+            
+            if detail_rows:
+                logging.info(f"Found {len(detail_rows)} detail rows in modal")
+                
+                # Map Danish property terms to standardized English field names
+                field_mapping = {
+                    'Seneste ombygningsår': 'Last_Remodel_Year',
+                    'Antal plan og etage': 'Floor_Count',
+                    'Antal plan': 'Floor_Count',
+                    'Etage': 'Floor_Count',
+                    'Antal toiletter': 'Toilets',
+                    'Toiletter': 'Toilets',
+                    'Varmeinstallation': 'Heating_Type',
+                    'Varme': 'Heating_Type',
+                    'Ydervægge': 'Wall_Material',
+                    'Ydermur': 'Wall_Material',
+                    'Vægtet areal': 'Weighted_Area',
+                    'Tagtype': 'Roof_Type',
+                    'Tag': 'Roof_Type',
+                    'Boligareal': 'Living_Area',
+                    'Areal': 'Living_Area',
+                    'Grundareal': 'Lot_Size',
+                    'Grund': 'Lot_Size',
+                    'Opførelsesår': 'Built_Year',
+                    'Byggeår': 'Built_Year',
+                    'Opført': 'Built_Year',
+                    'Antal værelser': 'Rooms',
+                    'Værelser': 'Rooms',
+                    'Antal badeværelser': 'Bathrooms',
+                    'Badeværelser': 'Bathrooms',
+                    'Kælderareal': 'Basement_Size',
+                    'Kælder': 'Basement_Size',
+                    'Energimærke': 'Energy_Label',
+                    'Boligtype': 'Property_Type',
+                    'Ejendomstype': 'Property_Type',
+                    'Type': 'Property_Type'
+                }
+                
+                # Process each detail row
+                for row in detail_rows:
+                    try:
+                        # Skip the last row which contains the buttons
+                        if "Luk" in row.text or "Ok" in row.text or "Lukk" in row.text:
+                            continue
+                            
+                        # Try different approaches to extract label and value
+                        row_text = row.text.strip()
+                        if not row_text:
+                            continue
+                            
+                        # Try direct XPath to find label and value
+                        labels = row.find_elements(By.XPATH, ".//div[1] | .//th | .//dt")
+                        values = row.find_elements(By.XPATH, ".//div[2] | .//td | .//dd")
+                        
+                        # If XPath didn't work, try parsing the text
+                        if (not labels or not values) and ":" in row_text:
+                            parts = row_text.split(":", 1)
+                            label = parts[0].strip()
+                            value = parts[1].strip() if len(parts) > 1 else ""
+                        elif labels and values:
+                            label = labels[0].text.strip()
+                            value = values[0].text.strip()
+                        else:
+                            # For cases where the structure is different
+                            # Try to identify by common patterns
+                            for known_label in field_mapping.keys():
+                                if known_label.lower() in row_text.lower():
+                                    # Extract value after the known label
+                                    label_pos = row_text.lower().find(known_label.lower())
+                                    label = known_label
+                                    value = row_text[label_pos + len(known_label):].strip()
+                                    if value.startswith(":"):
+                                        value = value[1:].strip()
+                                    break
+                            else:
+                                # If we can't identify the row format, log and continue
+                                logging.debug(f"Could not parse row text: {row_text}")
+                                continue
+                            
+                        # Map the Danish field name to English
+                        field_name = None
+                        for danish_term, english_field in field_mapping.items():
+                            if danish_term.lower() in label.lower():
+                                field_name = english_field
+                                break
+                                
+                        if field_name:
+                            # Clean the value - extract numbers for numerical fields
+                            if field_name in ['Living_Area', 'Lot_Size', 'Weighted_Area', 'Basement_Size']:
+                                # Extract number from strings like "189.75 m²"
+                                match = re.search(r'(\d+(?:[,.]\d+)?)', value)
+                                if match:
+                                    value = match.group(1).replace(',', '.')
+                            elif field_name in ['Rooms', 'Floor_Count', 'Toilets', 'Bathrooms']:
+                                # Extract number from strings like "2 plan" or just "2"
+                                match = re.search(r'(\d+)', value)
+                                if match:
+                                    value = match.group(1)
+                            
+                            # Store the value in our result dictionary
+                            modal_data[field_name] = value
+                            logging.info(f"Extracted {field_name}: {value}")
+                    except Exception as e:
+                        logging.warning(f"Error processing detail row: {e}")
+            else:
+                logging.warning("No detail rows found in modal")
+        except Exception as e:
+            logging.warning(f"Error extracting details from modal: {e}")
+            
+        # Check for additional information in the main page
+        try:
+            # Extract property type - updated selectors for new structure
+            property_type_selectors = [
+                "//span[contains(@class, 'text-gray-700')][1]",
+                "//p[contains(@class, 'text-xs')]/span[contains(@class, 'text-gray-700')]",
+                "//div[contains(@class, 'text-xs')]//span[contains(@class, 'text-gray-700')]"
+            ]
+            
+            for selector in property_type_selectors:
+                property_type_elems = driver.find_elements(By.XPATH, selector)
+                if property_type_elems:
+                    property_type = property_type_elems[0].text.strip()
+                    modal_data['Property_Type'] = property_type
+                    logging.info(f"Extracted Property_Type: {property_type}")
+                    break
+                
+            # Extract address - updated selectors for new structure
+            address_selectors = [
+                "//h1[contains(@class, 'text-blue-900')]//span[contains(@class, 'text-lg')]",
+                "//h1[contains(@class, 'text-blue-900')]/span[1]",
+                "//h1[contains(@class, 'space-y-1')]/span[1]"
+            ]
+            
+            for selector in address_selectors:
+                address_elems = driver.find_elements(By.XPATH, selector)
+                if address_elems:
+                    address = address_elems[0].text.strip()
+                    modal_data['Address'] = address
+                    logging.info(f"Extracted Address: {address}")
+                    break
+                
+            # Extract postal code and city - updated selectors for new structure
+            city_postal_selectors = [
+                "//h1[contains(@class, 'text-blue-900')]//span[contains(@class, 'block')]",
+                "//h1[contains(@class, 'space-y-1')]/span[2]"
+            ]
+            
+            for selector in city_postal_selectors:
+                city_postal_elems = driver.find_elements(By.XPATH, selector)
+                if city_postal_elems:
+                    city_postal = city_postal_elems[0].text.strip()
+                    # Extract postal code and city separately
+                    postal_match = re.search(r'(\d{4})\s+(.*)', city_postal)
+                    if postal_match:
+                        postal_code = postal_match.group(1)
+                        city = postal_match.group(2)
+                        modal_data['Postal_Code'] = postal_code
+                        modal_data['City'] = city
+                        logging.info(f"Extracted Postal_Code: {postal_code}, City: {city}")
+                    else:
+                        modal_data['City'] = city_postal
+                    break
+            
+            # Extract price - updated selectors for new structure
+            price_selectors = [
+                "//h2[contains(@class, 'text-blue-900')]",
+                "//div[contains(@class, 'text-blue-900')][contains(@class, 'text-28px')]",
+                "//h2[contains(@class, 'text-28px')]"
+            ]
+            
+            for selector in price_selectors:
+                price_elems = driver.find_elements(By.XPATH, selector)
+                if price_elems:
+                    price_text = price_elems[0].text.strip()
+                    # Clean price value
+                    price_match = re.search(r'([\d.,]+)', price_text)
+                    if price_match:
+                        price = price_match.group(1).replace('.', '').replace(',', '')
+                        modal_data['Price'] = price
+                        logging.info(f"Extracted Price: {price}")
+                    break
+                    
+            # Extract living area from tags - updated selectors for new structure
+            living_area_selectors = [
+                "//span[contains(text(), 'm²')]",
+                "//div[contains(@class, 'inline-flex')][contains(., 'm²')]//span[contains(@class, 'text-blue-900')]"
+            ]
+            
+            for selector in living_area_selectors:
+                living_area_elems = driver.find_elements(By.XPATH, selector)
+                if living_area_elems:
+                    for elem in living_area_elems:
+                        living_area_text = elem.text.strip()
+                        area_match = re.search(r'(\d+)', living_area_text)
+                        if area_match and 'Living_Area' not in modal_data:
+                            modal_data['Living_Area'] = area_match.group(1)
+                            logging.info(f"Extracted Living_Area from tag: {area_match.group(1)}")
+                            break
+                    if 'Living_Area' in modal_data:
+                        break
+                    
+            # Extract rooms - updated selectors for new structure
+            rooms_selectors = [
+                "//span[contains(text(), 'værelser')]",
+                "//div[contains(@class, 'inline-flex')][contains(., 'værelser')]//span[contains(@class, 'text-blue-900')]"
+            ]
+            
+            for selector in rooms_selectors:
+                rooms_elems = driver.find_elements(By.XPATH, selector)
+                if rooms_elems:
+                    for elem in rooms_elems:
+                        rooms_text = elem.text.strip()
+                        rooms_match = re.search(r'(\d+)', rooms_text)
+                        if rooms_match and 'Rooms' not in modal_data:
+                            modal_data['Rooms'] = rooms_match.group(1)
+                            logging.info(f"Extracted Rooms from tag: {rooms_match.group(1)}")
+                            break
+                    if 'Rooms' in modal_data:
+                        break
+        except Exception as e:
+            logging.warning(f"Error extracting additional information: {e}")
+            
+        # Take a screenshot of the modal for debugging
+        try:
+            screenshot_dir = "debug_screenshots"
+            os.makedirs(screenshot_dir, exist_ok=True)
+            timestamp = datetime.datetime.now().strftime("%Y%m%d_%H%M%S")
+            screenshot_path = f"{screenshot_dir}/modal_{timestamp}.png"
+            driver.save_screenshot(screenshot_path)
+            logging.info(f"Modal screenshot saved to {screenshot_path}")
+        except Exception as e:
+            logging.warning(f"Failed to save modal screenshot: {e}")
+            
+        # Close the modal
+        try:
+            close_button_selectors = [
+                "//button[contains(text(), 'Luk')]", 
+                "//button[contains(text(), 'Ok')]", 
+                "//button[contains(text(), 'Lukk')]",
+                "//div[@id='modal-root']//button[contains(@class, 'float-right')]",
+                "//div[contains(@role, 'dialog')]//button"
+            ]
+            
+            for selector in close_button_selectors:
+                close_buttons = driver.find_elements(By.XPATH, selector)
+                for button in close_buttons:
+                    if button.is_displayed():
+                        driver.execute_script("arguments[0].click();", button)
+                        logging.info("Closed modal dialog")
+                        break
+        except Exception as e:
+            logging.warning(f"Error closing modal: {e}")
+        
+        return modal_data
+    except Exception as e:
+        logging.error(f"Error in extract_modal_data: {e}")
+        logging.error("Stack trace:", exc_info=True)
+        return {}
 
 def extract_regex_data(html_source):
     """
@@ -602,14 +890,22 @@ def fetch_property_data(listing_url, header, site_name='unknown', wait_time_seco
     Returns:
         Dictionary containing property data
     """
+    # Validate URL before proceeding
+    if not listing_url or not isinstance(listing_url, str) or listing_url.strip() == '':
+        logging.error("Empty or invalid URL provided to fetch_property_data")
+        return None
+    
     if not listing_url.startswith('http'):
         original_url = listing_url
-        listing_url = f"https://www.boligsiden.dk{listing_url}"
-        logging.info(f"URL transformed (added protocol): {original_url} -> {listing_url}")
+        listing_url = f"https://www.boligsiden.dk{listing_url if listing_url.startswith('/') else '/' + listing_url}"
+        logging.info(f"URL transformed in fetch_property_data: '{original_url}' -> '{listing_url}'")
+    
+    # Log the final URL being used
+    logging.info(f"Fetching data from URL: '{listing_url}'")
     
     options = webdriver.ChromeOptions()
-    # Run in visible mode for debugging
-    # options.add_argument('--headless')
+    # Enable headless mode
+    options.add_argument('--headless=new')
     options.add_argument('--disable-gpu')
     options.add_argument('--no-sandbox')
     options.add_argument('--disable-dev-shm-usage')
@@ -623,21 +919,11 @@ def fetch_property_data(listing_url, header, site_name='unknown', wait_time_seco
     
     options.add_argument(f'user-agent={user_agent}')
     
-    # Performance optimizations
+    # Basic performance optimizations - reducing the number to minimize complexity
     options.add_argument('--disable-gpu')
-    options.add_argument('--disable-software-rasterizer')
-    options.add_argument('--disable-webgl')
     options.add_argument('--disable-dev-shm-usage')
-    options.add_argument('--disable-browser-side-navigation')
-    options.add_argument('--disable-infobars')
     options.add_argument('--disable-extensions')
-    options.add_argument('--disable-notifications')
-    options.add_argument('--disable-popup-blocking')
-    options.add_argument('--blink-settings=imagesEnabled=false')  # Disable images for faster loading
-    
-    # Reduce logging noise
-    options.add_argument('--log-level=3')  # Only show fatal errors
-    options.add_experimental_option('excludeSwitches', ['enable-logging'])
+    options.add_argument('--blink-settings=imagesEnabled=true')  # Enable images for modal interaction
     
     driver = None
     property_data = {
@@ -671,290 +957,53 @@ def fetch_property_data(listing_url, header, site_name='unknown', wait_time_seco
     try:
         driver = webdriver.Chrome(options=options)
         
-        # Optimize wait time - reduce from current value
-        wait_time_seconds = max(1, wait_time_seconds - 1)  # Ensure minimum of 1 second
+        # Log that we're opening the URL
+        logging.info(f"Opening URL in Chrome: '{listing_url}'")
         
-        # Set an implicit wait - reduced from 10
+        # Navigate to the page
+        driver.get(listing_url)
+        
+        # Set an implicit wait
         driver.implicitly_wait(5)
         
-        # Wait for the page to load (reduced timeout from 15)
+        # Check if we ended up on a data: URL, which indicates an issue
+        current_url = driver.current_url
+        if current_url.startswith('data:'):
+            logging.error(f"Navigation failed - redirected to data: URL. Original URL: '{listing_url}'")
+            return None
+        
+        # Wait for the page to load
         WebDriverWait(driver, 10).until(
             EC.presence_of_element_located((By.TAG_NAME, 'body'))
         )
         
-        # Shorter fixed wait - reduced from 2 seconds
-        time.sleep(1)
+        # Short fixed wait
+        time.sleep(wait_time_seconds)
         
-        # Find all "Se flere detaljer" buttons more efficiently
-        detail_buttons_clicked = False
-        
+        # Handle cookie consent (simplified version)
         try:
-            # Use a more aggressive approach to find and click detail buttons
-            logging.info("Using aggressive approach to find and click detail buttons")
-            
-            # First try clicking any 'Se flere detaljer' buttons directly
-            detail_button_js = """
-                // Find and click all possible detail buttons
-                var clickedAny = false;
-                var buttonSelectors = [
-                    'button:contains("Se flere detaljer")', 
-                    'button:contains("detaljer")', 
-                    'button:contains("Vis mere")',
-                    'button.showMore', 
-                    'button[class*="details"]', 
-                    'button[class*="expand"]'
-                ];
-                
-                // Simulate jQuery-like :contains selector since it's not standard
-                function contains(selector, text) {
-                    var elements = document.querySelectorAll(selector);
-                    return Array.prototype.filter.call(elements, function(element) {
-                        return element.textContent.indexOf(text) > -1;
-                    });
-                }
-                
-                // Find all buttons with the text "Se flere detaljer"
-                var detailButtons = contains('button', 'Se flere detaljer');
-                detailButtons = detailButtons.concat(contains('button', 'detaljer'));
-                detailButtons = detailButtons.concat(contains('button', 'Vis mere'));
-                
-                // Also find buttons by class
-                document.querySelectorAll('button.showMore, button[class*="details"], button[class*="expand"]').forEach(function(btn) {
-                    if (!detailButtons.includes(btn)) {
-                        detailButtons.push(btn);
-                    }
-                });
-                
-                console.log("Found " + detailButtons.length + " potential detail buttons");
-                
-                // Click all buttons
-                detailButtons.forEach(function(btn) {
-                    try {
-                        console.log("Clicking button: " + btn.textContent);
-                        btn.click();
-                        clickedAny = true;
-                    } catch(e) {
-                        console.log("Failed to click button: " + e);
-                    }
-                });
-                
-                return clickedAny;
-            """
-            
-            # Attempt to click buttons with JavaScript
-            buttons_clicked = driver.execute_script(detail_button_js)
-            if buttons_clicked:
-                logging.info("Successfully clicked detail buttons with JavaScript")
-                time.sleep(2)  # Allow time for content to expand
-            
-            # Now use enhanced DOM manipulation script to force visibility of all elements
-            logging.info("Using enhanced DOM manipulation to reveal all hidden details")
-            
-            # Execute DOM manipulation script to reveal all hidden elements
-            driver.execute_script("""
-                // Helper function to make an element and all its children visible
-                function makeVisible(el) {
-                    if (!el) return;
-                    
-                    // Make the element itself visible
-                    el.style.display = 'block';
-                    el.style.visibility = 'visible';
-                    el.style.maxHeight = 'none';
-                    el.style.height = 'auto';
-                    el.style.opacity = '1';
-                    el.style.overflow = 'visible';
-                    
-                    // Remove classes that might hide it
-                    el.classList.remove('hidden', 'collapsed', 'folded', 'hide');
-                    el.classList.add('expanded', 'visible', 'details-expanded', 'show');
-                    
-                    // Set attributes that control visibility
-                    if (el.hasAttribute('aria-hidden')) {
-                        el.setAttribute('aria-hidden', 'false');
-                    }
-                    if (el.hasAttribute('aria-expanded')) {
-                        el.setAttribute('aria-expanded', 'true');
-                    }
-                    
-                    // Make all children visible too
-                    Array.from(el.children).forEach(makeVisible);
-                }
-                
-                // Process all elements that might contain details
-                var allDetailSelectors = [
-                    // Direct detail containers
-                    'div[class*="details"], div[class*="property-detail"], div[id*="details"]',
-                    'div[class*="collapse"], div[class*="hidden"], div[class*="fold"]',
-                    'section[class*="detail"], div[class*="more"], div[class*="expandable"]',
-                    '.property-details, .facts, .property-info, .specifications',
-                    'div[id*="facts"], div[id*="info"], div[id*="specifications"]',
-                    
-                    // Common containers for property information
-                    '.ejendomsoplysninger, .boligspecifikationer, .facts-table',
-                    'article.property, section.property, div.property-card',
-                    'div[class*="property"], div[class*="house"], div[class*="estate"]',
-                    
-                    // Always check these common containers that might have hidden content
-                    'div.container, section, article, main, div.content',
-                    'div[role="tabpanel"], div[id*="panel"], div[aria-hidden="true"]',
-                    'div[class*="accordion"], div[class*="tab-content"]',
-                    'div.row, div.grid, div.flex, div.card'
-                ];
-                
-                var elementsProcessed = 0;
-                
-                // First, click all buttons that might reveal content
-                document.querySelectorAll('button, a[role="button"], div[role="button"], span[role="button"]').forEach(function(btn) {
-                    try {
-                        // Click any button that might expand content
-                        var text = (btn.textContent || '').toLowerCase();
-                        if (text.includes('detaljer') || text.includes('details') || 
-                            text.includes('mere') || text.includes('more') || 
-                            text.includes('vis') || text.includes('show') || 
-                            text.includes('oplysninger') || text.includes('information') ||
-                            text.includes('data') || text.includes('fakta') ||
-                            text.includes('fold') || text.includes('expand')) {
-                            
-                            console.log("Auto-clicking button:", btn.textContent);
-                            btn.click();
-                        }
-                    } catch (e) {
-                        // Ignore click errors and continue
-                    }
-                });
-                
-                // Process all potential detail elements
-                allDetailSelectors.forEach(function(selector) {
-                    try {
-                        document.querySelectorAll(selector).forEach(function(el) {
-                            makeVisible(el);
-                            elementsProcessed++;
-                        });
-                    } catch (e) {
-                        console.error("Error processing selector " + selector + ": " + e);
-                    }
-                });
-                
-                // Try to expand any React/Angular/Vue controlled elements
-                document.querySelectorAll('[data-expanded="false"], [data-collapse="true"], [data-show="false"]').forEach(function(el) {
-                    el.setAttribute('data-expanded', 'true');
-                    el.setAttribute('data-collapse', 'false');
-                    el.setAttribute('data-show', 'true');
-                    makeVisible(el);
-                    elementsProcessed++;
-                });
-                
-                console.log("Processed " + elementsProcessed + " elements");
-                
-                // Force all detail sections to be visible regardless of their original state
-                var sectionsFound = document.querySelectorAll('*').length;
-                return sectionsFound;
-            """)
-            
-            # Wait a little longer for DOM changes to take effect
-            time.sleep(2)
-            
-            # Check if details are visible now (use any element that might be part of details)
-            expanded_sections = driver.find_elements(By.XPATH, "//div[contains(@class, 'expanded') or contains(@class, 'details') or contains(@class, 'facts') or contains(@class, 'property')]")
-            if expanded_sections:
-                logging.info(f"Successfully found {len(expanded_sections)} potential detail sections")
-                detail_buttons_clicked = True
-            else:
-                # Try one more direct approach - find content by common property labels
-                property_labels = driver.find_elements(By.XPATH, 
-                    "//div[contains(text(), 'Boligareal') or contains(text(), 'Byggeår') or " +
-                    "contains(text(), 'Værelser') or contains(text(), 'Grundareal') or " + 
-                    "contains(text(), 'Energimærke')]")
-                
-                if property_labels:
-                    logging.info(f"Found {len(property_labels)} property labels directly")
-                    detail_buttons_clicked = True
-                else:
-                    logging.info("No detail sections found after DOM manipulation, continuing anyway")
-                    
-            # Take a screenshot for debugging
-            try:
-                screenshot_dir = "debug_screenshots"
-                os.makedirs(screenshot_dir, exist_ok=True)
-                timestamp = datetime.datetime.now().strftime("%Y%m%d_%H%M%S")
-                screenshot_path = f"{screenshot_dir}/property_screen_{timestamp}.png"
-                driver.save_screenshot(screenshot_path)
-                logging.info(f"Screenshot saved to {screenshot_path}")
-                
-                # Also save the HTML for debugging
-                html_dir = "debug_html"
-                os.makedirs(html_dir, exist_ok=True)
-                html_path = f"{html_dir}/property_html_{timestamp}.html"
-                with open(html_path, 'w', encoding='utf-8') as f:
-                    f.write(driver.page_source)
-                logging.info(f"HTML saved to {html_path}")
-            except Exception as e:
-                logging.warning(f"Failed to save debug files: {e}")
-                
-        except Exception as e:
-            logging.warning(f"Error during DOM manipulation: {e}")
-        
-        # First, try to handle Didomi consent with direct JavaScript approach
-        handle_didomi_consent(driver)
-        
-        # Handle cookie consent popups more aggressively
-        try:
-            # First check for Didomi specific popup which is blocking clicks
-            didomi_popup = driver.find_elements(By.XPATH, "//div[@id='didomi-popup']")
-            if didomi_popup and didomi_popup[0].is_displayed():
-                logging.info("Found Didomi cookie consent popup, attempting to accept...")
-                
-                # Try multiple approaches to click accept
-                accept_selectors = [
-                    "//button[contains(@id, 'accept') or contains(@id, 'agree')]",
-                    "//button[contains(., 'Accept') or contains(., 'Accepter') or contains(., 'Tillad')]",
-                    "//button[contains(@class, 'didomi-button-highlight') or contains(@class, 'didomi-button-accept')]",
-                    "//div[@id='didomi-popup']//button",
-                    "//button[@id='didomi-notice-agree-button']",
-                    "//button[contains(@class, 'didomi-consent-button')]"
-                ]
-                
-                for selector in accept_selectors:
+            # Try to accept cookie consent
+            consent_buttons = driver.find_elements(By.XPATH, "//button[contains(text(), 'Accept') or contains(text(), 'Accepter') or contains(text(), 'OK') or contains(@id, 'accept')]")
+            for button in consent_buttons:
+                if button.is_displayed():
                     try:
-                        buttons = driver.find_elements(By.XPATH, selector)
-                        for button in buttons:
-                            if button.is_displayed():
-                                logging.info(f"Clicking Didomi consent button: {button.text}")
-                                driver.execute_script("arguments[0].click();", button)
-                                time.sleep(1)
-                                if not (driver.find_elements(By.XPATH, "//div[@id='didomi-popup']") and 
-                                       driver.find_elements(By.XPATH, "//div[@id='didomi-popup']")[0].is_displayed()):
-                                    logging.info("Successfully closed Didomi popup")
-                                    break
+                        logging.info(f"Clicking consent button: {button.text}")
+                        driver.execute_script("arguments[0].click();", button)
+                        time.sleep(1)
                     except Exception as e:
-                        logging.warning(f"Error clicking Didomi button with selector {selector}: {str(e)}")
-                    continue
-        
-            # Check for any other consent banners
-            consent_buttons = driver.find_elements(By.XPATH, "//button[contains(text(), 'Accept') or contains(text(), 'Accepter') or contains(text(), 'OK') or contains(text(), 'Ja') or contains(@id, 'consent') or contains(@class, 'consent')]")
-            if consent_buttons:
-                for button in consent_buttons:
-                    if button.is_displayed():
-                        try:
-                            logging.info(f"Clicking consent button: {button.text}")
-                            button.click()
-                        except:
-                            # Use JavaScript as fallback
-                            driver.execute_script("arguments[0].click();", button)
-                        time.sleep(0.5)
+                        logging.warning(f"Failed to click consent button: {e}")
         except Exception as e:
-            logging.warning(f"Failed to handle consent banner: {str(e)}")
+            logging.warning(f"Error handling cookie consent: {e}")
         
-        # Try to detect if page has finished loading key content
-        try:
-            # Wait for price element which is usually one of the last to load
-            WebDriverWait(driver, 10).until(
-                EC.presence_of_element_located((By.XPATH, 
-                    "//div[contains(@class, 'price')] | //span[contains(@class, 'price')] | //h2[contains(text(), 'kr')] | //h3[contains(text(), 'kr')] | //div[contains(text(), 'Villa')] | //div[contains(text(), 'Lejlighed')]"))
-            )
-        except:
-            # If we can't find price, wait briefly and continue anyway
-            pass
+        # First extract data from the modal dialog - this is the most reliable source
+        modal_data = extract_modal_data(driver)
+        
+        if modal_data:
+            logging.info(f"Successfully extracted data from modal dialog: {len(modal_data)} fields")
+            # Update our property data with the modal data
+            property_data.update(modal_data)
+        else:
+            logging.warning("No data extracted from modal dialog, falling back to page scraping")
         
         # Get the page source and parse with BeautifulSoup for static content
         soup = BeautifulSoup(driver.page_source, 'html.parser')
@@ -996,22 +1045,29 @@ def fetch_property_data(listing_url, header, site_name='unknown', wait_time_seco
             'last_remodel_year': 'Last_Remodel_Year'
         }
         
-        # Map details to property_data using our mapping
+        # Map details to property_data only for fields not already populated by modal data
         for detail_key, prop_key in detail_mapping.items():
-            if detail_key in details and details[detail_key]:
+            if detail_key in details and details[detail_key] and (prop_key not in property_data or property_data[prop_key] == 'N/A'):
                 property_data[prop_key] = details[detail_key]
                 
         logging.info(f"Extracted and mapped property details: {details}")
         
-        # For debugging, keep the browser open for a while before returning
-        if not options.arguments or '--headless' not in options.arguments:
-            logging.info("Browser window will stay open for 30 seconds for inspection...")
-            time.sleep(30)
+        # Extract property ID from URL if not already set
+        if 'Property_ID' not in property_data or property_data['Property_ID'] == 'N/A':
+            try:
+                url_parts = listing_url.split('/')
+                if len(url_parts) > 0:
+                    last_part = url_parts[-1]
+                    if last_part:
+                        property_data['Property_ID'] = last_part
+            except Exception as e:
+                logging.warning(f"Error extracting property ID from URL: {e}")
             
         return property_data
     
     except Exception as e:
         logging.error(f"Error in fetch_property_data: {str(e)}")
+        logging.error("Stack trace:", exc_info=True)
         return property_data
     finally:
         if driver:
@@ -1031,135 +1087,147 @@ def process_property(property_row, index, total, start_time=None):
         remaining_time = remaining_properties * avg_time_per_property / 60  # minutes
         logging.info(f"Estimated time remaining: {remaining_time:.1f} minutes")
     
+    # Get link and validate it
     link = property_row.get('Link', '')
-    if not link:
-        logging.warning(f"No link found for property {property_id}, skipping")
+    logging.info(f"Raw link from CSV: '{link}'")
+    
+    # Skip if link is empty or just whitespace
+    if not link or link.strip() == '':
+        logging.warning(f"No valid link found for property {property_id}, skipping")
         return None
     
-    # Transform relative URLs to absolute URLs
-    if link.startswith('/'):
-        link = f"https://www.boligsiden.dk{link}"
-        logging.info(f"URL transformed from relative: {property_row.get('Link')} -> {link}")
+    # Ensure proper URL formatting
+    if not link.startswith('http'):
+        if link.startswith('/'):
+            link = f"https://www.boligsiden.dk{link}"
+        else:
+            link = f"https://www.boligsiden.dk/{link}"
+        logging.info(f"URL transformed: '{property_row.get('Link')}' -> '{link}'")
+    
+    # Final validation check
+    if not link.startswith('http'):
+        logging.error(f"Invalid URL format after transformation: '{link}'")
+        return None
     
     try:
-        # Use a separate header for each property to avoid detection
+        # Use a consistent header for all requests
         header = {
-            "User-Agent": f"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/{random.randint(80, 110)}.0.{random.randint(1000, 9999)}.{random.randint(10, 999)} Safari/537.36"
+            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/96.0.4664.110 Safari/537.36"
         }
         
-        # Fetch property data with reduced wait time (1-2 seconds)
+        # Add a small delay between requests
+        time.sleep(2)
+        
+        # Fetch property data
         property_data = fetch_property_data(
             link, 
             header, 
             site_name='boligsiden', 
-            wait_time_seconds=1, 
+            wait_time_seconds=3,
             retries=2,
             params_info={'Property_ID': property_id}
         )
         
+        if not property_data:
+            logging.warning(f"No data extracted for property {property_id}")
+            return None
+            
+        # Validate the extracted data
+        required_fields = ['URL', 'Source_Site', 'Scrape_Date', 'Address', 'City', 'Postal_Code']
+        missing_fields = [field for field in required_fields if field not in property_data]
+        if missing_fields:
+            logging.warning(f"Missing required fields for property {property_id}: {', '.join(missing_fields)}")
+        
         return property_data
     except Exception as e:
         logging.error(f"Error processing property {property_id}: {str(e)}")
+        logging.error("Stack trace:", exc_info=True)
         return None
 
 def main(sample_size=None):
     """Main function to process property links."""
-    
-    # Load list of property links from CSV
     try:
-        all_properties = []
+        # Load list of property links from CSV
         with open('data/scraped_properties.csv', 'r', encoding='utf-8') as f:
-            reader = csv.DictReader(f)
-            for row in reader:
-                all_properties.append(row)
+            all_properties = list(csv.DictReader(f))
         
         logging.info(f"Loaded {len(all_properties)} properties from CSV")
+        
+        # Validate that the CSV has the required columns
+        if not all_properties or 'Link' not in all_properties[0]:
+            logging.error("CSV file does not contain 'Link' column. Cannot proceed.")
+            return
+            
+        # Validate URLs in the CSV
+        valid_properties = []
+        invalid_links = []
+        
+        for prop in all_properties:
+            link = prop.get('Link', '')
+            if not link or link.strip() == '':
+                invalid_links.append((prop.get('Property ID', 'unknown'), link))
+            else:
+                valid_properties.append(prop)
+                
+        if invalid_links:
+            logging.warning(f"Found {len(invalid_links)} properties with invalid links:")
+            for prop_id, link in invalid_links[:10]:  # Show first 10 only
+                logging.warning(f"  Property ID: {prop_id}, Link: '{link}'")
+            if len(invalid_links) > 10:
+                logging.warning(f"  ...and {len(invalid_links) - 10} more")
+                
+        logging.info(f"Found {len(valid_properties)} properties with valid links")
+        
+        # Use only valid properties
+        all_properties = valid_properties
+        
+        if not all_properties:
+            logging.error("No valid property links found in CSV. Cannot proceed.")
+            return
         
         # Take a sample if requested
         if sample_size:
             if sample_size < len(all_properties):
                 all_properties = random.sample(all_properties, sample_size)
-                logging.info(f"Taking a random sample of {sample_size} links from {len(all_properties)} total links")
+                logging.info(f"Taking a random sample of {sample_size} links")
             else:
                 logging.info(f"Sample size {sample_size} is larger than available properties ({len(all_properties)}), using all properties")
         
-        # For debugging, just process one property in visible mode without threading
+        # For debugging, just process one property in visible mode
         if sample_size == 1:
             logging.info("Running in debug mode with a single property")
-            # Get the first property in the sample
             property_row = all_properties[0]
-            property_id = property_row.get('Property ID', 'unknown')
-            link = property_row.get('Link', '')
+            result = process_property(property_row, 1, 1)
             
-            if link:
-                # Transform relative URLs to absolute URLs
-                if link.startswith('/'):
-                    link = f"https://www.boligsiden.dk{link}"
-                    logging.info(f"Debug URL: {link}")
+            if result:
+                output_file = 'data/property_details_debug.csv'
+                # Define the column order with Property_ID first
+                ordered_fields = ['Property_ID']
+                for field in sorted(result.keys()):
+                    if field != 'Property_ID':
+                        ordered_fields.append(field)
                 
-                header = {
-                    "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/96.0.4664.110 Safari/537.36"
-                }
-                
-                # Process this single property with more time for debugging
-                logging.info(f"Processing single property for debugging: {property_id}")
-                result = fetch_property_data(
-                    link, 
-                    header, 
-                    site_name='boligsiden',
-                    wait_time_seconds=5,  # longer wait time for debugging
-                    retries=1,
-                    params_info={'Property_ID': property_id}
-                )
-                
-                if result:
-                    logging.info(f"Debug result: {result}")
-                    output_file = 'data/property_details_debug.csv'
-                    with open(output_file, 'w', encoding='utf-8', newline='') as f:
-                        writer = csv.DictWriter(f, fieldnames=sorted(result.keys()))
-                        writer.writeheader()
-                        writer.writerow(result)
-                    
-                    logging.info(f"Saved debug result to {output_file}")
-                
-                return
+                with open(output_file, 'w', encoding='utf-8', newline='') as f:
+                    writer = csv.DictWriter(f, fieldnames=ordered_fields)
+                    writer.writeheader()
+                    writer.writerow(result)
+                logging.info(f"Saved debug result to {output_file}")
+            return
         
         # Start timer for regular processing
         start_time = time.time()
-        
-        # Initialize results list
         all_results = []
         
-        # Use ThreadPoolExecutor instead of ProcessPoolExecutor for better sharing of resources
-        max_workers = min(4, multiprocessing.cpu_count())
-        logging.info(f"Using {max_workers} concurrent workers")
-        
-        # Process properties in parallel
-        with concurrent.futures.ThreadPoolExecutor(max_workers=max_workers) as executor:
-            # Submit all properties for processing
-            futures = [
-                executor.submit(process_property, prop, i+1, len(all_properties), start_time) 
-                for i, prop in enumerate(all_properties)
-            ]
-            
-            # Process results as they complete
-            for future in concurrent.futures.as_completed(futures):
-                try:
-                    result = future.result()
-                    if result:
-                        all_results.append(result)
-                except Exception as e:
-                    logging.error(f"Error processing property in parallel: {str(e)}")
+        # Process properties sequentially to avoid overwhelming the server
+        for i, prop in enumerate(all_properties, 1):
+            result = process_property(prop, i, len(all_properties), start_time)
+            if result:
+                all_results.append(result)
+            logging.info(f"Successfully processed property {i}/{len(all_properties)}")
         
         # Summarize results
         total_time = time.time() - start_time
         logging.info(f"Processed {len(all_results)} properties in {total_time/60:.2f} minutes")
-        
-        # Handle the case where no results were collected to avoid division by zero
-        if all_results:
-            logging.info(f"Average time per property: {total_time/len(all_results):.2f} seconds")
-        else:
-            logging.warning("No properties were successfully processed")
         
         # Save results to CSV
         if all_results:
@@ -1171,8 +1239,14 @@ def main(sample_size=None):
             for result in all_results:
                 all_keys.update(result.keys())
             
+            # Define the column order with Property_ID first
+            ordered_fields = ['Property_ID']
+            for field in sorted(all_keys):
+                if field != 'Property_ID':
+                    ordered_fields.append(field)
+            
             with open(output_file, 'w', encoding='utf-8', newline='') as f:
-                writer = csv.DictWriter(f, fieldnames=sorted(all_keys))
+                writer = csv.DictWriter(f, fieldnames=ordered_fields)
                 writer.writeheader()
                 writer.writerows(all_results)
             
@@ -1182,6 +1256,7 @@ def main(sample_size=None):
             
     except Exception as e:
         logging.error(f"Error in main function: {str(e)}")
+        logging.error("Stack trace:", exc_info=True)
         raise
 
 def get_user_choice():

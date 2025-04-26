@@ -32,6 +32,8 @@ ENV/
 .vscode/
 *.swp
 *.swo
+.cursor/
+.cursor.json
 
 # Project specific
 debug/
