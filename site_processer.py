@@ -23,24 +23,16 @@ REGEX_PATTERNS = {
         re.compile(r'(?:etageareal|ejendomsareal)(?:\s*:)?\s*(\d+(?:[,.]\d+)?)\s*(?:m²|kvm|sqm)', re.IGNORECASE)
     ],
     'rooms': [
+        re.compile(r'(?:Værelser|Rum|Rooms|Badeværelse|Bathroom|Toilet)(?:\s*:)?\s*(\d+(?:[,.]\d+)?)', re.IGNORECASE),
+        re.compile(r'(\d+(?:[,.]\d+)?)\s*(?:værelser|vær|rum|rooms|badeværelse|bathroom|toilet)', re.IGNORECASE),
+        re.compile(r'antal\s*(?:rum|værelser|badeværelse|toilet)(?:\s*:)?\s*(\d+(?:[,.]\d+)?)', re.IGNORECASE),
         re.compile(r'(?:Værelser|Rum|Rooms)(?:\s*:)?\s*(\d+(?:[,.]\d+)?)', re.IGNORECASE),
-        re.compile(r'(\d+(?:[,.]\d+)?)\s*(?:værelser|vær|rum|rooms)', re.IGNORECASE),
-        re.compile(r'antal\s*(?:rum|værelser)(?:\s*:)?\s*(\d+(?:[,.]\d+)?)', re.IGNORECASE)
-    ],
-    'build_year': [
-        re.compile(r'(?:Byggeår|Bygget|Opført|Built|Construction year)(?:\s*:)?\s*(\d{4})', re.IGNORECASE),
-        re.compile(r'(?:opført|bygget)(?:\s+i)?\s*(?:år)?\s*(\d{4})', re.IGNORECASE),
-        re.compile(r'(?:year|år)(?:\s+of)?\s*(?:construction|built|opført)(?:\s*:)?\s*(\d{4})', re.IGNORECASE)
-    ],
-    'energy_label': [
-        re.compile(r'(?:Energimærke|Energimaerke|Energy label|Energy rating|Energy class)(?:\s*:)?\s*\b([A-G](?:[+\d]*))\b', re.IGNORECASE),
-        re.compile(r'(?:energy|energi)(?:\s*[-:])?\s*\b([A-G](?:[+\d]*))\b', re.IGNORECASE),
-        re.compile(r'\b([A-G](?:[+\d]*))-?mærk(?:e|ning)?', re.IGNORECASE)
+        re.compile(r'(\d+(?:[,.]\d+)?)\s*(?:værelser|rum|rooms)', re.IGNORECASE)
     ],
     'price': [
-        re.compile(r'(?:Pris|Kontantpris|Price|Asking price)(?:\s*:)?\s*(?:kr\.?|DKK|€)?\s*([\d.,]+)(?:\s*(?:kr\.?|DKK|€))?', re.IGNORECASE),
-        re.compile(r'(?:kr\.?|DKK|€)\s*([\d.,]+)(?:\s*(?:kr\.?|DKK|€|v/|inkl))?', re.IGNORECASE),
-        re.compile(r'(?:salgspris|købspris|handelspris)(?:\s*:)?\s*(?:kr\.?|DKK|€)?\s*([\d.,]+)', re.IGNORECASE)
+        re.compile(r'(?:Pris|Kontantpris|Price|Asking price)(?:\s*:)?\s*(?:kr\.?)?\s*([\d.]+)(?:\s*kr\.?)', re.IGNORECASE),
+        re.compile(r'(?:kr\.?)\s*([\d.]+)(?:\s*kr\.?)', re.IGNORECASE),
+        re.compile(r'(?:salgspris|købspris|handelspris)(?:\s*:)?\s*(?:kr\.?)?\s*([\d.]+)', re.IGNORECASE)
     ]
 }
 
@@ -58,9 +50,7 @@ def extract_property_details(soup):
         "[class*='details']", "[class*='specs']", "[class*='info']",
         "[id*='details']", "[id*='specifications']", "[id*='info']",
         "section", "article", ".facts-table", ".estateFacts", 
-        # Add new selectors based on observed HTML structure
         "div.scroll-mt-0", "div[id='oversigt']", 
-        # Replace Tailwind-style selectors with more compatible alternatives
         "div.pt-22", ".pt-22", 
         "div.flex", "div.space-y-2",
         "div.whitespace-nowrap"
@@ -77,7 +67,6 @@ def extract_property_details(soup):
             "tr", ".fact-row", ".detail-row", "li", ".item", 
             "[class*='row']", "[class*='item']", "[class*='field']",
             "div.row", "div.flex", 
-            # Add new selectors based on observed HTML structure
             "div.inline-flex", "div.space-y-2", "div.justify-between",
             "div.mt-4", "div.mb-6", "div.whitespace-nowrap",
             "div[class*='tag']", "span[class*='text']"
@@ -107,7 +96,6 @@ def extract_property_details(soup):
             if not label_div or not value_div:
                 if row.find("strong") and row.find("span"):
                     label_div = row.find("strong")
-                    # Assume value is in the span that's not the label
                     spans = row.find_all("span")
                     if spans:
                         for span in spans:
@@ -124,47 +112,32 @@ def extract_property_details(soup):
             
             # Method 4: Check for SVG icons with adjacent text
             if not label_div or not value_div:
-                # If there's an SVG and text/span element, the text might be a property value
                 if row.find("svg") and (row.find("span") or row.get_text().strip()):
-                    # The text content after the SVG could be a property value
                     svg = row.find("svg")
                     if svg and svg.next_sibling:
                         if isinstance(svg.next_sibling, str) and svg.next_sibling.strip():
-                            # SVG followed by text directly
                             value_div = svg.next_sibling
                         elif svg.next_sibling.name == "span":
-                            # SVG followed by span
                             value_div = svg.next_sibling
                             
-                    # Try to determine the property type from the SVG
                     if svg and svg.get('class'):
                         svg_classes = ' '.join(svg.get('class'))
                         if 'floor' in svg_classes or 'home' in svg_classes:
                             label_div = "living_area"
-                        elif 'bed' in svg_classes or 'bedroom' in svg_classes:
+                        elif 'bed' in svg_classes or 'bedroom' in svg_classes or 'bath' in svg_classes or 'toilet' in svg_classes:
                             label_div = "rooms"
-                        elif 'bath' in svg_classes or 'toilet' in svg_classes:
-                            label_div = "bathrooms"
             
             # Method 5: For div.inline-flex elements, check for property-specific patterns
             if not label_div or not value_div:
                 row_text = row.get_text().strip()
                 if 'm²' in row_text:
                     label_div = "living_area"
-                    # Extract the number before m²
                     match = re.search(r'(\d+)\s*m²', row_text)
                     if match:
                         value_div = match.group(1)
-                elif 'værelser' in row_text:
+                elif 'værelser' in row_text or 'badeværelse' in row_text or 'toilet' in row_text:
                     label_div = "rooms"
-                    # Extract the number before værelser
-                    match = re.search(r'(\d+)\s*værelser', row_text)
-                    if match:
-                        value_div = match.group(1)
-                elif 'toilet' in row_text:
-                    label_div = "toilets"
-                    # Extract the number before toilet
-                    match = re.search(r'(\d+)\s*toilet', row_text)
+                    match = re.search(r'(\d+)\s*(?:værelser|badeværelse|toilet)', row_text)
                     if match:
                         value_div = match.group(1)
                 
@@ -201,14 +174,10 @@ def extract_property_details(soup):
                 danish_to_english = {
                     'boligareal': 'living_area',
                     'areal': 'area',
-                    'grundareal': 'plot_area',
                     'værelser': 'rooms',
                     'rum': 'rooms',
-                    'byggeår': 'build_year',
-                    'opført': 'build_year',
-                    'energimærke': 'energy_label',
-                    'energi': 'energy_label',
-                    'sagsnr': 'case_number',
+                    'badeværelse': 'rooms',
+                    'toilet': 'rooms',
                     'kontantpris': 'price',
                     'pris': 'price',
                     'ejerudgift': 'owner_cost',
@@ -219,8 +188,6 @@ def extract_property_details(soup):
                     'etage': 'floor',
                     'kælder': 'basement',
                     'liggetid': 'days_on_market',
-                    'toilet': 'toilets',
-                    'badeværelse': 'bathrooms',
                     'varme': 'heating_type',
                     'tag': 'roof_type',
                     'ydervæg': 'wall_material',
@@ -246,134 +213,14 @@ def extract_property_details(soup):
                     value = clean_numerical_value(value, 'area')
                 elif 'kr' in value.lower() or 'dkk' in value.lower() or '€' in value:
                     value = clean_numerical_value(value, 'price')
-                elif re.search(r'\b\d{4}\b', value) and ('år' in label.lower() or 'year' in label.lower() or 'opført' in label.lower() or 'bygget' in label.lower()):
-                    value = clean_numerical_value(value, 'year')
-                elif any(w in label.lower() for w in ['antal', 'rooms', 'værelser', 'rum', 'bedrooms']):
-                    value = clean_numerical_value(value, 'number')
                 
-                processed_details[label] = value
-                logging.debug(f"Extracted detail: {label} = {value}")
-        
+                # Store the value in the processed details
+                if label in ['living_area', 'rooms', 'price']:
+                    processed_details[label] = value
+                
         except Exception as e:
             logging.error(f"Error processing detail row: {str(e)}")
-    
-    # Special handling for energy label which might be in an image
-    if 'energy_label' not in processed_details:
-        # Try to find energy label images or special elements
-        energy_selectors = [
-            "img[src*='energy'], img[alt*='energy'], img[src*='energi'], img[alt*='energi']",
-            "[class*='energy-label'], [class*='energi'], [id*='energy'], [id*='energi']",
-            ".energy-rating, .energy-class, .energy-certificate",
-            # Add new selectors for energy labels
-            "svg[class*='w-7'][class*='h-7']", "div.cursor-pointer svg", 
-            "div[data-tooltipped] svg", "div.w-10.h-10 svg"
-        ]
-        
-        for selector in energy_selectors:
-            energy_elements = soup.select(selector)
-            if energy_elements:
-                for element in energy_elements:
-                    # Check if it's an image with energy rating in alt text or src
-                    if element.name == 'img':
-                        alt_text = element.get('alt', '')
-                        src_text = element.get('src', '')
-                        
-                        # Look for energy rating (A-G) in alt text or src
-                        energy_match = re.search(r'\b([A-G][+\-]?)\b', alt_text + ' ' + src_text, re.IGNORECASE)
-                        if energy_match:
-                            processed_details['energy_label'] = energy_match.group(1).upper()
-                            break
-                    # Check for SVG title element that might contain energy rating
-                    elif element.name == 'svg':
-                        title_elem = element.find('title')
-                        if title_elem:
-                            title_text = title_elem.get_text()
-                            if 'energimærke' in title_text.lower() or 'energy' in title_text.lower():
-                                energy_match = re.search(r'\b([A-G][+\-]?)\b', title_text, re.IGNORECASE)
-                                if energy_match:
-                                    processed_details['energy_label'] = energy_match.group(1).upper()
-                                    break
-                                elif 'intet' in title_text.lower() or 'no' in title_text.lower():
-                                    # "Intet energimærke" means "No energy label"
-                                    processed_details['energy_label'] = "N/A"
-                                    break
-                    # Check if it's an element with energy class as text content
-                    else:
-                        text = element.get_text().strip()
-                        energy_match = re.search(r'\b([A-G][+\-]?)\b', text, re.IGNORECASE)
-                        if energy_match:
-                            processed_details['energy_label'] = energy_match.group(1).upper()
-                            break
-    
-    # Try to extract price specifically from the page
-    if 'price' not in processed_details:
-        price_selectors = [
-            "h2.text-blue-900", 
-            "div.text-blue-900.text-28px", 
-            "h2.text-28px",
-            ".text-blue-900.font-semibold"
-        ]
-        
-        for selector in price_selectors:
-            price_elements = soup.select(selector)
-            for element in price_elements:
-                price_text = element.get_text().strip()
-                if 'kr' in price_text or '.' in price_text:
-                    # Looks like a price
-                    price_match = re.search(r'([\d.,]+)', price_text)
-                    if price_match:
-                        price = price_match.group(1).replace('.', '').replace(',', '')
-                        processed_details['price'] = price
-                        break
-    
-    # Extract property type if not found yet
-    if 'property_type' not in processed_details:
-        type_selectors = [
-            "span.text-gray-700", 
-            "p.text-xs span.text-gray-700"
-        ]
-        
-        for selector in type_selectors:
-            type_elements = soup.select(selector)
-            if type_elements:
-                property_type = type_elements[0].get_text().strip()
-                processed_details['property_type'] = property_type
-                break
-    
-    # Extract rooms from specific tags if not found yet
-    if 'rooms' not in processed_details:
-        rooms_selectors = [
-            "div.inline-flex span.text-blue-900",
-            "div[class*='tag'] span.text-blue-900"
-        ]
-        
-        for selector in rooms_selectors:
-            room_elements = soup.select(selector)
-            for element in room_elements:
-                text = element.get_text().strip()
-                if 'værelser' in text:
-                    rooms_match = re.search(r'(\d+)', text)
-                    if rooms_match:
-                        processed_details['rooms'] = rooms_match.group(1)
-                        break
-    
-    # Extract living area from specific tags if not found yet
-    if 'living_area' not in processed_details:
-        area_selectors = [
-            "div.inline-flex span.text-blue-900",
-            "div[class*='tag'] span.text-blue-900",
-            "span[class*='whitespace-nowrap']"
-        ]
-        
-        for selector in area_selectors:
-            area_elements = soup.select(selector)
-            for element in area_elements:
-                text = element.get_text().strip()
-                if 'm²' in text:
-                    area_match = re.search(r'(\d+)', text)
-                    if area_match:
-                        processed_details['living_area'] = area_match.group(1)
-                        break
+            continue
     
     return processed_details
 
@@ -498,7 +345,6 @@ def extract_modal_data(driver):
                 "//button[contains(., 'detaljer')]",
                 "//span[contains(., 'Se flere detaljer')]/parent::button",
                 "//button[contains(@class, 'text-blue-900')][.//span[contains(text(), 'Se flere detaljer')]]",
-                # Adding new selectors based on the provided HTML
                 "//button[contains(@class, 'flex justify-center items-center')][.//span[contains(text(), 'Se flere detaljer')]]",
                 "//div[contains(@class, 'sm:hidden')]//button[.//span[contains(text(), 'Se flere detaljer')]]",
                 "//div[contains(@class, 'hidden sm:flex')]//button[.//span[contains(text(), 'Se flere detaljer')]]"
@@ -575,8 +421,6 @@ def extract_modal_data(driver):
                     'Antal plan og etage': 'Floor_Count',
                     'Antal plan': 'Floor_Count',
                     'Etage': 'Floor_Count',
-                    'Antal toiletter': 'Toilets',
-                    'Toiletter': 'Toilets',
                     'Varmeinstallation': 'Heating_Type',
                     'Varme': 'Heating_Type',
                     'Ydervægge': 'Wall_Material',
@@ -586,21 +430,13 @@ def extract_modal_data(driver):
                     'Tag': 'Roof_Type',
                     'Boligareal': 'Living_Area',
                     'Areal': 'Living_Area',
-                    'Grundareal': 'Lot_Size',
-                    'Grund': 'Lot_Size',
-                    'Opførelsesår': 'Built_Year',
-                    'Byggeår': 'Built_Year',
-                    'Opført': 'Built_Year',
                     'Antal værelser': 'Rooms',
                     'Værelser': 'Rooms',
-                    'Antal badeværelser': 'Bathrooms',
-                    'Badeværelser': 'Bathrooms',
-                    'Kælderareal': 'Basement_Size',
-                    'Kælder': 'Basement_Size',
-                    'Energimærke': 'Energy_Label',
                     'Boligtype': 'Property_Type',
                     'Ejendomstype': 'Property_Type',
-                    'Type': 'Property_Type'
+                    'Type': 'Property_Type',
+                    'Energimærke': 'Energy_Label',
+                    'Energimærkning': 'Energy_Label'
                 }
                 
                 # Process each detail row
@@ -653,12 +489,12 @@ def extract_modal_data(driver):
                                 
                         if field_name:
                             # Clean the value - extract numbers for numerical fields
-                            if field_name in ['Living_Area', 'Lot_Size', 'Weighted_Area', 'Basement_Size']:
+                            if field_name in ['Living_Area', 'Weighted_Area']:
                                 # Extract number from strings like "189.75 m²"
                                 match = re.search(r'(\d+(?:[,.]\d+)?)', value)
                                 if match:
                                     value = match.group(1).replace(',', '.')
-                            elif field_name in ['Rooms', 'Floor_Count', 'Toilets', 'Bathrooms']:
+                            elif field_name in ['Rooms', 'Floor_Count']:
                                 # Extract number from strings like "2 plan" or just "2"
                                 match = re.search(r'(\d+)', value)
                                 if match:
@@ -841,8 +677,6 @@ def extract_regex_data(html_source):
                     value = clean_numerical_value(value, 'area' if field == 'living_area' else 'number')
                 elif field == 'price':
                     value = clean_numerical_value(value, 'price')
-                elif field == 'build_year':
-                    value = clean_numerical_value(value, 'year')
                 
                 extracted_data[field] = value
                 break
@@ -850,7 +684,7 @@ def extract_regex_data(html_source):
     # Add more specialized patterns for specific sites
     try:
         # Try to extract prices from multiple formats
-        price_matches = re.findall(r'(?:kr\.?|DKK)\s*([\d.,]+)', html_source, re.IGNORECASE)
+        price_matches = re.findall(r'(?:kr\.?|DKK)\s*([\d.]+)', html_source, re.IGNORECASE)
         if price_matches:
             extracted_data['price'] = clean_numerical_value(price_matches[0], 'price')
         
@@ -865,11 +699,6 @@ def extract_regex_data(html_source):
             if prop_type in html_source:
                 extracted_data['property_type'] = prop_type
                 break
-        
-        # Look for energy label with a specific format (A-G)
-        energy_match = re.search(r'[Ee]nergimærke:?\s*([A-G][+\d]*)', html_source)
-        if energy_match:
-            extracted_data['energy_label'] = energy_match.group(1)
     except Exception as e:
         logging.warning(f"Error in additional regex extraction: {e}")
         
@@ -910,6 +739,15 @@ def fetch_property_data(listing_url, header, site_name='unknown', wait_time_seco
     options.add_argument('--no-sandbox')
     options.add_argument('--disable-dev-shm-usage')
     options.add_argument('--disable-extensions')
+    options.add_argument('--disable-software-rasterizer')
+    options.add_argument('--disable-webgl')
+    options.add_argument('--disable-gpu-sandbox')
+    options.add_argument('--disable-dev-shm-usage')
+    options.add_argument('--disable-setuid-sandbox')
+    options.add_argument('--disable-logging')
+    options.add_argument('--log-level=3')
+    options.add_argument('--silent')
+    options.add_experimental_option('excludeSwitches', ['enable-logging'])
     
     # Fix for None header - provide default User-Agent if header is None
     if header is None:
@@ -919,7 +757,7 @@ def fetch_property_data(listing_url, header, site_name='unknown', wait_time_seco
     
     options.add_argument(f'user-agent={user_agent}')
     
-    # Basic performance optimizations - reducing the number to minimize complexity
+    # Basic performance optimizations
     options.add_argument('--disable-gpu')
     options.add_argument('--disable-dev-shm-usage')
     options.add_argument('--disable-extensions')
@@ -935,18 +773,15 @@ def fetch_property_data(listing_url, header, site_name='unknown', wait_time_seco
         'Postal_Code': 'N/A',
         'Price': 'N/A',
         'Property_Type': 'N/A',
-        'Bedrooms': 'N/A',
         'Living_Area': 'N/A',
-        'Lot_Size': 'N/A',
-        'Built_Year': 'N/A',
         'Rooms': 'N/A',
-        'Bathrooms': 'N/A',
-        'Toilets': 'N/A',
+        'Floor': 'N/A',
         'Floor_Count': 'N/A',
-        'Basement_Size': 'N/A',
-        'Energy_Label': 'N/A',
+        'Heating_Type': 'N/A',
         'Weighted_Area': 'N/A',
-        'Last_Remodel_Year': 'N/A'
+        'Last_Remodel_Year': 'N/A',
+        'Wall_Material': 'N/A',
+        'Roof_Type': 'N/A'
     }
     
     # Add any additional parameters from params_info
@@ -1028,21 +863,15 @@ def fetch_property_data(listing_url, header, site_name='unknown', wait_time_seco
         detail_mapping = {
             'living_area': 'Living_Area',
             'area': 'Living_Area',
-            'plot_area': 'Lot_Size',
             'rooms': 'Rooms',
-            'build_year': 'Built_Year',
-            'energy_label': 'Energy_Label',
             'price': 'Price',
-            'owner_cost': 'Monthly_Cost',
-            'case_number': 'Reference',
             'property_type': 'Property_Type',
-            'floor': 'Floor_Count',
-            'basement': 'Basement_Size',
-            'days_on_market': 'Days_On_Market',
-            'bathrooms': 'Bathrooms',
-            'toilets': 'Toilets',
+            'floor': 'Floor',
             'weighted_area': 'Weighted_Area',
-            'last_remodel_year': 'Last_Remodel_Year'
+            'last_remodel_year': 'Last_Remodel_Year',
+            'wall_material': 'Wall_Material',
+            'roof_type': 'Roof_Type',
+            'heating_type': 'Heating_Type'
         }
         
         # Map details to property_data only for fields not already populated by modal data
@@ -1074,74 +903,67 @@ def fetch_property_data(listing_url, header, site_name='unknown', wait_time_seco
             driver.quit()
 
 def process_property(property_row, index, total, start_time=None):
-    """Process a single property and extract its details"""
-    property_id = property_row.get('Property ID', 'unknown')
-    logging.info(f"Processing property {index}/{total} ({index/total*100:.1f}%)")
-    logging.info(f"ID: {property_id}")
-    
-    # Calculate and display remaining time based on average processing time
-    if start_time and index > 1:
-        elapsed_time = time.time() - start_time
-        avg_time_per_property = elapsed_time / (index - 1)
-        remaining_properties = total - index
-        remaining_time = remaining_properties * avg_time_per_property / 60  # minutes
-        logging.info(f"Estimated time remaining: {remaining_time:.1f} minutes")
-    
-    # Get link and validate it
-    link = property_row.get('Link', '')
-    logging.info(f"Raw link from CSV: '{link}'")
-    
-    # Skip if link is empty or just whitespace
-    if not link or link.strip() == '':
-        logging.warning(f"No valid link found for property {property_id}, skipping")
-        return None
-    
-    # Ensure proper URL formatting
-    if not link.startswith('http'):
-        if link.startswith('/'):
-            link = f"https://www.boligsiden.dk{link}"
-        else:
-            link = f"https://www.boligsiden.dk/{link}"
-        logging.info(f"URL transformed: '{property_row.get('Link')}' -> '{link}'")
-    
-    # Final validation check
-    if not link.startswith('http'):
-        logging.error(f"Invalid URL format after transformation: '{link}'")
-        return None
-    
     try:
-        # Use a consistent header for all requests
-        header = {
-            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/96.0.4664.110 Safari/537.36"
-        }
+        # Extract basic information
+        property_id = property_row.get('Property_ID', '')
+        address = property_row.get('Address', '')
+        link = property_row.get('Link', '')
         
-        # Add a small delay between requests
-        time.sleep(2)
-        
+        if not link:
+            logging.warning(f"No valid link found for property {property_id}, skipping")
+            return None
+            
         # Fetch property data
-        property_data = fetch_property_data(
-            link, 
-            header, 
-            site_name='boligsiden', 
-            wait_time_seconds=3,
-            retries=2,
-            params_info={'Property_ID': property_id}
-        )
+        property_data = fetch_property_data(link, {}, site_name='boligsiden', params_info={'Property_ID': property_id})
         
         if not property_data:
             logging.warning(f"No data extracted for property {property_id}")
             return None
             
-        # Validate the extracted data
-        required_fields = ['URL', 'Source_Site', 'Scrape_Date', 'Address', 'City', 'Postal_Code']
-        missing_fields = [field for field in required_fields if field not in property_data]
+        # Combine the data
+        combined_data = {
+            'Property_ID': property_id,
+            'Address': address,
+            'City': property_row.get('City', ''),
+            'Floor': property_row.get('Floor', 'N/A'),
+            'Floor_Count': property_row.get('Floor_Count', 'N/A'),
+            'Heating_Type': property_row.get('Heating_Type', ''),
+            'Last_Remodel_Year': property_row.get('Last_Remodel_Year', ''),
+            'Link': link,
+            'Living_Area': property_row.get('Living_Area', ''),
+            'Postal_Code': property_row.get('Postal_Code', ''),
+            'Price': property_row.get('Price', ''),
+            'Property_Type': property_row.get('Property_Type', ''),
+            'Roof_Type': property_row.get('Roof_Type', ''),
+            'Rooms': property_row.get('Rooms', ''),
+            'Scrape_Date': property_row.get('Scrape_Date', ''),
+            'Source_Site': property_row.get('Source_Site', ''),
+            'URL': property_row.get('URL', ''),
+            'Wall_Material': property_row.get('Wall_Material', ''),
+            'Weighted_Area': property_row.get('Weighted_Area', '')
+        }
+        
+        # Update with any new data from the property page
+        combined_data.update(property_data)
+        
+        # Ensure empty floor values are set to N/A
+        if not combined_data.get('Floor'):
+            combined_data['Floor'] = 'N/A'
+        if not combined_data.get('Floor_Count'):
+            combined_data['Floor_Count'] = 'N/A'
+        
+        # Check for required fields
+        required_fields = ['Property_ID', 'Address', 'Price', 'Living_Area', 'Rooms']
+        missing_fields = [field for field in required_fields if not combined_data.get(field)]
+        
         if missing_fields:
             logging.warning(f"Missing required fields for property {property_id}: {', '.join(missing_fields)}")
+            return None
+            
+        return combined_data
         
-        return property_data
     except Exception as e:
         logging.error(f"Error processing property {property_id}: {str(e)}")
-        logging.error("Stack trace:", exc_info=True)
         return None
 
 def main(sample_size=None):
@@ -1245,10 +1067,16 @@ def main(sample_size=None):
                 if field != 'Property_ID':
                     ordered_fields.append(field)
             
-            with open(output_file, 'w', encoding='utf-8', newline='') as f:
+            # Define the CSV file path
+            csv_file = 'data/property_details.csv'
+            
+            # Open the CSV file in write mode (not append)
+            with open(csv_file, 'w', newline='', encoding='utf-8') as f:
                 writer = csv.DictWriter(f, fieldnames=ordered_fields)
                 writer.writeheader()
-                writer.writerows(all_results)
+                # Write all results
+                for result in all_results:
+                    writer.writerow(result)
             
             logging.info(f"Data successfully saved to {output_file}")
         else:
