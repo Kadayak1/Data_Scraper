@@ -966,18 +966,24 @@ def process_property(property_row, index, total, start_time=None):
         logging.error(f"Error processing property {property_id}: {str(e)}")
         return None
 
-def main(sample_size=None):
+def main(sample_size=None, input_file='data/scraped_properties.csv'):
     """Main function to process property links."""
     try:
+        # Determine output file based on input file
+        if 'regular_sales' in input_file:
+            output_file = 'data/property_details_regular_sales.csv'
+        else:
+            output_file = 'data/property_details.csv'
+            
         # Load list of property links from CSV
-        with open('data/scraped_properties.csv', 'r', encoding='utf-8') as f:
+        with open(input_file, 'r', encoding='utf-8') as f:
             all_properties = list(csv.DictReader(f))
         
-        logging.info(f"Loaded {len(all_properties)} properties from CSV")
+        logging.info(f"Loaded {len(all_properties)} properties from {input_file}")
         
         # Validate that the CSV has the required columns
         if not all_properties or 'Link' not in all_properties[0]:
-            logging.error("CSV file does not contain 'Link' column. Cannot proceed.")
+            logging.error(f"CSV file {input_file} does not contain 'Link' column. Cannot proceed.")
             return
             
         # Validate URLs in the CSV
@@ -1022,7 +1028,6 @@ def main(sample_size=None):
             result = process_property(property_row, 1, 1)
             
             if result:
-                output_file = 'data/property_details_debug.csv'
                 # Define the column order with Property_ID first
                 ordered_fields = ['Property_ID']
                 for field in sorted(result.keys()):
@@ -1053,7 +1058,6 @@ def main(sample_size=None):
         
         # Save results to CSV
         if all_results:
-            output_file = 'data/property_details.csv'
             logging.info(f"Saving {len(all_results)} property details to {output_file}")
             
             # Get all unique keys for the CSV header
@@ -1067,11 +1071,8 @@ def main(sample_size=None):
                 if field != 'Property_ID':
                     ordered_fields.append(field)
             
-            # Define the CSV file path
-            csv_file = 'data/property_details.csv'
-            
             # Open the CSV file in write mode (not append)
-            with open(csv_file, 'w', newline='', encoding='utf-8') as f:
+            with open(output_file, 'w', newline='', encoding='utf-8') as f:
                 writer = csv.DictWriter(f, fieldnames=ordered_fields)
                 writer.writeheader()
                 # Write all results
@@ -1093,27 +1094,31 @@ def get_user_choice():
     print("2. Medium sample (50 properties, ~20 minutes)")
     print("3. Full dataset (552 properties, ~3.5 hours)")
     print("4. Debug mode (1 property, visible browser)")
+    print("5. Process regular sales data")
     
     while True:
         try:
-            choice = input("Enter your choice (1-4): ")
+            choice = input("Enter your choice (1-5): ")
             
             if choice == '1':
                 print("\nStarting sample run with 5 properties...")
-                return 5
+                return 5, 'data/scraped_properties.csv'
             elif choice == '2':
                 print("\nStarting medium run with 50 properties...")
-                return 50
+                return 50, 'data/scraped_properties.csv'
             elif choice == '3':
                 print("\nStarting full run with all properties...")
-                return None  # None means process all properties
+                return None, 'data/scraped_properties.csv'  # None means process all properties
             elif choice == '4':
                 print("\nStarting debug mode with 1 property and visible browser...")
-                return 1
+                return 1, 'data/scraped_properties.csv'
+            elif choice == '5':
+                print("\nStarting regular sales data processing...")
+                return None, 'data/regular_sales_20250319_001337.csv'
             else:
-                print("Invalid choice. Please enter 1, 2, 3, or 4.")
+                print("Invalid choice. Please enter 1, 2, 3, 4, or 5.")
         except ValueError:
-            print("Invalid input. Please enter a number between 1 and 4.")
+            print("Invalid input. Please enter a number between 1 and 5.")
 
 def clean_numerical_value(value, value_type='number'):
     """
@@ -1158,14 +1163,17 @@ def clean_numerical_value(value, value_type='number'):
 
 if __name__ == '__main__':
     try:
-        sample_size = get_user_choice()
+        sample_size, input_file = get_user_choice()
         if sample_size is None:
-            print("\nStarting full dataset run (552 properties)...")
-            print("Estimated time: 3.5 hours")
+            print(f"\nStarting full dataset run from {input_file}...")
+            if 'regular_sales' in input_file:
+                print("Output will be saved to property_details_regular_sales.csv")
+            else:
+                print("Output will be saved to property_details.csv")
         else:
-            print(f"\nStarting sample run with {sample_size} properties...")
+            print(f"\nStarting sample run with {sample_size} properties from {input_file}...")
         
-        main(sample_size=sample_size)
+        main(sample_size=sample_size, input_file=input_file)
     except KeyboardInterrupt:
         print("\nProcess interrupted by user. Check property_details_interrupted.csv for partial results.")
     except Exception as e:
