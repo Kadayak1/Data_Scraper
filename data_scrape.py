@@ -159,32 +159,39 @@ def format_date(date_text: str) -> str:
         day, month, year = date_match.groups()
         return f"{day}-{month}-{year}"
     
+    # Check for numeric date format like DDMMYYYY
+    num_match = re.search(r'(\d{1,2})(\d{2})(\d{4})', date_text)
+    if num_match:
+        day, month, year = num_match.groups()
+        # Pad day with leading zero if needed
+        if len(day) == 1:
+            day = f"0{day}"
+        # Ensure month is valid (01-12)
+        if 1 <= int(month) <= 12:
+            return f"{day}-{month}-{year}"
+    
     return date_text
 
 def determine_sale_type(sale_type_text: str) -> str:
     """Clean and standardize the sale type"""
     if not sale_type_text or sale_type_text == "N/A":
-        return "Unknown"
+        return "N/A"
     
     # Lowercase for comparison
     sale_type_lower = sale_type_text.lower()
     
     # Map of known sale types
     sale_type_mapping = {
-        "fri handel": "Free Sale",
-        "tvangsauktion": "Foreclosure",
-        "familie handel": "Family Sale",
-        "andet": "Other"
+        "fri handel": "Fri handel",
+        "tvangsauktion": "Tvangsauktion",
+        "familie handel": "Familie handel",
+        "andet": "Andet"
     }
     
     # Check each known sale type
     for key, value in sale_type_mapping.items():
         if key in sale_type_lower:
             return value
-    
-    # If we have a street address, it's likely misclassified and should be "Foreclosure"
-    if re.search(r'\d{4}', sale_type_lower):  # Contains postal code (4 digits)
-        return "Foreclosure"
     
     return sale_type_text
 
@@ -251,80 +258,101 @@ def fetch_page_data(page, page_number: int, base_url: str, max_retries: int = 3)
                         
                     processed_property_ids.add(property_id)
                     
-                    # Extract property type
+                    # Default values
                     property_type = "N/A"
-                    type_el = container.select_one('div[class*="text-gray"]')
-                    if type_el:
-                        property_type = type_el.text.strip()
+                    address = "N/A"
+                    postal_code = "N/A"
                     
-                    # Extract address
-                    address = ""
-                    address_div = container.select_one('div[class*="font-black"]')
+                    # Extract postal code from property_id
+                    # Format is typically: address-postalcode-city-id
+                    if '-' in property_id:
+                        parts = property_id.split('-')
+                        for i, part in enumerate(parts):
+                            # Postal code is typically a 4-digit number
+                            if part.isdigit() and len(part) == 4:
+                                postal_code = part
+                                break
+                    
+                    # Find the property type - using the parent div of the property type content
+                    type_container = container.select_one('div.text-gray-600.font-normal.text-sm')
+                    if type_container:
+                        property_type = type_container.text.strip()
+                    
+                    # Find the address
+                    address_div = container.select_one('div.font-black.text-sm')
                     if address_div:
                         address = address_div.text.strip()
                     
+                    # Look in the desktop view table as backup
+                    table = container.find('table')
+                    if table:
+                        # Try to find property type from table header
+                        thead_type = table.select_one('thead th:first-child div')
+                        if thead_type and (property_type == "N/A" or not property_type):
+                            property_type = thead_type.text.strip()
+                        
+                        # Find address from tbody if not already found
+                        if address == "N/A":
+                            tbody = table.find('tbody')
+                            if tbody:
+                                first_row = tbody.find('tr')
+                                if first_row:
+                                    address_cell = first_row.select_one('td[rowspan]')
+                                    if address_cell:
+                                        address_divs = address_cell.find_all('div')
+                                        if len(address_divs) >= 1:
+                                            address = address_divs[0].text.strip()
+            
                     # Process sale records within the container
                     sales = []
                     
-                    # Try desktop view first
-                    table = container.find('table')
                     if table:
-                        table_rows = table.find_all('tr')
-                        for row in table_rows:
-                            cells = row.find_all('td')
-                            if len(cells) >= 4:
-                                raw_sale_type = cells[0].text.strip()
-                                raw_sale_date = cells[1].text.strip()
-                                raw_price = cells[2].text.strip()
+                        # Get only the tbody rows (skip thead)
+                        tbody = table.find('tbody')
+                        if tbody:
+                            table_rows = tbody.find_all('tr')
+                            
+                            for row in table_rows:
+                                cells = row.find_all('td')
                                 
-                                # Format and clean the data
-                                sale_type = determine_sale_type(raw_sale_type)
-                                sale_date = format_date(raw_sale_date)
-                                price = format_price(raw_price)
+                                # Each row should have at least 3 cells (sale type, date, price)
+                                if len(cells) < 3:
+                                    continue
+                                    
+                                # If the first cell has rowspan, it's the address cell (skip it)
+                                # The sale data starts from index 0 or 1 depending on the row
+                                start_idx = 0
                                 
-                                sales.append({
-                                    'Sale Type': sale_type,
-                                    'Raw Sale Type': raw_sale_type,
-                                    'Sale Date': sale_date,
-                                    'Raw Sale Date': raw_sale_date,
-                                    'Price': price,
-                                    'Raw Price': raw_price
-                                })
-                    else:
-                        # Handle mobile view format with safer selector usage
-                        try:
-                            mobile_grid = container.select_one('div[class*="grid"]')
-                            if mobile_grid:
-                                # Safely get elements with error handling
-                                sale_type_element = mobile_grid.select_one('div:nth-child(1) span:last-child')
-                                sale_date_element = mobile_grid.select_one('div:nth-child(2) span:last-child')
-                                price_element = mobile_grid.select_one('div:nth-child(3) span:last-child')
-                                
-                                if sale_type_element and sale_date_element and price_element:
-                                    raw_sale_type = sale_type_element.text.strip()
-                                    raw_sale_date = sale_date_element.text.strip()
-                                    raw_price = price_element.text.strip()
+                                # Check if the first cell has address info (has rowspan)
+                                first_cell = cells[0]
+                                if 'rowspan' in first_cell.attrs:
+                                    # This is the address cell, sale data starts at index 1
+                                    start_idx = 1
+                                    
+                                # Extract the sale data from the correct indices
+                                if start_idx + 2 < len(cells):  # Make sure we have enough cells
+                                    sale_type = cells[start_idx].text.strip()
+                                    sale_date = cells[start_idx + 1].text.strip()
+                                    price_text = cells[start_idx + 2].text.strip()
                                     
                                     # Format and clean the data
-                                    sale_type = determine_sale_type(raw_sale_type)
-                                    sale_date = format_date(raw_sale_date)
-                                    price = format_price(raw_price)
+                                    sale_type_clean = determine_sale_type(sale_type)
+                                    sale_date_clean = format_date(sale_date)
+                                    price_clean = format_price(price_text)
                                     
                                     sales.append({
-                                        'Sale Type': sale_type,
-                                        'Raw Sale Type': raw_sale_type,
-                                        'Sale Date': sale_date,
-                                        'Raw Sale Date': raw_sale_date,
-                                        'Price': price,
-                                        'Raw Price': raw_price
+                                        'Sale Type': sale_type_clean,
+                                        'Raw Sale Type': sale_type,
+                                        'Sale Date': sale_date_clean,
+                                        'Raw Sale Date': sale_date,
+                                        'Price': price_clean,
+                                        'Raw Price': price_text
                                     })
-                        except Exception as e:
-                            logging.warning(f"Error parsing mobile view for property {property_id}: {e}")
-                    
+            
                     # If no sales records were found, add a record with N/A values
                     if not sales:
                         sales.append({
-                            'Sale Type': 'Unknown',
+                            'Sale Type': 'N/A',
                             'Raw Sale Type': 'N/A',
                             'Sale Date': None,
                             'Raw Sale Date': 'N/A',
@@ -337,11 +365,12 @@ def fetch_page_data(page, page_number: int, base_url: str, max_retries: int = 3)
                         'Property ID': property_id,
                         'Link': link,
                         'Address': address,
-                        'Property Type': property_type,
+                        'Postal_Code': postal_code,
+                        'Property_Type': property_type,
                         'Sales': json.dumps(sales),  # Store all sales as JSON
-                        'First Sale Type': sales[0]['Sale Type'],
-                        'First Sale Date': sales[0]['Sale Date'],
-                        'First Sale Price': sales[0]['Price'],
+                        'First Sale Type': sales[0]['Sale Type'] if sales else 'N/A',
+                        'First Sale Date': sales[0]['Sale Date'] if sales else 'N/A',
+                        'First Sale Price': sales[0]['Price'] if sales else 'N/A',
                         'Sales Count': len(sales),
                         'Page Number': page_number
                     }
@@ -349,7 +378,7 @@ def fetch_page_data(page, page_number: int, base_url: str, max_retries: int = 3)
                     page_data_list.append(property_data)
                         
                 except Exception as e:
-                    logging.error(f"Error processing container on page {page_number}: {e}")
+                    logging.error(f"Error processing container: {str(e)}")
                     continue
             
             # Log the actual number of unique properties processed
@@ -426,7 +455,7 @@ def main():
                                 total_pages = 29  # Default to known value
                                 logging.info("Found pagination with next button, using default of 29 pages")
                             else:
-                                total_pages = 1
+                                total_pages = 29
                                 logging.info("No pagination links found, assuming single page")
                     else:
                         # Check if there are any results at all
@@ -439,7 +468,7 @@ def main():
                             logging.info("No pagination found, using default of 29 pages")
                 except Exception as e:
                     logging.warning(f"Could not determine total pages: {e}")
-                    total_pages = 29  # Default to known value
+                    total_pages = 29 # Default to known value
                     logging.info("Using default of 29 pages")
                 
                 progress_tracker = ProgressTracker(total_pages)
@@ -573,7 +602,7 @@ def save_data_to_csv(data_list: List[Dict], filepath: str):
         return
         
     os.makedirs(os.path.dirname(filepath), exist_ok=True)
-    csv_columns = ['Property ID', 'Link', 'Address', 'Property Type', 'Sales', 
+    csv_columns = ['Property ID', 'Link', 'Address', 'Postal_Code', 'Property_Type', 'Sales', 
                    'First Sale Type', 'First Sale Date', 'First Sale Price', 
                    'Sales Count', 'Page Number']
     
@@ -603,28 +632,23 @@ def save_expanded_sales_data(data_list: List[Dict], filepath: str):
             for i, sale in enumerate(sales):
                 expanded_row = {
                     'Property ID': property_data['Property ID'],
-                    'Link': property_data['Link'],
                     'Address': property_data['Address'],
-                    'Property Type': property_data['Property Type'],
+                    'Postal_Code': property_data['Postal_Code'],
+                    'Property_Type': property_data['Property_Type'],
                     'Sale Type': sale['Sale Type'],
                     'Sale Date': sale['Sale Date'],
                     'Price': sale['Price'],
-                    'Raw Sale Type': sale['Raw Sale Type'],
-                    'Raw Sale Date': sale['Raw Sale Date'],
-                    'Raw Price': sale['Raw Price'],
                     'Sale Index': i + 1,
-                    'Total Sales': len(sales),
-                    'Page Number': property_data['Page Number']
+                    'Total Sales': len(sales)
                 }
                 expanded_data.append(expanded_row)
         except Exception as e:
             logging.error(f"Error expanding sales data for property {property_data['Property ID']}: {e}")
     
     # Define columns for the expanded data
-    csv_columns = ['Property ID', 'Link', 'Address', 'Property Type', 
-                   'Sale Type', 'Sale Date', 'Price', 
-                   'Raw Sale Type', 'Raw Sale Date', 'Raw Price',
-                   'Sale Index', 'Total Sales', 'Page Number']
+    csv_columns = ['Property ID', 'Address', 'Postal_Code', 'Property_Type',
+                   'Sale Type', 'Sale Date', 'Price',
+                   'Sale Index', 'Total Sales']
     
     try:
         with open(filepath, 'w', newline='', encoding='utf-8') as csvfile:
