@@ -43,4 +43,6 @@ data/*.csv
 !data/property_details.csv
 !data/property_details_sample.csv
 !data/scraped_properties.csv
+!data/scraped_properties_expanded.csv
+!data/property_details_per_sale.csv
 *.log 
